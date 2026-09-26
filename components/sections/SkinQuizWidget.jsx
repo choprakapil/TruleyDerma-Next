@@ -5,17 +5,43 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronRight,
   RotateCcw,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  Award,
-  Sparkles,
 } from "lucide-react";
+import {
+  CalendarIcon,
+  CheckCircleIcon,
+  ClockIcon,
+  AwardMedalIcon,
+  SparklesIcon,
+  RadianceGlowIcon,
+  PoreRefineIcon,
+  PigmentShieldIcon,
+  ScarRemodelIcon,
+  FaceLiftIcon,
+  HairCareIcon,
+  ShieldCheckIcon,
+  SerumDropletIcon,
+  DigitalSkinScanIcon,
+} from "../ui/LuxuryIcons";
 import { useBooking } from "../providers/BookingContext";
 import MagneticButton from "../ui/MagneticButton";
 import { Reveal } from "../animation/Reveal";
 import { SingleBloom, BotanicalFrameCorner } from "../ui/BotanicalMotifs";
 import { SkinQuizLuxuryBg } from "../ui/LuxuryBackgrounds";
+
+const optionIconMap = {
+  glow: RadianceGlowIcon,
+  pores: PoreRefineIcon,
+  pigmentation: PigmentShieldIcon,
+  scars: ScarRemodelIcon,
+  laxity: FaceLiftIcon,
+  hair: HairCareIcon,
+  zero: SparklesIcon,
+  mild: ClockIcon,
+  progressive: AwardMedalIcon,
+  resilient: ShieldCheckIcon,
+  sensitive: SerumDropletIcon,
+  reactive: DigitalSkinScanIcon,
+};
 
 const QUIZ_QUESTIONS = [
   {
@@ -319,24 +345,34 @@ export default function SkinQuizWidget() {
                 </div>
 
                 {/* Options Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                  {QUIZ_QUESTIONS[currentStep].options.map((opt) => (
-                    <button
-                      key={opt.id}
-                      onClick={() => handleSelectOption(opt)}
-                      className="p-3 rounded-xl border border-blush-200/80 hover:border-blush-400 bg-[#FCFAF9] hover:bg-white transition-all duration-200 text-left group hover:shadow-2xs flex flex-col justify-between space-y-1 cursor-pointer"
-                    >
-                      <div className="flex items-center justify-between w-full">
-                        <span className="text-xs sm:text-sm font-serif font-semibold text-charcoal-900 group-hover:text-blush-600 transition-colors">
-                          {opt.label}
-                        </span>
-                        <ChevronRight className="w-3.5 h-3.5 text-charcoal-400 group-hover:text-blush-500 group-hover:translate-x-1 transition-all" />
-                      </div>
-                      <p className="text-[11px] text-charcoal-700/80 leading-snug font-light line-clamp-2">
-                        {opt.description}
-                      </p>
-                    </button>
-                  ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  {QUIZ_QUESTIONS[currentStep].options.map((opt) => {
+                    const OptIcon = optionIconMap[opt.id];
+                    return (
+                      <button
+                        key={opt.id}
+                        onClick={() => handleSelectOption(opt)}
+                        className="p-3.5 rounded-2xl border border-blush-200/80 hover:border-blush-400 bg-[#FCFAF9] hover:bg-white transition-all duration-200 text-left group hover:shadow-sm flex items-start gap-3 cursor-pointer"
+                      >
+                        {OptIcon && (
+                          <div className="w-10 h-10 rounded-xl bg-white shadow-2xs border border-blush-100 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                            <OptIcon className="w-6 h-6" />
+                          </div>
+                        )}
+                        <div className="flex-1 space-y-0.5">
+                          <div className="flex items-center justify-between w-full">
+                            <span className="text-xs sm:text-sm font-serif font-semibold text-charcoal-900 group-hover:text-blush-600 transition-colors">
+                              {opt.label}
+                            </span>
+                            <ChevronRight className="w-3.5 h-3.5 text-charcoal-400 group-hover:text-blush-500 group-hover:translate-x-1 transition-all shrink-0 ml-1" />
+                          </div>
+                          <p className="text-[11px] text-charcoal-700/80 leading-snug font-light line-clamp-2">
+                            {opt.description}
+                          </p>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
@@ -363,9 +399,9 @@ export default function SkinQuizWidget() {
 
                   <button
                     onClick={handleReset}
-                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-charcoal-700 hover:text-blush-600 transition-colors cursor-pointer self-start sm:self-auto"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal-700 hover:text-blush-600 transition-colors cursor-pointer self-start sm:self-auto"
                   >
-                    <RotateCcw className="w-3 h-3" />
+                    <RotateCcw className="w-3.5 h-3.5" />
                     <span>Retake Consultation</span>
                   </button>
                 </div>
@@ -395,9 +431,9 @@ export default function SkinQuizWidget() {
                     {prescription.keyBenefits.map((benefit, bIdx) => (
                       <div
                         key={bIdx}
-                        className="p-2 rounded-lg bg-white border border-blush-100 flex items-start gap-1.5 shadow-2xs font-light text-charcoal-800"
+                        className="p-2 rounded-lg bg-white border border-blush-100 flex items-start gap-2 shadow-2xs font-light text-charcoal-800"
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blush-500 shrink-0 mt-0.5" />
+                        <CheckCircleIcon className="w-3.5 h-3.5 shrink-0 mt-0.5" />
                         <span className="leading-tight">{benefit}</span>
                       </div>
                     ))}
@@ -406,8 +442,8 @@ export default function SkinQuizWidget() {
 
                 {/* Downtime & Duration Specs */}
                 <div className="grid grid-cols-2 gap-2">
-                  <div className="p-2.5 rounded-xl bg-blush-50/60 border border-blush-100 flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-blush-500" />
+                  <div className="p-2.5 rounded-xl bg-blush-50/60 border border-blush-100 flex items-center gap-2.5">
+                    <ClockIcon className="w-5 h-5" />
                     <div>
                       <span className="text-[9px] uppercase font-bold text-charcoal-500 block">
                         Downtime
@@ -418,8 +454,8 @@ export default function SkinQuizWidget() {
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-blush-50/60 border border-blush-100 flex items-center gap-2">
-                    <Award className="w-4 h-4 text-blush-500" />
+                  <div className="p-2.5 rounded-xl bg-blush-50/60 border border-blush-100 flex items-center gap-2.5">
+                    <AwardMedalIcon className="w-5 h-5" />
                     <div>
                       <span className="text-[9px] uppercase font-bold text-charcoal-500 block">
                         Course Recommendation
@@ -440,9 +476,9 @@ export default function SkinQuizWidget() {
                   <MagneticButton strength={0.25}>
                     <button
                       onClick={() => openBooking(prescription.slug)}
-                      className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
+                      className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      <Calendar className="w-3.5 h-3.5 text-white" />
+                      <CalendarIcon className="w-4 h-4" />
                       <span>Book Prescribed Protocol</span>
                     </button>
                   </MagneticButton>

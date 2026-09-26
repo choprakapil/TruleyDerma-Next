@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Clock, ShieldCheck, CheckCircle2, Sparkles, Calendar, MessageSquare, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  ClockIcon,
+  ShieldCheckIcon,
+  CheckCircleIcon,
+  AwardMedalIcon,
+  CalendarIcon,
+  WhatsAppIcon,
+} from "../ui/LuxuryIcons";
 import { useBooking } from "../providers/BookingContext";
 import { clinicInfo } from "../../data/clinicInfo";
 import { TreatmentDetailLuxuryBg } from "../ui/LuxuryBackgrounds";
@@ -53,24 +61,24 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
 
             {/* Treatment Fast Facts */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 border-y border-rose-100">
-              <div className="flex items-center gap-2.5">
-                <Clock className="w-5 h-5 text-brand-rose shrink-0" />
+              <div className="flex items-center gap-3">
+                <ClockIcon className="w-6 h-6 shrink-0" />
                 <div>
                   <p className="text-[10px] text-charcoal-500 uppercase tracking-wider font-semibold">Duration</p>
                   <p className="text-xs font-semibold text-charcoal-900">{treatment.sessionDuration}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-brand-rose shrink-0" />
+              <div className="flex items-center gap-3">
+                <ShieldCheckIcon className="w-6 h-6 shrink-0" />
                 <div>
                   <p className="text-[10px] text-charcoal-500 uppercase tracking-wider font-semibold">Downtime</p>
                   <p className="text-xs font-semibold text-charcoal-900">{treatment.downtime}</p>
                 </div>
               </div>
 
-              <div className="col-span-2 sm:col-span-1 flex items-center gap-2.5">
-                <Sparkles className="w-5 h-5 text-brand-rose shrink-0" />
+              <div className="col-span-2 sm:col-span-1 flex items-center gap-3">
+                <AwardMedalIcon className="w-6 h-6 shrink-0" />
                 <div>
                   <p className="text-[10px] text-charcoal-500 uppercase tracking-wider font-semibold">Supervision</p>
                   <p className="text-xs font-semibold text-charcoal-900">Dr. Megha Aggarwal</p>
@@ -84,7 +92,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
                 onClick={() => openBooking(treatment.slug)}
                 className="px-8 py-4 rounded-full bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white text-xs sm:text-sm font-semibold tracking-wider uppercase hover:opacity-95 active:scale-95 transition-all shadow-[0_8px_25px_rgb(201,130,148,0.35)] flex items-center gap-2.5 border border-white/40 cursor-pointer"
               >
-                <Calendar className="w-4 h-4 text-white" />
+                <CalendarIcon className="w-4 h-4" />
                 <span>Reserve Consultation</span>
               </button>
 
@@ -92,9 +100,9 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
                 href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent(`Hello Dr. Megha, I would like to inquire about ${treatment.name} at Truly Derma.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-4 rounded-full bg-white hover:bg-rose-50 text-brand-rose text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors flex items-center gap-2 border border-rose-200 shadow-sm"
+                className="px-7 py-4 rounded-full bg-white hover:bg-rose-50 text-charcoal-900 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors flex items-center gap-2 border border-rose-200 shadow-sm"
               >
-                <MessageSquare className="w-4 h-4 text-brand-rose" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>WhatsApp Clinical Desk</span>
               </a>
             </div>
@@ -165,7 +173,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
               <ul className="space-y-3">
                 {treatment.highlights.map((highlight, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-charcoal-700">
-                    <CheckCircle2 className="w-4 h-4 text-brand-rose shrink-0 mt-0.5" />
+                    <CheckCircleIcon className="w-4 h-4 shrink-0 mt-0.5" />
                     <span className="font-normal font-sans">{highlight}</span>
                   </li>
                 ))}

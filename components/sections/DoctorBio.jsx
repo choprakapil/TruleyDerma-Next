@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Award, GraduationCap, Calendar, MessageSquare, Sparkles } from "lucide-react";
+import { AwardMedalIcon, GraduationCapIcon, CalendarIcon, WhatsAppIcon } from "../ui/LuxuryIcons";
 import { clinicInfo } from "../../data/clinicInfo";
 import { useBooking } from "../providers/BookingContext";
 import { Reveal, StaggerReveal, StaggerItem } from "../animation/Reveal";
@@ -72,8 +72,8 @@ export default function DoctorBio() {
 
               {/* Verified Experience Floating Badge */}
               <div className="absolute -bottom-2 -right-2 sm:-right-2 bg-white px-2.5 py-1.5 rounded-xl border border-blush-200 shadow-md flex items-center gap-2 z-20">
-                <div className="w-6 h-6 rounded-lg bg-blush-100 text-blush-600 flex items-center justify-center font-bold">
-                  <SingleBloom className="w-3.5 h-3.5" color="#C98294" />
+                <div className="w-6 h-6 rounded-lg bg-amber-50 flex items-center justify-center font-bold">
+                  <AwardMedalIcon className="w-4 h-4" />
                 </div>
                 <div>
                   <p className="text-[10px] font-serif font-bold text-charcoal-900 leading-none">14+ Years</p>
@@ -86,8 +86,8 @@ export default function DoctorBio() {
           {/* Right Column: Biography, Credentials & Stats */}
           <div className="lg:col-span-7 space-y-2.5 sm:space-y-3">
             <Reveal>
-              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white border border-blush-200 text-blush-600 text-[10px] font-semibold tracking-widest uppercase shadow-2xs">
-                <Award className="w-3 h-3 text-blush-500" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50/80 border border-amber-200/80 text-charcoal-800 text-[10px] font-semibold tracking-widest uppercase shadow-2xs">
+                <AwardMedalIcon className="w-4 h-4" />
                 <span>Direct Physician Leadership</span>
               </div>
             </Reveal>
@@ -129,8 +129,8 @@ export default function DoctorBio() {
 
             {/* Truly Derma Academy Badge */}
             <Reveal delay={0.15} className="p-2.5 rounded-xl bg-white border border-blush-200/80 shadow-2xs flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blush-100 text-blush-600 flex items-center justify-center shrink-0 shadow-2xs">
-                <GraduationCap className="w-3.5 h-3.5 text-blush-600" />
+              <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0 shadow-2xs">
+                <GraduationCapIcon className="w-5 h-5" />
               </div>
               <div>
                 <h4 className="text-xs font-serif font-semibold text-charcoal-900">
@@ -147,9 +147,9 @@ export default function DoctorBio() {
               <MagneticButton strength={0.2}>
                 <button
                   onClick={() => openBooking()}
-                  className="w-full sm:w-auto px-4 py-2 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-[11px] font-semibold tracking-wider uppercase active:scale-95 transition-all shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-[11px] font-semibold tracking-wider uppercase active:scale-95 transition-all shadow-2xs flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Calendar className="w-3.5 h-3.5 text-white" />
+                  <CalendarIcon className="w-4 h-4" />
                   <span>Consult Dr. Megha</span>
                 </button>
               </MagneticButton>
@@ -159,9 +159,9 @@ export default function DoctorBio() {
                   href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent("Hello Dr. Megha, I would like to book a private clinical consultation.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-4 py-2 rounded-full bg-white hover:bg-blush-50 text-charcoal-800 text-[11px] font-semibold tracking-wider uppercase transition-colors flex items-center justify-center gap-1.5 border border-blush-200 shadow-2xs cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2 rounded-full bg-white hover:bg-blush-50 text-charcoal-800 text-[11px] font-semibold tracking-wider uppercase transition-colors flex items-center justify-center gap-2 border border-blush-200 shadow-2xs cursor-pointer"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-blush-500" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>WhatsApp Desk</span>
                 </a>
               </MagneticButton>

@@ -1,6 +1,7 @@
 "use client";
 
-import { Star, Quote, Sparkles, CheckCircle2 } from "lucide-react";
+import { Star, Quote } from "lucide-react";
+import { SparklesIcon, CheckCircleIcon } from "../ui/LuxuryIcons";
 import { clinicInfo } from "../../data/clinicInfo";
 import { SlideUp } from "../ui/MotionWrappers";
 import { SingleBloom } from "../ui/BotanicalMotifs";
@@ -25,8 +26,8 @@ export default function TestimonialsMarquee() {
         {/* Section Header */}
         <SlideUp yOffset={15} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center relative z-10">
           <div>
-            <div className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-white border border-blush-300/80 text-blush-700 text-[10px] font-bold tracking-widest uppercase mb-1.5 shadow-2xs">
-              <Sparkles className="w-3 h-3 text-blush-500" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-blush-300/80 text-blush-700 text-[10px] font-bold tracking-widest uppercase mb-1.5 shadow-2xs">
+              <SparklesIcon className="w-3.5 h-3.5" />
               <span>Verified Patient Reflections</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-semibold text-charcoal-950 tracking-tight">
@@ -73,9 +74,9 @@ export default function TestimonialsMarquee() {
                         {initial}
                       </div>
                       <div>
-                        <h4 className="text-[11px] font-serif font-bold text-charcoal-950 flex items-center gap-1 leading-none">
+                        <h4 className="text-[11px] font-serif font-bold text-charcoal-950 flex items-center gap-1.5 leading-none">
                           <span>{item.patientName}</span>
-                          <CheckCircle2 className="w-2.5 h-2.5 text-blush-500" />
+                          <CheckCircleIcon className="w-3 h-3" />
                         </h4>
                         <p className="text-[9.5px] text-blush-600 font-semibold tracking-wide mt-0.5">
                           {item.treatment}
@@ -128,9 +129,9 @@ export default function TestimonialsMarquee() {
                         {initial}
                       </div>
                       <div>
-                        <h4 className="text-[11px] font-serif font-bold text-charcoal-950 flex items-center gap-1 leading-none">
+                        <h4 className="text-[11px] font-serif font-bold text-charcoal-950 flex items-center gap-1.5 leading-none">
                           <span>{item.patientName}</span>
-                          <CheckCircle2 className="w-2.5 h-2.5 text-blush-500" />
+                          <CheckCircleIcon className="w-3 h-3" />
                         </h4>
                         <p className="text-[9.5px] text-blush-600 font-semibold tracking-wide mt-0.5">
                           {item.treatment}

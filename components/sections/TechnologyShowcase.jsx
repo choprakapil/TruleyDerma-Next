@@ -1,14 +1,14 @@
 "use client";
 
-import { Microscope, Cpu, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
+import { DigitalSkinScanIcon, ResonanceChipIcon, CryoSealIcon, SparklesIcon, CheckCircleIcon } from "../ui/LuxuryIcons";
 import { clinicInfo } from "../../data/clinicInfo";
 import { SlideDown, StaggerContainer, StaggerItemSlide } from "../ui/MotionWrappers";
 import { SingleBloom } from "../ui/BotanicalMotifs";
 
 const stepIcons = {
-  Microscope: Microscope,
-  Cpu: Cpu,
-  ShieldCheck: ShieldCheck,
+  Microscope: DigitalSkinScanIcon,
+  Cpu: ResonanceChipIcon,
+  ShieldCheck: CryoSealIcon,
 };
 
 export default function TechnologyShowcase() {
@@ -31,8 +31,8 @@ export default function TechnologyShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
         {/* Section Header */}
         <SlideDown className="text-center max-w-3xl mx-auto mb-5 sm:mb-7">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white border border-rose-200/80 text-brand-rose text-[10px] font-semibold tracking-widest uppercase mb-2 shadow-2xs">
-            <Cpu className="w-3 h-3 text-brand-rose" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-charcoal-800 text-[10px] font-semibold tracking-widest uppercase mb-2 shadow-2xs">
+            <ResonanceChipIcon className="w-4 h-4" />
             <span>US-FDA Cleared Instrumentation</span>
           </div>
 
@@ -63,8 +63,8 @@ export default function TechnologyShowcase() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent" />
                       
-                      <div className="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2 py-0.5 rounded-full text-brand-rose text-[9.5px] font-bold tracking-wider uppercase border border-rose-200/80 shadow-2xs flex items-center gap-1">
-                        <Icon className="w-2.5 h-2.5 text-brand-rose" />
+                      <div className="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-charcoal-900 text-[9.5px] font-bold tracking-wider uppercase border border-rose-200/80 shadow-2xs flex items-center gap-1.5">
+                        <Icon className="w-3.5 h-3.5" />
                         <span>Phase {step.stepNumber}</span>
                       </div>
                     </div>
@@ -83,8 +83,8 @@ export default function TechnologyShowcase() {
 
                   {/* Verification Tag */}
                   <div className="pt-2.5 mt-3 border-t border-rose-100/70 flex items-center justify-between text-[10.5px] text-charcoal-700">
-                    <span className="flex items-center gap-1 font-medium text-brand-rose">
-                      <CheckCircle2 className="w-3 h-3 text-brand-rose" />
+                    <span className="flex items-center gap-1.5 font-medium text-charcoal-800">
+                      <CheckCircleIcon className="w-3.5 h-3.5" />
                       <span>Certified Protocol</span>
                     </span>
                     <span className="text-[9px] uppercase text-charcoal-400 font-semibold tracking-wider">

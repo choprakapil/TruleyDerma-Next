@@ -2,7 +2,8 @@
 
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
-import { Zap, ArrowRight, CheckCircle2, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { LaserPulseIcon, CheckCircleIcon, CalendarIcon } from "../ui/LuxuryIcons";
 import { useBooking } from "../providers/BookingContext";
 import MagneticButton from "../ui/MagneticButton";
 import { SingleBloom, BotanicalFrameCorner } from "../ui/BotanicalMotifs";
@@ -229,8 +230,8 @@ export default function PinnedShowcase() {
 
                   {/* Top Badge & Number */}
                   <div className="flex items-center justify-between pb-3 border-b border-blush-100 relative z-10">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blush-50 text-blush-600 border border-blush-200 text-[11px] font-semibold uppercase tracking-wider">
-                      <Zap className="w-3 h-3 text-blush-500" />
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-charcoal-800 border border-amber-200/80 text-[11px] font-semibold uppercase tracking-wider">
+                      <LaserPulseIcon className="w-4 h-4" />
                       <span>{suite.badge}</span>
                     </div>
                     <span className="text-xl sm:text-2xl font-serif text-blush-300 tracking-wider">
@@ -271,7 +272,7 @@ export default function PinnedShowcase() {
                       <ul className="pt-1.5 space-y-1.5">
                         {suite.features.slice(0, 2).map((feat, fIdx) => (
                           <li key={fIdx} className="flex items-start gap-2 text-xs text-charcoal-800">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-blush-500 shrink-0 mt-0.5" />
+                            <CheckCircleIcon className="w-3.5 h-3.5 shrink-0 mt-0.5" />
                             <span className="leading-snug font-medium text-charcoal-800">{feat}</span>
                           </li>
                         ))}
@@ -297,8 +298,9 @@ export default function PinnedShowcase() {
                     <MagneticButton strength={0.2}>
                       <button
                         onClick={() => openBooking(suite.slug)}
-                        className="px-5 py-2.5 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+                        className="px-5 py-2.5 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer shrink-0"
                       >
+                        <CalendarIcon className="w-3.5 h-3.5" />
                         <span>Book Suite</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>

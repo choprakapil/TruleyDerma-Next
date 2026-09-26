@@ -3,15 +3,12 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useSpring, useScroll, useTransform } from "framer-motion";
 import {
-  Calendar,
-  MessageSquare,
   ChevronLeft,
   ChevronRight,
   ArrowRight,
   Star,
-  Sparkles,
-  Award
 } from "lucide-react";
+import { CalendarIcon, WhatsAppIcon, AwardMedalIcon, SparklesIcon } from "../ui/LuxuryIcons";
 import { useBooking } from "../providers/BookingContext";
 import { clinicInfo } from "../../data/clinicInfo";
 import MagneticButton from "../ui/MagneticButton";
@@ -181,8 +178,8 @@ export default function HeroSection() {
             {/* High-Contrast Doctor Credentials Pill */}
             <div className="p-3.5 rounded-2xl bg-white border-2 border-blush-300 shadow-md flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blush-400 text-white flex items-center justify-center font-bold shrink-0 shadow-sm">
-                  <Award className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center font-bold shrink-0 shadow-sm border border-amber-200">
+                  <AwardMedalIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm font-serif font-bold text-charcoal-950 tracking-wide">
@@ -203,9 +200,9 @@ export default function HeroSection() {
               <MagneticButton strength={0.25}>
                 <button
                   onClick={() => openBooking()}
-                  className="px-6 py-3 rounded-full bg-blush-500 hover:bg-blush-600 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md shadow-blush-400/30 flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 rounded-full bg-blush-500 hover:bg-blush-600 text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md shadow-blush-400/30 flex items-center gap-2.5 cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4 text-white" />
+                  <CalendarIcon className="w-4 h-4" />
                   <span>{slide.ctaText}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </button>
@@ -220,7 +217,7 @@ export default function HeroSection() {
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-full bg-white hover:bg-blush-50 text-charcoal-950 text-xs sm:text-sm font-bold tracking-wider uppercase transition-all flex items-center gap-2 border border-blush-300 shadow-sm cursor-pointer"
                 >
-                  <MessageSquare className="w-4 h-4 text-blush-600" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>WhatsApp Desk</span>
                 </a>
               </MagneticButton>
@@ -257,7 +254,7 @@ export default function HeroSection() {
 
                 {/* Floating Stat Badge (Safe Inset - Never Cut Off) */}
                 <div className="absolute top-4 left-5 sm:left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-blush-200 text-charcoal-950 text-xs font-bold flex items-center gap-2 shadow-md">
-                  <Sparkles className="w-3.5 h-3.5 text-blush-500" />
+                  <SparklesIcon className="w-4 h-4" />
                   <span>{slide.badgeText}</span>
                 </div>
 

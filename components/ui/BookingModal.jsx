@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Clock, CheckCircle2, MessageSquare, Sparkles, Phone, User, Mail } from "lucide-react";
+import { X } from "lucide-react";
+import {
+  CalendarIcon,
+  ClockIcon,
+  WhatsAppIcon,
+  SparklesIcon,
+  PhoneIcon,
+  UserIcon,
+} from "./LuxuryIcons";
 import AnimatedCheckmark from "./AnimatedCheckmark";
 import { treatments } from "../../data/treatments";
 import { clinicInfo } from "../../data/clinicInfo";
@@ -110,7 +118,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                 <X className="w-5 h-5" />
               </button>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 border border-white/30 text-white text-xs tracking-wider uppercase mb-3 font-semibold">
-                <Sparkles className="w-3.5 h-3.5" />
+                <SparklesIcon className="w-3.5 h-3.5" />
                 <span>Dr. Megha Aggarwal's Clinic</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-serif font-normal text-white">
@@ -137,7 +145,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                   <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                       onClick={resetAndClose}
-                      className="px-7 py-3.5 rounded-full bg-brand-rose text-white text-xs font-semibold uppercase tracking-wider hover:opacity-95 transition-colors shadow-md"
+                      className="px-7 py-3.5 rounded-full bg-brand-rose text-white text-xs font-semibold uppercase tracking-wider hover:opacity-95 transition-colors shadow-md cursor-pointer"
                     >
                       Return to Experience
                     </button>
@@ -145,9 +153,9 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                       href={`https://wa.me/${clinicInfo.contact.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-7 py-3.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold uppercase tracking-wider hover:bg-emerald-100 transition-colors flex items-center justify-center gap-2 border border-emerald-200"
+                      className="px-7 py-3.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold uppercase tracking-wider hover:bg-emerald-100 transition-colors flex items-center justify-center gap-2 border border-emerald-200"
                     >
-                      <MessageSquare className="w-4 h-4 text-emerald-600" />
+                      <WhatsAppIcon className="w-4 h-4" />
                       Chat with Desk on WhatsApp
                     </a>
                   </div>
@@ -160,7 +168,9 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                         Full Name *
                       </label>
                       <div className="relative">
-                        <User className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3.5" />
+                        <div className="absolute left-3.5 top-3 pointer-events-none">
+                          <UserIcon className="w-4 h-4" />
+                        </div>
                         <input
                           type="text"
                           name="name"
@@ -178,7 +188,9 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                         Phone / WhatsApp *
                       </label>
                       <div className="relative">
-                        <Phone className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3.5" />
+                        <div className="absolute left-3.5 top-3 pointer-events-none">
+                          <PhoneIcon className="w-4 h-4" />
+                        </div>
                         <input
                           type="tel"
                           name="phone"
@@ -233,7 +245,9 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                         Preferred Date
                       </label>
                       <div className="relative">
-                        <Calendar className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3.5" />
+                        <div className="absolute left-3.5 top-3 pointer-events-none">
+                          <CalendarIcon className="w-4 h-4" />
+                        </div>
                         <input
                           type="date"
                           name="date"
@@ -249,7 +263,9 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                         Preferred Time Slot
                       </label>
                       <div className="relative">
-                        <Clock className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3.5" />
+                        <div className="absolute left-3.5 top-3 pointer-events-none">
+                          <ClockIcon className="w-4 h-4" />
+                        </div>
                         <select
                           name="timeSlot"
                           value={formData.timeSlot}
@@ -282,9 +298,9 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                     <button
                       type="button"
                       onClick={handleWhatsAppBooking}
-                      className="flex-1 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2.5 hover:opacity-95 active:scale-[0.99] transition-all shadow-md shadow-brand-rose/25"
+                      className="flex-1 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2.5 hover:opacity-95 active:scale-[0.99] transition-all shadow-md shadow-brand-rose/25 cursor-pointer"
                     >
-                      <MessageSquare className="w-4 h-4 text-white" />
+                      <WhatsAppIcon className="w-4 h-4" />
                       <span>Instant WhatsApp Reservation</span>
                     </button>
 

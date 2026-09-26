@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import { MoveHorizontal, CheckCircle2, Play, Pause } from "lucide-react";
+import { MoveHorizontal, Play, Pause } from "lucide-react";
+import { CheckCircleIcon } from "../ui/LuxuryIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { clinicInfo } from "../../data/clinicInfo";
 import { Reveal, ImageReveal } from "../animation/Reveal";
@@ -155,7 +156,7 @@ function SingleComparisonCard({ item }) {
 
       {/* Doctor Note */}
       <div className="mt-2 flex items-start gap-1.5 text-[10.5px] text-charcoal-700 bg-blush-50/70 p-2 rounded-xl border border-blush-100">
-        <CheckCircle2 className="w-3.5 h-3.5 text-blush-500 shrink-0 mt-0.5" />
+        <CheckCircleIcon className="w-3.5 h-3.5 shrink-0 mt-0.5" />
         <span><strong className="text-charcoal-900 font-semibold">Note:</strong> {item.notes}</span>
       </div>
     </div>

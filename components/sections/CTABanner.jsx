@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, Calendar, Sparkles, Phone, ShieldCheck, CheckCircle } from "lucide-react";
+import { CalendarIcon, WhatsAppIcon, PhoneIcon, SparklesIcon, CheckCircleIcon, ShieldCheckIcon } from "../ui/LuxuryIcons";
 import { clinicInfo } from "../../data/clinicInfo";
 import { useBooking } from "../providers/BookingContext";
 import { ZoomIn } from "../ui/MotionWrappers";
@@ -51,8 +51,8 @@ export default function CTABanner() {
           </div>
 
           {/* Section Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFF6F8] border border-rose-200 text-brand-rose text-[11px] font-semibold tracking-widest uppercase shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-brand-rose" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF6F8] border border-rose-200 text-charcoal-900 text-[11px] font-semibold tracking-widest uppercase shadow-xs">
+            <SparklesIcon className="w-4 h-4" />
             <span>Begin Your Skincare Journey</span>
           </div>
 
@@ -68,15 +68,15 @@ export default function CTABanner() {
           {/* Value Badges */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-xs text-charcoal-700 font-medium pt-1">
             <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-brand-rose shrink-0" />
+              <CheckCircleIcon className="w-4 h-4 shrink-0" />
               <span>Zero Wait Times With Advance Booking</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-brand-rose shrink-0" />
+              <CheckCircleIcon className="w-4 h-4 shrink-0" />
               <span>US-FDA Cleared Technologies</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-brand-rose shrink-0" />
+              <CheckCircleIcon className="w-4 h-4 shrink-0" />
               <span>Personalized Clinical Roadmaps</span>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function CTABanner() {
                 onClick={() => openBooking()}
                 className="w-full sm:w-auto px-7 py-3 rounded-full bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white text-xs sm:text-sm font-semibold tracking-wider uppercase hover:opacity-95 active:scale-95 transition-all shadow-[0_6px_20px_rgb(201,130,148,0.35)] flex items-center justify-center gap-2 border border-white/40 cursor-pointer"
               >
-                <Calendar className="w-4 h-4 text-white" />
+                <CalendarIcon className="w-4 h-4" />
                 <span>Reserve Consultation</span>
               </button>
             </MagneticButton>
@@ -102,7 +102,7 @@ export default function CTABanner() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-rose-50/70 text-charcoal-800 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 border border-rose-200 shadow-xs"
               >
-                <MessageSquare className="w-4 h-4 text-brand-rose" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>Chat via WhatsApp</span>
               </a>
             </MagneticButton>
@@ -112,7 +112,7 @@ export default function CTABanner() {
                 href={`tel:${clinicInfo.contact.phone}`}
                 className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-rose-50/70 text-charcoal-800 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 border border-rose-200 shadow-xs"
               >
-                <Phone className="w-4 h-4 text-brand-rose" />
+                <PhoneIcon className="w-4 h-4" />
                 <span>{clinicInfo.contact.phone}</span>
               </a>
             </MagneticButton>
@@ -120,7 +120,7 @@ export default function CTABanner() {
 
           {/* Security & Confidentiality */}
           <div className="pt-1 flex items-center justify-center gap-2 text-[11px] text-charcoal-500 font-normal">
-            <ShieldCheck className="w-3.5 h-3.5 text-brand-rose" />
+            <ShieldCheckIcon className="w-4 h-4" />
             <span>Strict Patient Confidentiality & Certified Dermatology Protocols</span>
           </div>
         </div>

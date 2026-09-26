@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Sparkles, Phone, MessageSquare, Menu, X, ChevronDown } from "lucide-react";
+import { WhatsAppIcon, PhoneIcon, SparklesIcon, CalendarIcon } from "../ui/LuxuryIcons";
 import { clinicInfo } from "../../data/clinicInfo";
 import { useBooking } from "../providers/BookingContext";
 
@@ -186,9 +187,9 @@ export default function Navbar() {
           {/* Official Phone Direct Dial */}
           <a
             href={`tel:${clinicInfo.contact.phone}`}
-            className="hidden md:flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-charcoal-800 hover:text-brand-rose transition-colors rounded-full bg-rose-50/80 border border-rose-200/70"
+            className="hidden md:flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-charcoal-800 hover:text-brand-rose transition-colors rounded-full bg-rose-50/80 border border-rose-200/70"
           >
-            <Phone className="w-3.5 h-3.5 text-brand-rose" />
+            <PhoneIcon className="w-4 h-4 shrink-0" />
             <span>{clinicInfo.contact.phone}</span>
           </a>
 
@@ -197,11 +198,11 @@ export default function Navbar() {
             href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent("Hello Truly Derma, I would like to reserve an appointment.")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-full bg-rose-100/80 hover:bg-rose-200 text-brand-rose transition-colors border border-rose-200 shadow-sm"
+            className="p-1 rounded-full hover:scale-105 transition-transform"
             title="Chat on WhatsApp"
             aria-label="WhatsApp Contact"
           >
-            <MessageSquare className="w-4 h-4" />
+            <WhatsAppIcon className="w-8 h-8" />
           </a>
 
           {/* Book Appointment CTA Button */}
@@ -364,9 +365,9 @@ export default function Navbar() {
               href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent("Hello Truly Derma, I would like to book an appointment.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-full bg-rose-50 text-brand-rose text-xs font-semibold tracking-wider uppercase text-center flex items-center justify-center gap-2 border border-rose-200"
+              className="w-full py-3 rounded-full bg-rose-50 text-charcoal-900 text-xs font-semibold tracking-wider uppercase text-center flex items-center justify-center gap-2 border border-rose-200"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-5 h-5 shrink-0" />
               WhatsApp Clinic Desk
             </a>
             <a

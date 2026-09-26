@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Award, Microscope, Zap, Droplet, CheckCircle2 } from "lucide-react";
+import { MicroscopeIcon, LaserPulseIcon, SerumDropletIcon, AwardMedalIcon, CheckCircleIcon } from "../ui/LuxuryIcons";
 import { Reveal, StaggerReveal, StaggerItem } from "../animation/Reveal";
 import TiltSpotlightCard from "../ui/TiltSpotlightCard";
 import { SingleBloom, FloralBranch, BotanicalSectionDivider } from "../ui/BotanicalMotifs";
@@ -28,9 +28,9 @@ export default function BrandPhilosophy() {
       title: "Microscopic Tissue Analysis",
       description:
         "Every clinical consultation commences with multi-spectral polarized dermoscopy, mapping cellular histology, lipid barrier integrity, and melanin depth before any treatment.",
-      icon: Microscope,
+      icon: MicroscopeIcon,
       tag: "Polarized Dermoscopy",
-      iconBg: "bg-blush-100 text-blush-600",
+      iconBg: "bg-rose-50",
     },
     {
       num: "02",
@@ -38,9 +38,9 @@ export default function BrandPhilosophy() {
       title: "Bio-Calibrated Energy",
       description:
         "From authentic TD Glowtech 360° microcurrent resonance to US-FDA cleared Q-Switch Nd:YAG lasers, all instrumentation is calibrated to protect natural facial volume.",
-      icon: Zap,
+      icon: LaserPulseIcon,
       tag: "US-FDA Cleared",
-      iconBg: "bg-blush-200/60 text-blush-600",
+      iconBg: "bg-amber-50",
     },
     {
       num: "03",
@@ -48,9 +48,9 @@ export default function BrandPhilosophy() {
       title: "Zero-Downtime Luxury",
       description:
         "Experience boutique calm paired with clinical potency. Walk out with visible cellular luminosity and zero peeling, allowing an effortless return to your life.",
-      icon: Droplet,
+      icon: SerumDropletIcon,
       tag: "Immediate Radiance",
-      iconBg: "bg-blush-100 text-blush-600",
+      iconBg: "bg-cyan-50",
     },
   ];
 
@@ -93,8 +93,8 @@ export default function BrandPhilosophy() {
         {/* Doctor Signature Credit */}
         <Reveal delay={0.15}>
           <div className="flex items-center justify-center gap-3.5 pt-2">
-            <div className="w-11 h-11 rounded-full bg-blush-200/80 text-blush-600 flex items-center justify-center shadow-sm border border-blush-300/40">
-              <Award className="w-5 h-5" />
+            <div className="w-11 h-11 rounded-full bg-amber-50 flex items-center justify-center shadow-sm border border-amber-200/60">
+              <AwardMedalIcon className="w-6 h-6" />
             </div>
             <div className="text-left">
               <div className="flex items-center gap-2">
@@ -129,7 +129,7 @@ export default function BrandPhilosophy() {
                         <div
                           className={`w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm ${pillar.iconBg} transition-transform duration-300 group-hover:rotate-[4deg]`}
                         >
-                          <Icon className="w-6 h-6" />
+                          <Icon className="w-7 h-7" />
                         </div>
                         <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-blush-50 text-charcoal-700 border border-blush-100">
                           {pillar.num}
@@ -149,7 +149,7 @@ export default function BrandPhilosophy() {
 
                     <div className="pt-5 mt-5 border-t border-blush-100 flex items-center justify-between text-xs font-medium text-charcoal-800">
                       <span className="flex items-center gap-1.5 text-[11px] text-charcoal-900">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blush-500" />
+                        <CheckCircleIcon className="w-3.5 h-3.5" />
                         <span>{pillar.tag}</span>
                       </span>
                       <span className="text-[10px] uppercase text-charcoal-600/70 font-semibold tracking-wider">
