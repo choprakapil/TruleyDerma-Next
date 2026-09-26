@@ -124,7 +124,7 @@ export default function HeroSection() {
         <SingleBloom className="w-24 h-24 text-blush-300" color="#DFA6B4" />
       </motion.div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Top Open Status Strip */}
         <div className="flex flex-wrap items-center justify-between gap-2 mb-4 px-2 text-xs">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200/90 text-charcoal-900 font-semibold shadow-sm">

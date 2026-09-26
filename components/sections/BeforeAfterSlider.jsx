@@ -195,7 +195,7 @@ export default function BeforeAfterSlider() {
       </div>
 
       {/* 2 Side-by-Side Comparison Cards */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full flex-1 my-auto flex items-center z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 my-auto flex items-center z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
           {clinicInfo.beforeAfter.slice(0, 2).map((item, idx) => (
             <ImageReveal key={idx} delay={idx * 0.1}>
@@ -206,7 +206,7 @@ export default function BeforeAfterSlider() {
       </div>
 
       {/* Bottom Hint */}
-      <div className="max-w-7xl mx-auto px-4 shrink-0 text-center z-10 pt-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shrink-0 text-center z-10 pt-2">
         <p className="text-[10.5px] text-charcoal-500 font-light">
           Drag slider handle horizontally to compare before and after outcomes ↔
         </p>

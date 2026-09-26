@@ -295,7 +295,7 @@ export default function ServicesGallery() {
       </div>
 
       {/* Bottom Hint */}
-      <div className="max-w-7xl mx-auto px-4 shrink-0 text-center z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shrink-0 text-center z-10">
         <p className="text-[11px] text-charcoal-500 font-light">
           Drag horizontally with mouse or click side arrows to browse clinical procedures ↔
         </p>

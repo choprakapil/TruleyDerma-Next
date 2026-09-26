@@ -14,7 +14,7 @@ export default function CTABanner() {
   const { openBooking } = useBooking();
 
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FDEBF0] via-[#FCE4EA] to-[#FCE8ED] border-b border-blush-200/80 text-charcoal-900 flex flex-col justify-center items-center relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#FDEBF0] via-[#FCE4EA] to-[#FCE8ED] border-b border-blush-200/80 text-charcoal-900 flex flex-col justify-center items-center relative overflow-hidden">
       {/* Bespoke Opulent Sunburst Moire Silk & Radiant Starlight Sparkles Background */}
       <CTABannerLuxuryBg />
 
@@ -41,9 +41,10 @@ export default function CTABanner() {
         className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[400px] bg-blush-200/25 rounded-full blur-3xl pointer-events-none"
       />
 
-      {/* Main Luxury Glass Card */}
-      <ZoomIn initialScale={0.96} duration={0.8} className="relative max-w-4xl mx-auto z-10 w-full">
-        <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 md:p-10 border border-rose-200/80 shadow-[0_15px_45px_rgb(201,130,148,0.1)] text-center space-y-5 sm:space-y-6 relative overflow-hidden">
+      {/* Main Luxury Glass Card within Site-Wide Standard 7xl Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <ZoomIn initialScale={0.96} duration={0.8} className="w-full">
+          <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-12 border border-rose-200/80 shadow-[0_15px_45px_rgb(201,130,148,0.1)] text-center space-y-5 sm:space-y-6 relative overflow-hidden">
           
           {/* Subtle Corner Bloom Accent */}
           <div className="absolute -top-10 -right-10 opacity-10 pointer-events-none">
@@ -125,6 +126,7 @@ export default function CTABanner() {
           </div>
         </div>
       </ZoomIn>
+      </div>
     </section>
   );
 }

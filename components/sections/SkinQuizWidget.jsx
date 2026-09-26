@@ -248,7 +248,7 @@ export default function SkinQuizWidget() {
   return (
     <section
       id="skin-matcher"
-      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#FDEBF0] border-b border-blush-200/70 relative overflow-hidden text-charcoal-900"
+      className="py-16 sm:py-20 bg-[#FDEBF0] border-b border-blush-200/70 relative overflow-hidden text-charcoal-900"
     >
       {/* Bespoke Water Lily Floral Bloom & Floret Lace Background */}
       <SkinQuizLuxuryBg />
@@ -256,7 +256,7 @@ export default function SkinQuizWidget() {
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blush-100/50 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto relative z-10 w-full my-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
         {/* Section Header */}
         <Reveal className="text-center space-y-1.5 mb-4 sm:mb-5">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white border border-blush-200 text-blush-600 text-[10px] font-semibold tracking-widest uppercase shadow-2xs">
@@ -345,7 +345,7 @@ export default function SkinQuizWidget() {
                 </div>
 
                 {/* Options Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-1">
                   {QUIZ_QUESTIONS[currentStep].options.map((opt) => {
                     const OptIcon = optionIconMap[opt.id];
                     return (

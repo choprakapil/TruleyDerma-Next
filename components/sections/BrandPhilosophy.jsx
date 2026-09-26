@@ -70,7 +70,7 @@ export default function BrandPhilosophy() {
         <FloralBranch className="w-36 h-36 text-blush-300" color="#DFA6B4" />
       </motion.div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
         {/* Section Pill with Small Blossom */}
         <Reveal>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blush-200 text-blush-600 text-xs tracking-widest uppercase font-semibold shadow-sm">
