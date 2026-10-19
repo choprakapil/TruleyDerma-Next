@@ -191,25 +191,27 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 4-Column Balanced & Concise Navigation Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 pb-6 sm:pb-7 border-b border-blush-200/80">
+        {/* 4-Column Balanced & Distinct Navigation Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 sm:pb-9 border-b border-blush-200/80">
           
           {/* Col 1: Brand & Doctor Leadership (Span 4) */}
-          <div className="lg:col-span-4 space-y-3">
-            <div className="bg-white p-2.5 rounded-2xl inline-block shadow-2xs border border-blush-200 group hover:border-blush-400 transition-all">
-              <img
-                src="/logo.png"
-                alt="Truly Derma Clinic & Academy"
-                className="h-9 w-auto object-contain group-hover:scale-103 transition-transform"
-              />
-            </div>
+          <div className="lg:col-span-4 space-y-3.5">
+            <Link href="/" className="inline-block">
+              <div className="bg-white p-2.5 rounded-2xl shadow-2xs border border-blush-200 group hover:border-blush-400 transition-all">
+                <img
+                  src="/logo.png"
+                  alt="Truly Derma Clinic & Academy"
+                  className="h-10 w-auto object-contain group-hover:scale-103 transition-transform"
+                />
+              </div>
+            </Link>
 
             <p className="text-xs text-charcoal-700 leading-relaxed font-light">
-              Directed by Gold Medalist Dermatologist <strong>{doctorProfile?.name}</strong>. Delivering certified skin restoration, US-FDA laser precision, and hair rejuvenation across Delhi NCR.
+              Directed by Gold Medalist Dermatologist <strong>{doctorProfile?.name}</strong>. Certified medical aesthetic dermatology, advanced US-FDA lasers, and trichology suites in Pitampura &amp; Rajouri Garden, Delhi.
             </p>
 
             {/* Official Social Badges */}
-            <div className="pt-1 flex items-center gap-2.5">
+            <div className="pt-1 flex items-center gap-3">
               {clinicContact.socials.facebook && (
                 <a
                   href={clinicContact.socials.facebook}
@@ -247,14 +249,18 @@ export default function Footer() {
           </div>
 
           {/* Col 2: Navigation - Matching Navbar (Span 2) */}
-          <div className="lg:col-span-2 space-y-2.5">
-            <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Navigation
+          <div className="lg:col-span-2 space-y-3">
+            <h5 className="text-[11px] font-bold tracking-widest text-blush-600 uppercase border-b border-blush-200/60 pb-1.5 inline-block">
+              Explore
             </h5>
-            <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
+            <ul className="space-y-2 text-xs text-charcoal-700 font-medium">
               {navigationLinks.map((item, idx) => (
                 <li key={idx}>
-                  <Link href={item.href} className="hover:text-blush-600 transition-colors flex items-center gap-1.5">
+                  <Link
+                    href={item.href}
+                    className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-blush-300 group-hover:bg-blush-500 transition-colors" />
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -263,40 +269,46 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Signature Treatments (Span 3) */}
-          <div className="lg:col-span-3 space-y-2.5">
-            <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Signature Treatments
+          <div className="lg:col-span-3 space-y-3">
+            <h5 className="text-[11px] font-bold tracking-widest text-blush-600 uppercase border-b border-blush-200/60 pb-1.5 inline-block">
+              Treatments
             </h5>
-            <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
+            <ul className="space-y-2 text-xs text-charcoal-700 font-light">
               {signatureTreatments.map((proc, idx) => (
                 <li key={idx}>
-                  <Link href={proc.href} className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
+                  <Link
+                    href={proc.href}
+                    className="hover:text-blush-600 transition-colors flex items-center gap-2 group font-medium"
+                  >
                     <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform shrink-0" />
-                    <span>{proc.name}</span>
+                    <span className="group-hover:translate-x-0.5 transition-transform">{proc.name}</span>
                   </Link>
                 </li>
               ))}
-              <li className="pt-1">
-                <Link href="/treatments" className="text-[11px] font-semibold text-blush-600 hover:text-blush-700 hover:underline inline-flex items-center gap-1">
-                  <span>View All Treatments →</span>
+              <li className="pt-1.5">
+                <Link
+                  href="/treatments"
+                  className="text-[11px] font-bold text-blush-600 hover:text-blush-700 hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Explore All Treatments →</span>
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Col 4: Contact & Desks (Span 3) */}
-          <div className="lg:col-span-3 space-y-2.5">
-            <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Direct Contact
+          <div className="lg:col-span-3 space-y-3">
+            <h5 className="text-[11px] font-bold tracking-widest text-blush-600 uppercase border-b border-blush-200/60 pb-1.5 inline-block">
+              Contact Desk
             </h5>
-            <ul className="space-y-2 text-xs text-charcoal-700 font-light">
+            <ul className="space-y-2.5 text-xs text-charcoal-700 font-light">
               <li>
                 <a
                   href={`tel:${clinicContact.phoneClean || "+917591055566"}`}
-                  className="hover:text-blush-600 transition-colors flex items-center gap-2"
+                  className="hover:text-blush-600 transition-colors flex items-center gap-2.5 group"
                 >
-                  <PhoneIcon className="w-4 h-4 shrink-0" />
-                  <span className="font-medium text-charcoal-800">{clinicContact.phoneFormatted || "+91 75910 55566"}</span>
+                  <PhoneIcon className="w-4 h-4 shrink-0 text-blush-500 group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold text-charcoal-900">{clinicContact.phoneFormatted || "+91 75910 55566"}</span>
                 </a>
               </li>
               <li>
@@ -304,23 +316,23 @@ export default function Footer() {
                   href={`https://wa.me/${clinicContact.whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-500 transition-colors flex items-center gap-2 text-charcoal-900 font-medium"
+                  className="hover:text-emerald-600 transition-colors flex items-center gap-2.5 group text-charcoal-900 font-medium"
                 >
-                  <WhatsAppIcon className="w-4 h-4 shrink-0" />
-                  <span>WhatsApp Desk</span>
+                  <WhatsAppIcon className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>WhatsApp: {clinicContact.whatsappFormatted || "+91 80769 26982"}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${clinicContact.email}`}
-                  className="hover:text-blush-600 transition-colors flex items-center gap-2"
+                  className="hover:text-blush-600 transition-colors flex items-center gap-2.5"
                 >
-                  <MailIcon className="w-4 h-4 shrink-0" />
+                  <MailIcon className="w-4 h-4 shrink-0 text-blush-500" />
                   <span className="truncate">{clinicContact.email}</span>
                 </a>
               </li>
-              <li className="pt-0.5 text-[11px] text-charcoal-500">
-                <span>Pitampura &amp; Rajouri Garden, Delhi</span>
+              <li className="pt-1 text-[11px] text-charcoal-600 leading-snug border-t border-blush-100">
+                <span className="font-medium text-charcoal-800">Clinic Suites:</span> Pitampura &amp; Rajouri Garden, Delhi
               </li>
             </ul>
           </div>
@@ -332,15 +344,11 @@ export default function Footer() {
           id="footer-butterfly-anchor"
           className="pt-1 pb-2 flex flex-col items-center justify-center text-center relative !mt-3 sm:!mt-4"
         >
-          {/* Subtle decorative pedestal with rose-gold shimmer aura */}
+          {/* Soft radial glow behind the emblem */}
           <div className="relative w-full max-w-sm flex flex-col items-center justify-center">
-            {/* Soft radial glow behind the emblem */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blush-200/40 to-transparent blur-xl h-16 sm:h-20 -top-1 pointer-events-none" />
-            
-            {/* Reserved vertical height slot where the animated butterfly logo hovers/rests */}
             <div className="h-16 sm:h-20 w-full flex items-center justify-center pointer-events-none" />
 
-            {/* Subtle luxury brand signature */}
             <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-blush-600/90 font-medium font-serif mt-0.5">
               Truly Derma • Aesthetic Excellence
             </p>
@@ -348,21 +356,30 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Copyright, Legal Links & Back to Top */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-600 !mt-2.5 sm:!mt-3 pt-3 border-t border-blush-200/60">
-          <p>© {new Date().getFullYear()} Truly Derma Clinic & Academy. All Rights Reserved.</p>
+        {/* Dedicated Bottom Bar: Copyright, Legal Policies (Separated & Clear), Back to Top */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-600 !mt-2.5 sm:!mt-3 pt-3.5 border-t border-blush-200/60">
+          <p className="text-[11px] sm:text-xs">
+            © {new Date().getFullYear()} Truly Derma Clinic &amp; Academy. All Rights Reserved.
+          </p>
 
-          <div className="flex items-center gap-4 text-[11px] text-charcoal-500">
+          {/* Legal Policies - Explicitly Placed Here Out of Main Navigation */}
+          <div className="flex items-center gap-3 px-3 py-1 rounded-full bg-white/70 border border-blush-200/80 shadow-2xs text-[11px] text-charcoal-600">
             {legalLinks.map((link, idx) => (
-              <Link key={idx} href={link.href} className="hover:text-blush-600 transition-colors">
-                {link.name}
-              </Link>
+              <span key={idx} className="flex items-center gap-3">
+                <Link
+                  href={link.href}
+                  className="hover:text-blush-600 hover:underline transition-colors font-medium"
+                >
+                  {link.name}
+                </Link>
+                {idx < legalLinks.length - 1 && <span className="text-blush-300">•</span>}
+              </span>
             ))}
           </div>
 
           <div className="flex items-center gap-3">
             <span className="text-charcoal-500 text-[11px] hidden md:inline">
-              {branches.map(b => b.name).join(" & ")}, New Delhi
+              Delhi NCR, India
             </span>
 
             <motion.button
