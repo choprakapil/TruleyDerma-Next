@@ -8,8 +8,11 @@ import TiltSpotlightCard from "../ui/TiltSpotlightCard";
 import { SingleBloom, FloralBranch, BotanicalSectionDivider } from "../ui/BotanicalMotifs";
 import { BrandPhilosophyLuxuryBg } from "../ui/LuxuryBackgrounds";
 
+import { pagesContent, doctorProfile } from "../../data/siteContent";
+
 export default function BrandPhilosophy() {
   const sectionRef = useRef(null);
+  const philosophyData = pagesContent.home.brandPhilosophy;
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -21,38 +24,14 @@ export default function BrandPhilosophy() {
   const botanicalY = useTransform(scrollYProgress, [0, 1], [60, -30]);
   const botanicalRotate = useTransform(scrollYProgress, [0, 1], [-6, 6]);
 
-  const pillars = [
-    {
-      num: "01",
-      category: "DIAGNOSTICS",
-      title: "Microscopic Tissue Analysis",
-      description:
-        "Every clinical consultation commences with multi-spectral polarized dermoscopy, mapping cellular histology, lipid barrier integrity, and melanin depth before any treatment.",
-      icon: MicroscopeIcon,
-      tag: "Polarized Dermoscopy",
-      iconBg: "bg-rose-50",
-    },
-    {
-      num: "02",
-      category: "TECHNOLOGY",
-      title: "Bio-Calibrated Energy",
-      description:
-        "From authentic TD Glowtech 360° microcurrent resonance to US-FDA cleared Q-Switch Nd:YAG lasers, all instrumentation is calibrated to protect natural facial volume.",
-      icon: LaserPulseIcon,
-      tag: "US-FDA Cleared",
-      iconBg: "bg-amber-50",
-    },
-    {
-      num: "03",
-      category: "EXPERIENCE",
-      title: "Zero-Downtime Luxury",
-      description:
-        "Experience boutique calm paired with clinical potency. Walk out with visible cellular luminosity and zero peeling, allowing an effortless return to your life.",
-      icon: SerumDropletIcon,
-      tag: "Immediate Radiance",
-      iconBg: "bg-cyan-50",
-    },
-  ];
+  const iconMap = [MicroscopeIcon, LaserPulseIcon, SerumDropletIcon];
+  const bgMap = ["bg-rose-50", "bg-amber-50", "bg-cyan-50"];
+
+  const pillars = philosophyData.pillars.map((p, idx) => ({
+    ...p,
+    icon: iconMap[idx] || MicroscopeIcon,
+    iconBg: bgMap[idx] || "bg-rose-50",
+  }));
 
   return (
     <section
@@ -75,18 +54,14 @@ export default function BrandPhilosophy() {
         <Reveal>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blush-200 text-blush-600 text-xs tracking-widest uppercase font-semibold shadow-sm">
             <SingleBloom className="w-3.5 h-3.5" color="#C98294" />
-            <span>The Truly Derma Philosophy</span>
+            <span>{philosophyData.pill}</span>
           </div>
         </Reveal>
 
         {/* Line-by-Line Editorial Serif Headline with Text Parallax */}
         <motion.div style={{ y: textY }} className="relative pt-2 max-w-4xl mx-auto">
-          <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-serif font-normal text-charcoal-900 leading-[1.3] tracking-tight">
-            “True aesthetic elegance cannot be achieved through generic salon facials or overfilling. It begins with{" "}
-            <span className="italic text-blush-600 font-medium">
-              deep cellular calibration
-            </span>
-            , medical laser accuracy, and an uncompromising respect for your natural facial harmony.”
+          <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-normal text-charcoal-900 leading-[1.3] tracking-tight">
+            {philosophyData.headlineQuote}
           </blockquote>
         </motion.div>
 
@@ -99,14 +74,14 @@ export default function BrandPhilosophy() {
             <div className="text-left">
               <div className="flex items-center gap-2">
                 <p className="text-base font-serif font-semibold text-charcoal-900 tracking-wide">
-                  Dr. Megha Aggarwal
+                  {doctorProfile.name}
                 </p>
                 <span className="px-2 py-0.5 rounded-full bg-blush-100 text-blush-600 text-[10px] font-bold uppercase tracking-wider">
                   MD Dermatology
                 </span>
               </div>
               <p className="text-xs text-charcoal-700/80 font-normal">
-                Founder & Aesthetic Director • Pitampura & Rajouri Garden, Delhi
+                {doctorProfile.role} • Pitampura & Rajouri Garden, Delhi
               </p>
             </div>
           </div>

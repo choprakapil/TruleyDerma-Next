@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { WhatsAppIcon, CalendarIcon } from "../ui/LuxuryIcons";
 import { motion, AnimatePresence } from "framer-motion";
-import { clinicInfo } from "../../data/clinicInfo";
+import { clinicContact, doctorProfile } from "../../data/siteContent";
 import { useBooking } from "../providers/BookingContext";
 
 export default function StickyCTA() {
@@ -75,8 +75,8 @@ export default function StickyCTA() {
       {/* 3. Normal WhatsApp Button */}
       <div className="relative group">
         <a
-          href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent(
-            "Hello Dr. Megha, I would like to inquire about Truly Derma clinical treatments."
+          href={`https://wa.me/${clinicContact.whatsappNumber}?text=${encodeURIComponent(
+            `Hello ${doctorProfile?.name || "Dr. Megha"}, I would like to inquire about Truly Derma clinical treatments.`
           )}`}
           target="_blank"
           rel="noopener noreferrer"

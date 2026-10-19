@@ -3,20 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  MapPin,
-  Mail,
-  Phone,
-  MessageSquare,
-  ExternalLink,
-  ArrowUp,
-  Sparkles,
-  Award,
-  Clock,
-  ShieldCheck,
-  CheckCircle2,
-  Navigation,
-} from "lucide-react";
+import { ArrowUp, Sparkles } from "lucide-react";
 import {
   WhatsAppIcon,
   PhoneIcon,
@@ -26,26 +13,27 @@ import {
   InstagramIcon,
   FacebookIcon,
   ClockIcon,
-  CalendarIcon,
-  SparklesIcon
 } from "../ui/LuxuryIcons";
-import { clinicInfo } from "../../data/clinicInfo";
+import { clinicContact, doctorProfile, siteNavigation } from "../../data/siteContent";
 import { SingleBloom, FloralBranch } from "../ui/BotanicalMotifs";
 import FloatingPetals from "../ui/FloatingPetals";
 import FlowingRosePetals from "../ui/FlowingRosePetals";
-import MagneticButton from "../ui/MagneticButton";
-import { useBooking } from "../providers/BookingContext";
 
 export default function Footer() {
   const [activeBranchIdx, setActiveBranchIdx] = useState(0);
-  const { openBooking } = useBooking();
-  const currentBranch = clinicInfo.contact.branches[activeBranchIdx];
+  const branches = clinicContact.branches || [];
+  const currentBranch = branches[activeBranchIdx] || branches[0];
 
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  const footerLinks = siteNavigation?.footerLinks || {};
+  const popularTreatments = footerLinks.treatments || [];
+  const companyLinks = footerLinks.company || [];
+  const legalLinks = footerLinks.legal || [];
 
   return (
     <footer id="contact" className="bg-gradient-to-b from-[#FAF5F7] via-[#FCEAEF] to-[#F9E2E8] text-charcoal-900 pt-10 sm:pt-14 pb-6 sm:pb-8 relative overflow-hidden">
@@ -103,7 +91,7 @@ export default function Footer() {
 
               <div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-normal text-charcoal-900 tracking-tight leading-tight">
-                  Visit Dr. Megha’s <span className="italic text-blush-600 font-medium">Delhi Suites</span>
+                  Visit {doctorProfile?.name || "Dr. Megha’s"} <span className="italic text-blush-600 font-medium">Delhi Suites</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-charcoal-700/85 mt-1 font-light leading-relaxed max-w-xl">
                   Select your preferred clinic branch below for direct directions, desk calling, and live availability.
@@ -112,7 +100,7 @@ export default function Footer() {
 
               {/* Branch Selector Tabs */}
               <div className="flex flex-wrap items-center gap-2.5 pt-0.5">
-                {clinicInfo.contact.branches.map((b, idx) => (
+                {branches.map((b, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveBranchIdx(idx)}
@@ -123,7 +111,7 @@ export default function Footer() {
                     }`}
                   >
                     <LocationPinIcon className="w-4 h-4 shrink-0" />
-                    <span>{b.city}</span>
+                    <span>{b.city || b.name}</span>
                     <span className={`text-[9px] px-2 py-0.5 rounded-full font-bold uppercase ${
                       activeBranchIdx === idx ? "bg-white/20 text-white" : "bg-blush-100 text-blush-700"
                     }`}>
@@ -137,59 +125,61 @@ export default function Footer() {
             {/* Right Col: Animated Selected Branch Information Card */}
             <div className="lg:col-span-5 relative">
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentBranch.city}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-gradient-to-br from-[#FFF8F9] via-white to-[#FFF2F5] p-4 sm:p-5 rounded-2xl border-2 border-blush-200/90 shadow-sm space-y-3"
-                >
-                  <div className="flex items-center justify-between border-b border-blush-100 pb-2.5">
-                    <div className="flex items-center gap-2">
-                      <LocationPinIcon className="w-7 h-7 shrink-0" />
-                      <div>
-                        <h4 className="text-sm font-serif font-bold text-charcoal-900">{currentBranch.name}</h4>
-                        <p className="text-[10px] text-blush-600 font-semibold uppercase tracking-wider">{currentBranch.city}</p>
+                {currentBranch && (
+                  <motion.div
+                    key={currentBranch.city || currentBranch.name}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-gradient-to-br from-[#FFF8F9] via-white to-[#FFF2F5] p-4 sm:p-5 rounded-2xl border-2 border-blush-200/90 shadow-sm space-y-3"
+                  >
+                    <div className="flex items-center justify-between border-b border-blush-100 pb-2.5">
+                      <div className="flex items-center gap-2">
+                        <LocationPinIcon className="w-7 h-7 shrink-0" />
+                        <div>
+                          <h4 className="text-sm font-serif font-bold text-charcoal-900">{currentBranch.name}</h4>
+                          <p className="text-[10px] text-blush-600 font-semibold uppercase tracking-wider">{currentBranch.city}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[10px] font-bold uppercase tracking-wider">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                        <span>Open Today</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[10px] font-bold uppercase tracking-wider">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                      <span>Open Today</span>
+                    <p className="text-xs text-charcoal-700 leading-relaxed font-light pl-2 border-l-2 border-blush-300">
+                      {currentBranch.address}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-[11px] text-charcoal-600 font-medium">
+                      <ClockIcon className="w-4 h-4 shrink-0" />
+                      <span>{currentBranch.hours || clinicContact.openingHours}</span>
                     </div>
-                  </div>
 
-                  <p className="text-xs text-charcoal-700 leading-relaxed font-light pl-2 border-l-2 border-blush-300">
-                    {currentBranch.address}
-                  </p>
+                    {/* Dual Quick Action Buttons */}
+                    <div className="flex items-center gap-2 pt-0.5">
+                      <a
+                        href={currentBranch.mapLink || `https://maps.google.com/?q=${encodeURIComponent(currentBranch.name + " " + currentBranch.address)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 rounded-xl bg-blush-400 hover:bg-blush-500 text-white text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all shadow-2xs cursor-pointer"
+                      >
+                        <NavigationIcon className="w-4 h-4 shrink-0" />
+                        <span>Directions</span>
+                      </a>
 
-                  <div className="flex items-center gap-2 text-[11px] text-charcoal-600 font-medium">
-                    <ClockIcon className="w-4 h-4 shrink-0" />
-                    <span>{clinicInfo.contact.hours}</span>
-                  </div>
-
-                  {/* Dual Quick Action Buttons */}
-                  <div className="flex items-center gap-2 pt-0.5">
-                    <a
-                      href={`https://maps.google.com/?q=${currentBranch.mapQuery}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 py-2 rounded-xl bg-blush-400 hover:bg-blush-500 text-white text-xs font-semibold tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all shadow-2xs cursor-pointer"
-                    >
-                      <NavigationIcon className="w-4 h-4 shrink-0" />
-                      <span>Directions</span>
-                    </a>
-
-                    <a
-                      href={`tel:${clinicInfo.contact.phoneNumbers[activeBranchIdx] || clinicInfo.contact.phone}`}
-                      className="flex-1 py-2 rounded-xl bg-white hover:bg-blush-50 text-charcoal-800 text-xs font-semibold tracking-wider uppercase border border-blush-200 flex items-center justify-center gap-1.5 transition-all cursor-pointer"
-                    >
-                      <PhoneIcon className="w-4 h-4 shrink-0" />
-                      <span>Call Suite</span>
-                    </a>
-                  </div>
-                </motion.div>
+                      <a
+                        href={`tel:${(currentBranch.phone || clinicContact.phoneNumbers[activeBranchIdx] || clinicContact.phoneClean).replace(/\s+/g, "")}`}
+                        className="flex-1 py-2 rounded-xl bg-white hover:bg-blush-50 text-charcoal-800 text-xs font-semibold tracking-wider uppercase border border-blush-200 flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                      >
+                        <PhoneIcon className="w-4 h-4 shrink-0" />
+                        <span>Call Suite</span>
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
               </AnimatePresence>
             </div>
           </div>
@@ -209,33 +199,37 @@ export default function Footer() {
             </div>
 
             <p className="text-xs text-charcoal-700 leading-relaxed font-light">
-              Directed by renowned Aesthetic Physician <strong>Dr. Megha Aggarwal</strong> (MBBS, MD Dermatology). Delivering certified skin restoration, laser precision, and hair rejuvenation across Delhi NCR.
+              Directed by renowned Aesthetic Physician <strong>{doctorProfile?.name}</strong> ({doctorProfile?.degrees}). {doctorProfile?.bio ? doctorProfile.bio.slice(0, 110) + "..." : "Delivering certified skin restoration, laser precision, and hair rejuvenation across Delhi NCR."}
             </p>
 
             {/* Official Social Badges */}
             <div className="pt-1 flex items-center gap-2.5">
-              <a
-                href={clinicInfo.contact.socials.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-8 h-8 rounded-full hover:scale-110 transition-transform shadow-2xs cursor-pointer"
-              >
-                <FacebookIcon className="w-8 h-8" />
-              </a>
+              {clinicContact.socials.facebook && (
+                <a
+                  href={clinicContact.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-8 h-8 rounded-full hover:scale-110 transition-transform shadow-2xs cursor-pointer"
+                >
+                  <FacebookIcon className="w-8 h-8" />
+                </a>
+              )}
+
+              {clinicContact.socials.instagram && (
+                <a
+                  href={clinicContact.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-8 h-8 rounded-full hover:scale-110 transition-transform shadow-2xs cursor-pointer"
+                >
+                  <InstagramIcon className="w-8 h-8" />
+                </a>
+              )}
 
               <a
-                href={clinicInfo.contact.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-8 h-8 rounded-full hover:scale-110 transition-transform shadow-2xs cursor-pointer"
-              >
-                <InstagramIcon className="w-8 h-8" />
-              </a>
-
-              <a
-                href={`https://wa.me/${clinicInfo.contact.whatsapp}`}
+                href={`https://wa.me/${clinicContact.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -246,98 +240,65 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Clinical Procedures (Span 3) */}
+          {/* Col 2: Popular Procedures (Span 3) */}
           <div className="lg:col-span-3 space-y-2.5">
             <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Clinical Procedures
+              Popular Procedures
             </h5>
             <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
-              <li>
-                <Link href="/treatments/td-glowtech-360" className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
-                  <span>TD Glowtech 360°</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/treatments/hydra-facial" className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
-                  <span>Medical HydraFacial MD</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/treatments/laser-toning" className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
-                  <span>Q-Switch Laser Toning</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/treatments/dermapen-4" className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
-                  <span>Dermapen 4™ Microneedling</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/treatments/hair-rejuvenation" className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
-                  <span>Autologous GFC Hair Therapy</span>
-                </Link>
-              </li>
+              {popularTreatments.map((proc, idx) => (
+                <li key={idx}>
+                  <Link href={proc.href} className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
+                    <span>{proc.name}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Navigation Links (Span 3) */}
+          {/* Col 3: Quick Links & Legal (Span 3) */}
           <div className="lg:col-span-3 space-y-2.5">
             <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Quick Navigation
+              Quick Links
             </h5>
             <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
-              <li>
-                <Link href="/" className="hover:text-blush-600 transition-colors">
-                  Home Studio
-                </Link>
-              </li>
-              <li>
-                <a href="#doctor" className="hover:text-blush-600 transition-colors">
-                  Dr. Megha Leadership
-                </a>
-              </li>
-              <li>
-                <a href="#technology" className="hover:text-blush-600 transition-colors">
-                  FDA Cleared Technology
-                </a>
-              </li>
-              <li>
-                <a href="#results" className="hover:text-blush-600 transition-colors">
-                  Verified Before & After
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className="hover:text-blush-600 transition-colors">
-                  Patient Reviews
-                </a>
-              </li>
+              {companyLinks.map((link, idx) => (
+                <li key={idx}>
+                  <Link href={link.href} className="hover:text-blush-600 transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              {legalLinks.map((link, idx) => (
+                <li key={`legal-${idx}`}>
+                  <Link href={link.href} className="hover:text-blush-600 transition-colors text-charcoal-500">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 4: Direct Desk Contact (Span 3) */}
+          {/* Col 4: Contact & Clinics (Span 3) */}
           <div className="lg:col-span-3 space-y-2.5">
             <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Direct Contact
+              Contact & Desks
             </h5>
             <ul className="space-y-2 text-xs text-charcoal-700 font-light">
               <li>
                 <a
-                  href={`mailto:${clinicInfo.contact.email}`}
+                  href={`mailto:${clinicContact.email}`}
                   className="hover:text-blush-600 transition-colors flex items-center gap-2"
                 >
                   <MailIcon className="w-4 h-4 shrink-0" />
-                  <span className="truncate">{clinicInfo.contact.email}</span>
+                  <span className="truncate">{clinicContact.email}</span>
                 </a>
               </li>
-              {clinicInfo.contact.phoneNumbers.slice(0, 2).map((phone, idx) => (
+              {clinicContact.phoneNumbers.map((phone, idx) => (
                 <li key={idx}>
                   <a
-                    href={`tel:${phone}`}
+                    href={`tel:${phone.replace(/\s+/g, "")}`}
                     className="hover:text-blush-600 transition-colors flex items-center gap-2"
                   >
                     <PhoneIcon className="w-4 h-4 shrink-0" />
@@ -347,13 +308,13 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href={`https://wa.me/${clinicInfo.contact.whatsapp}`}
+                  href={`https://wa.me/${clinicContact.whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-emerald-500 transition-colors flex items-center gap-2 text-charcoal-900 font-semibold"
                 >
                   <WhatsAppIcon className="w-4 h-4 shrink-0" />
-                  <span>WhatsApp Priority Desk</span>
+                  <span>WhatsApp: {clinicContact.whatsappFormatted}</span>
                 </a>
               </li>
             </ul>
@@ -388,7 +349,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <span className="text-charcoal-500 text-[11px]">
-              Pitampura & Rajouri Garden, New Delhi
+              {branches.map(b => b.name).join(" & ")}, New Delhi
             </span>
 
             <motion.button

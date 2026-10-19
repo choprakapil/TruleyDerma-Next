@@ -2,19 +2,25 @@
 
 import { motion } from "framer-motion";
 import { CalendarIcon, WhatsAppIcon, PhoneIcon, SparklesIcon, CheckCircleIcon, ShieldCheckIcon } from "../ui/LuxuryIcons";
-import { clinicInfo } from "../../data/clinicInfo";
+import { clinicContact, doctorProfile, pagesContent } from "../../data/siteContent";
 import { useBooking } from "../providers/BookingContext";
 import { ZoomIn } from "../ui/MotionWrappers";
 import MagneticButton from "../ui/MagneticButton";
 import FloatingPetals from "../ui/FloatingPetals";
-import { SingleBloom, FloralBranch } from "../ui/BotanicalMotifs";
+import { SingleBloom } from "../ui/BotanicalMotifs";
 import { CTABannerLuxuryBg } from "../ui/LuxuryBackgrounds";
 
 export default function CTABanner() {
   const { openBooking } = useBooking();
+  const cta = pagesContent?.home?.ctaBanner || {};
+  const badges = cta.badges || [
+    "Zero Wait Times With Advance Booking",
+    "US-FDA Cleared Technologies",
+    "Personalized Clinical Roadmaps",
+  ];
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#FDEBF0] via-[#FCE4EA] to-[#FCE8ED] border-b border-blush-200/80 text-charcoal-900 flex flex-col justify-center items-center relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-white border-b border-blush-200/80 text-charcoal-900 flex flex-col justify-center items-center relative overflow-hidden">
       {/* Bespoke Opulent Sunburst Moire Silk & Radiant Starlight Sparkles Background */}
       <CTABannerLuxuryBg />
 
@@ -35,7 +41,6 @@ export default function CTABanner() {
         animate={{
           scale: [1.15, 1, 1.15],
           rotate: [20, 0, 20],
-          x: [15, -15, 15],
         }}
         transition={{ repeat: Infinity, duration: 18, ease: "easeInOut" }}
         className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[550px] h-[400px] bg-blush-200/25 rounded-full blur-3xl pointer-events-none"
@@ -44,7 +49,7 @@ export default function CTABanner() {
       {/* Main Luxury Glass Card within Site-Wide Standard 7xl Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <ZoomIn initialScale={0.96} duration={0.8} className="w-full">
-          <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-12 border border-rose-200/80 shadow-[0_15px_45px_rgb(201,130,148,0.1)] text-center space-y-5 sm:space-y-6 relative overflow-hidden">
+          <div className="bg-gradient-to-b from-[#FFFDFE] to-[#FFF6F8] backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-12 border border-blush-200/90 shadow-[0_15px_45px_rgba(201,130,148,0.12)] text-center space-y-5 sm:space-y-6 relative overflow-hidden">
           
           {/* Subtle Corner Bloom Accent */}
           <div className="absolute -top-10 -right-10 opacity-10 pointer-events-none">
@@ -54,32 +59,33 @@ export default function CTABanner() {
           {/* Section Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF6F8] border border-rose-200 text-charcoal-900 text-[11px] font-semibold tracking-widest uppercase shadow-xs">
             <SparklesIcon className="w-4 h-4" />
-            <span>Begin Your Skincare Journey</span>
+            <span>{cta.pill || "Begin Your Skincare Journey"}</span>
           </div>
 
           <div className="space-y-2.5">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-normal leading-[1.18] text-charcoal-900 max-w-3xl mx-auto tracking-tight">
-              Your Skin. <span className="italic text-brand-rose">Your Confidence.</span>
+              {cta.title ? (
+                cta.title
+              ) : (
+                <>
+                  Your Skin. <span className="italic text-brand-rose">Your Confidence.</span>
+                </>
+              )}
             </h2>
             <p className="text-charcoal-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-sans font-light">
-              Experience the harmony of medical-grade dermatology and serene skincare luxury. Visit Dr. Megha Aggarwal at our Pitampura or Rajouri Garden suites, or reserve priority scheduling below.
+              {cta.subtitle ||
+                `Experience the harmony of medical-grade dermatology and serene skincare luxury. Visit ${doctorProfile?.name || "Dr. Megha Aggarwal"} at our ${clinicContact?.branches?.map((b) => b.name).join(" or ") || "Delhi suites"}, or reserve priority scheduling below.`}
             </p>
           </div>
 
           {/* Value Badges */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-xs text-charcoal-700 font-medium pt-1">
-            <div className="flex items-center gap-1.5">
-              <CheckCircleIcon className="w-4 h-4 shrink-0" />
-              <span>Zero Wait Times With Advance Booking</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircleIcon className="w-4 h-4 shrink-0" />
-              <span>US-FDA Cleared Technologies</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircleIcon className="w-4 h-4 shrink-0" />
-              <span>Personalized Clinical Roadmaps</span>
-            </div>
+            {badges.map((badge, idx) => (
+              <div key={idx} className="flex items-center gap-1.5">
+                <CheckCircleIcon className="w-4 h-4 shrink-0" />
+                <span>{badge}</span>
+              </div>
+            ))}
           </div>
 
           {/* Action Buttons with Magnetic Touch */}
@@ -90,31 +96,31 @@ export default function CTABanner() {
                 className="w-full sm:w-auto px-7 py-3 rounded-full bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white text-xs sm:text-sm font-semibold tracking-wider uppercase hover:opacity-95 active:scale-95 transition-all shadow-[0_6px_20px_rgb(201,130,148,0.35)] flex items-center justify-center gap-2 border border-white/40 cursor-pointer"
               >
                 <CalendarIcon className="w-4 h-4" />
-                <span>Reserve Consultation</span>
+                <span>{cta.primaryCtaText || "Reserve Consultation"}</span>
               </button>
             </MagneticButton>
 
             <MagneticButton strength={0.2}>
               <a
-                href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent(
-                  "Hello Truly Derma desk, I would like to schedule a private consultation with Dr. Megha Aggarwal."
+                href={`https://wa.me/${clinicContact.whatsappNumber}?text=${encodeURIComponent(
+                  `Hello Truly Derma desk, I would like to schedule a private consultation with ${doctorProfile?.name || "Dr. Megha Aggarwal"}.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-rose-50/70 text-charcoal-800 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 border border-rose-200 shadow-xs"
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                <span>Chat via WhatsApp</span>
+                <span>{cta.whatsappCtaText || "Chat via WhatsApp"}</span>
               </a>
             </MagneticButton>
 
             <MagneticButton strength={0.15}>
               <a
-                href={`tel:${clinicInfo.contact.phone}`}
+                href={`tel:${clinicContact.phoneClean}`}
                 className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-rose-50/70 text-charcoal-800 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 border border-rose-200 shadow-xs"
               >
                 <PhoneIcon className="w-4 h-4" />
-                <span>{clinicInfo.contact.phone}</span>
+                <span>{clinicContact.phoneFormatted}</span>
               </a>
             </MagneticButton>
           </div>

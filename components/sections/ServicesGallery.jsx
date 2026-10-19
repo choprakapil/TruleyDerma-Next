@@ -28,6 +28,7 @@ export default function ServicesGallery() {
     { id: "hair", label: "Hair Treatments" },
     { id: "laser", label: "Laser Treatments" },
     { id: "fat-loss", label: "Fat Loss" },
+    { id: "semi-permanent", label: "Semi-Permanent" },
   ];
 
   const filteredTreatments = treatments.filter((t) => {
@@ -36,6 +37,7 @@ export default function ServicesGallery() {
     if (selectedFilter === "hair") return t.category === "Hair Treatment";
     if (selectedFilter === "laser") return t.category === "Laser Treatment";
     if (selectedFilter === "fat-loss") return t.category === "Fat Loss";
+    if (selectedFilter === "semi-permanent") return t.category === "Semi-Permanent Makeup";
     return true;
   });
 
@@ -133,19 +135,19 @@ export default function ServicesGallery() {
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-cream-200/50 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top Header & Filters */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shrink-0 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shrink-0 relative z-10 w-full hidden">
         <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 hidden">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blush-50 border border-blush-200 text-blush-600 text-[11px] font-semibold tracking-widest uppercase mb-1.5 shadow-sm">
                 <SingleBloom className="w-3.5 h-3.5" color="#C98294" />
-                <span>Targeted Clinical Procedures</span>
+                <span>Our Services</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-                Curated Aesthetic Solutions
+                We Offer a Variety of Services for Your Needs
               </h2>
               <p className="text-charcoal-700/80 text-xs sm:text-sm mt-1 max-w-xl font-light">
-                From proprietary TD Glowtech 360° lifting to medical-grade HydraFacials and clinical Q-Switch Laser toning.
+                Comprehensive solutions for skincare, hair care, LASER treatments, fat loss, and semi-permanent makeup led by Dr. Megha Aggarwal.
               </p>
             </div>
 
@@ -262,7 +264,7 @@ export default function ServicesGallery() {
                       <h3 className="text-base sm:text-lg font-serif font-semibold text-charcoal-900 group-hover:text-blush-600 transition-colors">
                         {treatment.name}
                       </h3>
-                      <p className="text-xs text-charcoal-700/80 leading-relaxed font-light">
+                      <p className="text-xs text-charcoal-700/80 leading-relaxed font-light line-clamp-4">
                         {treatment.description}
                       </p>
                     </div>

@@ -6,7 +6,7 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import StickyCTA from "../components/layout/StickyCTA";
 import ScrollProgressBar from "../components/ui/ScrollProgressBar";
-import { clinicInfo } from "../data/clinicInfo";
+import { clinicContact, doctorProfile, siteMeta } from "../data/siteContent";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -23,27 +23,15 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Truly Derma Clinic & Academy | Dr. Megha Aggarwal | Aesthetic Dermatology Delhi",
-  description:
-    "Delhi's premier aesthetic clinic led by Dr. Megha Aggarwal (MD Dermatology). Proprietary TD Glowtech 360°, Medical Hydrafacial, Q-Switch Laser, and Dermapen 4.",
-  keywords: [
-    "Truly Derma",
-    "Dr Megha Aggarwal",
-    "Truly Derma Pitampura",
-    "Truly Derma Rajouri Garden",
-    "Hydra Facial Delhi",
-    "TD Glowtech 360",
-    "Laser Toning Delhi",
-    "Laser Hair Reduction Delhi",
-    "Fat Loss Clinic Delhi",
-    "Dermatologist in Pitampura",
-    "Dermatologist in Rajouri Garden",
-  ],
+  metadataBase: new URL("https://trulyderma.com"),
+  title: siteMeta.title || siteMeta.defaultTitle,
+  description: siteMeta.description || siteMeta.defaultDescription,
+  keywords: siteMeta.keywords,
   openGraph: {
-    title: "Truly Derma Clinic & Academy | Dr. Megha Aggarwal",
-    description: "Specialized Skin, Hair, Laser, and Fat Loss Treatments by Certified Experts in Pitampura & Rajouri Garden, New Delhi.",
+    title: siteMeta.title,
+    description: siteMeta.description,
     url: "https://trulyderma.com",
-    siteName: "Truly Derma Clinic & Academy",
+    siteName: siteMeta.brandName,
     locale: "en_IN",
     type: "website",
     images: ["/logo.png"],
@@ -62,34 +50,24 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "DermatologyClinic"],
-    name: clinicInfo.name,
+    name: siteMeta.brandName,
     image: "https://trulyderma.com/logo.png",
-    description: clinicInfo.tagline,
-    telephone: clinicInfo.contact.phone,
-    email: clinicInfo.contact.email,
-    address: [
-      {
-        "@type": "PostalAddress",
-        streetAddress: "1st Floor, Building 46, Harsh Vihar, Above AU Small Finance Bank",
-        addressLocality: "Pitampura",
-        addressRegion: "New Delhi",
-        postalCode: "110034",
-        addressCountry: "IN",
-      },
-      {
-        "@type": "PostalAddress",
-        streetAddress: "J2/16, Basement",
-        addressLocality: "Rajouri Garden",
-        addressRegion: "New Delhi",
-        postalCode: "110027",
-        addressCountry: "IN",
-      }
-    ],
+    description: siteMeta.tagline,
+    telephone: clinicContact.phoneClean,
+    email: clinicContact.email,
+    address: clinicContact.branches.map((b) => ({
+      "@type": "PostalAddress",
+      streetAddress: b.address.split(",")[0],
+      addressLocality: b.city,
+      addressRegion: "New Delhi",
+      postalCode: b.pincode || "110034",
+      addressCountry: "IN",
+    })),
     founder: {
       "@type": "Physician",
-      name: clinicInfo.doctor.name,
-      jobTitle: clinicInfo.doctor.title,
-      description: clinicInfo.doctor.qualifications,
+      name: doctorProfile.name,
+      jobTitle: doctorProfile.role,
+      description: doctorProfile.degrees,
     },
     openingHoursSpecification: [
       {

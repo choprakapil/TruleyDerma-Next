@@ -1,7 +1,7 @@
 "use client";
 
 import { DigitalSkinScanIcon, ResonanceChipIcon, CryoSealIcon, SparklesIcon, CheckCircleIcon } from "../ui/LuxuryIcons";
-import { clinicInfo } from "../../data/clinicInfo";
+import { clinicInfo, pagesContent } from "../../data/siteContent";
 import { SlideDown, StaggerContainer, StaggerItemSlide } from "../ui/MotionWrappers";
 import { SingleBloom } from "../ui/BotanicalMotifs";
 
@@ -13,11 +13,12 @@ const stepIcons = {
 
 export default function TechnologyShowcase() {
   const steps = clinicInfo.techSteps;
+  const techData = pagesContent.home.technologyShowcase;
 
   return (
     <section
       id="technology"
-      className="py-16 sm:py-20 bg-white text-charcoal-900 overflow-hidden relative border-b border-blush-200/70"
+      className="py-16 sm:py-20 bg-[#FDEBF0] text-charcoal-900 overflow-hidden relative border-b border-blush-200/70"
     >
       {/* Subtle Ambient Radial Light */}
       <div className="absolute top-1/3 -left-48 w-96 h-96 bg-rose-200/20 rounded-full blur-3xl pointer-events-none" />
@@ -31,17 +32,17 @@ export default function TechnologyShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
         {/* Section Header */}
         <SlideDown className="text-center max-w-3xl mx-auto mb-5 sm:mb-7">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-charcoal-800 text-[10px] font-semibold tracking-widest uppercase mb-2 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-blush-200 text-blush-700 text-[10px] font-semibold tracking-widest uppercase mb-2 shadow-2xs">
             <ResonanceChipIcon className="w-4 h-4" />
-            <span>US-FDA Cleared Instrumentation</span>
+            <span>{techData.pill}</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-            Precision Clinical Technology
+            {techData.title}
           </h2>
 
           <p className="text-charcoal-600 text-xs sm:text-xs mt-1 font-sans font-light max-w-xl mx-auto leading-relaxed">
-            Synchronized 3-phase biological transformation powered by certified medical-grade dermal instrumentation.
+            {techData.subtitle}
           </p>
         </SlideDown>
 

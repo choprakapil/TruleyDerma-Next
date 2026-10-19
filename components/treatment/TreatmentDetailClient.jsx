@@ -11,7 +11,7 @@ import {
   WhatsAppIcon,
 } from "../ui/LuxuryIcons";
 import { useBooking } from "../providers/BookingContext";
-import { clinicInfo } from "../../data/clinicInfo";
+import { clinicContact, doctorProfile } from "../../data/siteContent";
 import { TreatmentDetailLuxuryBg } from "../ui/LuxuryBackgrounds";
 
 export default function TreatmentDetailClient({ treatment, relatedTreatments }) {
@@ -25,7 +25,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
       {/* Back Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <Link
-          href="/#services"
+          href="/treatments"
           className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-700 hover:text-brand-rose transition-colors uppercase tracking-wider"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -81,7 +81,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
                 <AwardMedalIcon className="w-6 h-6 shrink-0" />
                 <div>
                   <p className="text-[10px] text-charcoal-500 uppercase tracking-wider font-semibold">Supervision</p>
-                  <p className="text-xs font-semibold text-charcoal-900">Dr. Megha Aggarwal</p>
+                  <p className="text-xs font-semibold text-charcoal-900">{doctorProfile?.name || "Dr. Megha Aggarwal"}</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
               </button>
 
               <a
-                href={`https://wa.me/${clinicInfo.contact.whatsapp}?text=${encodeURIComponent(`Hello Dr. Megha, I would like to inquire about ${treatment.name} at Truly Derma.`)}`}
+                href={`https://wa.me/${clinicContact.whatsappNumber}?text=${encodeURIComponent(`Hello ${doctorProfile?.name || "Dr. Megha"}, I would like to inquire about ${treatment.name} at Truly Derma.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-4 rounded-full bg-white hover:bg-rose-50 text-charcoal-900 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors flex items-center gap-2 border border-rose-200 shadow-sm"
@@ -192,17 +192,69 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
         </div>
       </div>
 
+      {/* Doctor Consultation Banner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-14">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#FFF5F7] via-white to-rose-50 border-2 border-blush-200/90 shadow-md flex flex-col md:flex-row items-center gap-8">
+          <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-xl">
+            <img
+              src={doctorProfile.image || "/images/Doctor.png"}
+              alt={doctorProfile.name}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          <div className="space-y-2 text-center md:text-left flex-1">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 text-blush-700 text-[10.5px] font-bold uppercase tracking-wider">
+              <span>Physician Supervised Treatment</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-charcoal-900">
+              Personalized Assessment with {doctorProfile.name}
+            </h3>
+            <p className="text-xs sm:text-sm text-charcoal-600 font-light leading-relaxed max-w-2xl">
+              Every skin biology is unique. Prior to receiving {treatment.name}, Dr. Megha evaluates your skin health, medical background, and aesthetic goals to calibrate exact energy levels and serums.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full sm:w-auto">
+            <button
+              onClick={() => openBooking(treatment.slug)}
+              className="px-6 py-3 rounded-full bg-blush-600 hover:bg-blush-700 text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md cursor-pointer text-center"
+            >
+              Book With Dr. Megha
+            </button>
+            <a
+              href={`https://wa.me/${clinicContact.whatsappNumber}?text=${encodeURIComponent(
+                `Hello Truly Derma, I have questions about ${treatment.name} before booking.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-white hover:bg-rose-50 text-charcoal-800 text-xs font-semibold uppercase tracking-wider transition-colors border border-blush-200 shadow-2xs flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon className="w-4 h-4" />
+              <span>Ask A Question</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Related Treatments Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 border-t border-rose-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 border-t border-rose-100">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h3 className="text-2xl font-serif font-normal text-charcoal-900">
-              Related Protocols
+              Related Clinical Protocols
             </h3>
             <p className="text-xs text-charcoal-500 mt-1 font-sans font-light">
               Explore complementary treatments for comprehensive aesthetic results.
             </p>
           </div>
+          <Link
+            href="/treatments"
+            className="text-xs font-semibold text-blush-600 hover:text-blush-700 flex items-center gap-1 uppercase tracking-wider"
+          >
+            <span>All Protocols</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -210,22 +262,37 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
             <Link
               key={item.slug}
               href={`/treatments/${item.slug}`}
-              className="group p-5 rounded-2xl bg-white border border-rose-100 hover:border-brand-rose/60 transition-all shadow-sm hover:shadow-[0_8px_25px_rgb(201,130,148,0.12)] flex flex-col justify-between"
+              className="group rounded-3xl overflow-hidden bg-white border border-blush-200 hover:border-blush-400 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between"
             >
-              <div className="space-y-2">
-                <span className="text-[10px] text-brand-rose font-semibold tracking-wider uppercase">
-                  {item.category}
-                </span>
-                <h4 className="text-lg font-serif font-medium text-charcoal-900 group-hover:text-brand-rose transition-colors">
-                  {item.name}
-                </h4>
-                <p className="text-xs text-charcoal-600 line-clamp-2 font-sans font-light">
-                  {item.tagline}
-                </p>
+              <div>
+                <div className="relative h-44 overflow-hidden bg-rose-50">
+                  <img
+                    src={item.heroImage}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent" />
+                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] text-blush-700 font-bold tracking-wider uppercase border border-blush-200">
+                    {item.category}
+                  </span>
+                  <h4 className="absolute bottom-3 left-3 right-3 text-base font-serif font-bold text-white drop-shadow-md">
+                    {item.name}
+                  </h4>
+                </div>
+
+                <div className="p-5 space-y-2">
+                  <p className="text-xs text-charcoal-600 line-clamp-2 font-sans font-light">
+                    {item.tagline || item.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-[11px] text-blush-600 font-medium">
+                    <ClockIcon className="w-3.5 h-3.5" />
+                    <span>{item.sessionDuration}</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-4 flex items-center justify-between text-xs text-brand-rose font-semibold mt-4 border-t border-rose-50">
-                <span>View Protocol</span>
+              <div className="p-5 pt-0 flex items-center justify-between text-xs text-blush-600 font-semibold border-t border-rose-50/80 mt-2">
+                <span>View Protocol Details</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>

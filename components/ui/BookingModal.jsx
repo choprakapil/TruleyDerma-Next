@@ -12,16 +12,18 @@ import {
   UserIcon,
 } from "./LuxuryIcons";
 import AnimatedCheckmark from "./AnimatedCheckmark";
-import { treatments } from "../../data/treatments";
-import { clinicInfo } from "../../data/clinicInfo";
+import { allTreatments, clinicContact, doctorProfile, clinicInfo } from "../../data/siteContent";
 
 export default function BookingModal({ isOpen, onClose, initialTreatment = "" }) {
+  const branches = clinicContact.branches || [];
+  const defaultBranchName = branches[0]?.name || "Pitampura Suite";
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    branch: "Pitampura Clinic (New Delhi)",
-    treatment: initialTreatment || treatments[0].slug,
+    branch: defaultBranchName,
+    treatment: initialTreatment || allTreatments[0]?.slug || "td-glowtech-360",
     date: "",
     timeSlot: "Morning (10:30 AM - 1:00 PM)",
     concerns: "",
@@ -58,7 +60,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
 
   const handleWhatsAppBooking = (e) => {
     e.preventDefault();
-    const selectedTreat = treatments.find((t) => t.slug === formData.treatment);
+    const selectedTreat = allTreatments.find((t) => t.slug === formData.treatment);
     const treatmentName = selectedTreat ? selectedTreat.name : formData.treatment;
     
     const message = `*Consultation Request — Truly Derma Clinic*\n\n` +
@@ -72,7 +74,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
       `_Sent via Truly Derma Online Portal_`;
 
     const encoded = encodeURIComponent(message);
-    const url = `https://wa.me/${clinicInfo.contact.whatsapp}?text=${encoded}`;
+    const url = `https://wa.me/${clinicContact.whatsappNumber}?text=${encoded}`;
     window.open(url, "_blank");
     setSubmitted(true);
   };
@@ -215,8 +217,11 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                         onChange={handleChange}
                         className="w-full px-4 py-2.5 bg-rose-50/30 border border-rose-200/80 rounded-xl text-sm focus:outline-none focus:border-brand-rose focus:ring-1 focus:ring-brand-rose text-charcoal-900"
                       >
-                        <option value="Pitampura Clinic (New Delhi)">Pitampura Suite (Harsh Vihar)</option>
-                        <option value="Rajouri Garden Clinic (New Delhi)">Rajouri Garden Suite (J2/16)</option>
+                        {branches.map((b, idx) => (
+                          <option key={idx} value={b.name}>
+                            {b.name} ({b.address.split(",")[0]})
+                          </option>
+                        ))}
                       </select>
                     </div>
 
@@ -230,7 +235,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                         onChange={handleChange}
                         className="w-full px-4 py-2.5 bg-rose-50/30 border border-rose-200/80 rounded-xl text-sm focus:outline-none focus:border-brand-rose focus:ring-1 focus:ring-brand-rose text-charcoal-900"
                       >
-                        {treatments.map((t) => (
+                        {allTreatments.map((t) => (
                           <option key={t.slug} value={t.slug}>
                             {t.name} ({t.category})
                           </option>
@@ -313,7 +318,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                   </div>
 
                   <p className="text-center text-[11px] text-charcoal-500 pt-1 font-sans">
-                    Direct clinical inquiries: Call <a href={`tel:${clinicInfo.contact.phone}`} className="underline font-medium text-brand-rose">{clinicInfo.contact.phone}</a>. We respect patient confidentiality.
+                    Direct clinical inquiries: Call <a href={`tel:${clinicContact.phoneClean || clinicInfo.contact.phone}`} className="underline font-medium text-brand-rose">{clinicContact.phone || clinicInfo.contact.phone}</a>. We respect patient confidentiality.
                   </p>
                 </form>
               )}
