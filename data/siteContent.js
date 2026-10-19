@@ -1230,27 +1230,22 @@ export const siteNavigation = {
     { label: "Contact", href: "/contact" }
   ],
   footerLinks: {
+    navigation: [
+      { name: "Home", href: "/" },
+      { name: "About Us", href: "/about-us" },
+      { name: "Treatments", href: "/treatments" },
+      { name: "Journal", href: "/blogs" },
+      { name: "Contact & Suites", href: "/contact" }
+    ],
     treatments: [
       { name: "TD Glowtech 360°", href: "/treatments/td-glowtech-360" },
       { name: "Medical Hydra Facial", href: "/treatments/hydra-facial" },
       { name: "Laser Hair Reduction", href: "/treatments/laser-hair-reduction" },
-      { name: "Q-Switch Laser Toning", href: "/treatments/laser-toning" },
-      { name: "PRP Hair Rejuvenation", href: "/treatments/hair-rejuvenation" },
-      { name: "Dermapen 4™ Microneedling", href: "/treatments/dermapen-4" },
-      { name: "Fat Loss & Body Contouring", href: "/treatments/fat-loss" }
-    ],
-    company: [
-      { name: "About Dr. Megha", href: "/about-us#doctor" },
-      { name: "Brand Philosophy", href: "/about-us" },
-      { name: "Before & After Results", href: "/#results" },
-      { name: "Clinical Journal", href: "/blogs" },
-      { name: "Our Clinic Suites", href: "/contact" },
-      { name: "Book Consultation", href: "/contact" }
+      { name: "Q-Switch Laser Toning", href: "/treatments/laser-toning" }
     ],
     legal: [
       { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms of Service", href: "/terms-of-service" },
-      { name: "Patient Safety Charter", href: "/about-us" }
+      { name: "Terms of Service", href: "/terms-of-service" }
     ]
   }
 };

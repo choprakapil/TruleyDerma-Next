@@ -31,8 +31,14 @@ export default function Footer() {
   };
 
   const footerLinks = siteNavigation?.footerLinks || {};
-  const popularTreatments = footerLinks.treatments || [];
-  const companyLinks = footerLinks.company || [];
+  const navigationLinks = footerLinks.navigation || [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Treatments", href: "/treatments" },
+    { name: "Journal", href: "/blogs" },
+    { name: "Contact & Suites", href: "/contact" }
+  ];
+  const signatureTreatments = footerLinks.treatments || [];
   const legalLinks = footerLinks.legal || [];
 
   return (
@@ -185,11 +191,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 5-Column Directory Navigation Grid */}
+        {/* 4-Column Balanced & Concise Navigation Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 pb-6 sm:pb-7 border-b border-blush-200/80">
           
-          {/* Col 1: Brand & Doctor Leadership (Span 3) */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Col 1: Brand & Doctor Leadership (Span 4) */}
+          <div className="lg:col-span-4 space-y-3">
             <div className="bg-white p-2.5 rounded-2xl inline-block shadow-2xs border border-blush-200 group hover:border-blush-400 transition-all">
               <img
                 src="/logo.png"
@@ -199,7 +205,7 @@ export default function Footer() {
             </div>
 
             <p className="text-xs text-charcoal-700 leading-relaxed font-light">
-              Directed by renowned Aesthetic Physician <strong>{doctorProfile?.name}</strong> ({doctorProfile?.degrees}). {doctorProfile?.bio ? doctorProfile.bio.slice(0, 110) + "..." : "Delivering certified skin restoration, laser precision, and hair rejuvenation across Delhi NCR."}
+              Directed by Gold Medalist Dermatologist <strong>{doctorProfile?.name}</strong>. Delivering certified skin restoration, US-FDA laser precision, and hair rejuvenation across Delhi NCR.
             </p>
 
             {/* Official Social Badges */}
@@ -240,52 +246,70 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Popular Procedures (Span 3) */}
-          <div className="lg:col-span-3 space-y-2.5">
+          {/* Col 2: Navigation - Matching Navbar (Span 2) */}
+          <div className="lg:col-span-2 space-y-2.5">
             <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Popular Procedures
+              Navigation
             </h5>
             <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
-              {popularTreatments.map((proc, idx) => (
+              {navigationLinks.map((item, idx) => (
+                <li key={idx}>
+                  <Link href={item.href} className="hover:text-blush-600 transition-colors flex items-center gap-1.5">
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: Signature Treatments (Span 3) */}
+          <div className="lg:col-span-3 space-y-2.5">
+            <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
+              Signature Treatments
+            </h5>
+            <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
+              {signatureTreatments.map((proc, idx) => (
                 <li key={idx}>
                   <Link href={proc.href} className="hover:text-blush-600 transition-colors flex items-center gap-1.5 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-blush-400 group-hover:scale-125 transition-transform shrink-0" />
                     <span>{proc.name}</span>
                   </Link>
                 </li>
               ))}
+              <li className="pt-1">
+                <Link href="/treatments" className="text-[11px] font-semibold text-blush-600 hover:text-blush-700 hover:underline inline-flex items-center gap-1">
+                  <span>View All Treatments →</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Col 3: Quick Links & Legal (Span 3) */}
+          {/* Col 4: Contact & Desks (Span 3) */}
           <div className="lg:col-span-3 space-y-2.5">
             <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Quick Links
-            </h5>
-            <ul className="space-y-1.5 text-xs text-charcoal-700 font-light">
-              {companyLinks.map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-blush-600 transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-              {legalLinks.map((link, idx) => (
-                <li key={`legal-${idx}`}>
-                  <Link href={link.href} className="hover:text-blush-600 transition-colors text-charcoal-500">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 4: Contact & Clinics (Span 3) */}
-          <div className="lg:col-span-3 space-y-2.5">
-            <h5 className="text-xs font-bold tracking-widest text-blush-600 uppercase">
-              Contact & Desks
+              Direct Contact
             </h5>
             <ul className="space-y-2 text-xs text-charcoal-700 font-light">
+              <li>
+                <a
+                  href={`tel:${clinicContact.phoneClean || "+917591055566"}`}
+                  className="hover:text-blush-600 transition-colors flex items-center gap-2"
+                >
+                  <PhoneIcon className="w-4 h-4 shrink-0" />
+                  <span className="font-medium text-charcoal-800">{clinicContact.phoneFormatted || "+91 75910 55566"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${clinicContact.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-500 transition-colors flex items-center gap-2 text-charcoal-900 font-medium"
+                >
+                  <WhatsAppIcon className="w-4 h-4 shrink-0" />
+                  <span>WhatsApp Desk</span>
+                </a>
+              </li>
               <li>
                 <a
                   href={`mailto:${clinicContact.email}`}
@@ -295,27 +319,8 @@ export default function Footer() {
                   <span className="truncate">{clinicContact.email}</span>
                 </a>
               </li>
-              {clinicContact.phoneNumbers.map((phone, idx) => (
-                <li key={idx}>
-                  <a
-                    href={`tel:${phone.replace(/\s+/g, "")}`}
-                    className="hover:text-blush-600 transition-colors flex items-center gap-2"
-                  >
-                    <PhoneIcon className="w-4 h-4 shrink-0" />
-                    <span>{phone}</span>
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={`https://wa.me/${clinicContact.whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-emerald-500 transition-colors flex items-center gap-2 text-charcoal-900 font-semibold"
-                >
-                  <WhatsAppIcon className="w-4 h-4 shrink-0" />
-                  <span>WhatsApp: {clinicContact.whatsappFormatted}</span>
-                </a>
+              <li className="pt-0.5 text-[11px] text-charcoal-500">
+                <span>Pitampura &amp; Rajouri Garden, Delhi</span>
               </li>
             </ul>
           </div>
@@ -343,12 +348,20 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Copyright & Back to Top */}
+        {/* Bottom Copyright, Legal Links & Back to Top */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-600 !mt-2.5 sm:!mt-3 pt-3 border-t border-blush-200/60">
           <p>© {new Date().getFullYear()} Truly Derma Clinic & Academy. All Rights Reserved.</p>
 
-          <div className="flex items-center gap-4">
-            <span className="text-charcoal-500 text-[11px]">
+          <div className="flex items-center gap-4 text-[11px] text-charcoal-500">
+            {legalLinks.map((link, idx) => (
+              <Link key={idx} href={link.href} className="hover:text-blush-600 transition-colors">
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="text-charcoal-500 text-[11px] hidden md:inline">
               {branches.map(b => b.name).join(" & ")}, New Delhi
             </span>
 
