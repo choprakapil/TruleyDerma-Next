@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Star, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Star, ExternalLink, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 import { SingleBloom } from "../ui/BotanicalMotifs";
 import {
   testimonialsList,
@@ -44,7 +44,12 @@ const CATEGORIES = [
 
 export default function TestimonialsMarquee() {
   const [selectedCat, setSelectedCat] = useState("all");
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const tContent = pagesContent?.home?.testimonials || {};
   const allReviews = tContent.reviews || testimonialsList || [];
@@ -54,13 +59,70 @@ export default function TestimonialsMarquee() {
       ? allReviews
       : allReviews.filter((r) => r.category === selectedCat);
 
+  // Responsive cards per view (1 on mobile, 2 on tablet, 3 on desktop)
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      if (typeof window === "undefined") return;
+      if (window.innerWidth < 640) {
+        setCardsPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setCardsPerView(2);
+      } else {
+        setCardsPerView(3);
+      }
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
+
+  const totalCards = filteredReviews.length;
+  const maxIndex = Math.max(0, totalCards - cardsPerView);
+
+  // Ensure currentIndex stays within bounds if filteredReviews shrink
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(0);
+    }
+  }, [selectedCat, maxIndex, currentIndex]);
+
   const handleNext = () => {
-    setActiveSlide((prev) => (prev + 1) % filteredReviews.length);
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const handlePrev = () => {
-    setActiveSlide((prev) => (prev - 1 + filteredReviews.length) % filteredReviews.length);
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
+
+  // Touch Swipe Handlers for mobile
+  const handleTouchStart = (e) => {
+    setIsPaused(true);
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50) {
+      handleNext();
+    } else if (diff < -50) {
+      handlePrev();
+    }
+  };
+
+  // Autoplay functionality with smooth pause on hover
+  useEffect(() => {
+    if (isPaused || maxIndex === 0) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused, maxIndex]);
 
   const googleReviewLink =
     clinicContact?.branches?.[0]?.mapLink ||
@@ -82,7 +144,7 @@ export default function TestimonialsMarquee() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* ===================================================================
-            GOOGLE REVIEWS HEADER WITH OFFICIAL GOOGLE BADGE
+            GOOGLE REVIEWS HEADER WITH SLIDER ARROWS & COUNTER
             =================================================================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 sm:pb-8 border-b border-blush-200/60">
           <div>
@@ -90,7 +152,7 @@ export default function TestimonialsMarquee() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200 shadow-2xs mb-3">
               <GoogleIcon className="w-4 h-4" />
               <span className="text-xs font-bold text-charcoal-900 tracking-wide">
-                {tContent.pill || "Google Reviews"}
+                {tContent.pill || "Patient Trust & Reviews"}
               </span>
               <span className="text-blush-300">•</span>
               <div className="flex items-center gap-0.5 text-amber-500">
@@ -104,17 +166,17 @@ export default function TestimonialsMarquee() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-              {tContent.title || "Words from Our Discerning Clients"}
+              {tContent.title || "Loved by Over 20,000 Happy Patients"}
             </h2>
 
             <p className="text-charcoal-700/85 text-xs sm:text-sm mt-1 max-w-xl font-light leading-relaxed">
               {tContent.subtitle ||
-                "Verified 5-star ratings and authentic experiences from patients visiting Dr. Megha Aggarwal at our Pitampura and Rajouri Garden clinics."}
+                "Verified Google reviews from patients who experienced transformative skin, hair, and aesthetic renewal at our Delhi clinics."}
             </p>
           </div>
 
-          {/* Right Action: Write a Google Review */}
-          <div className="flex items-center gap-3 self-start md:self-end">
+          {/* Right Action: Write a Google Review & Slider Navigation Controls */}
+          <div className="flex flex-wrap items-center gap-3 self-start md:self-end">
             <a
               href={googleReviewLink}
               target="_blank"
@@ -126,19 +188,24 @@ export default function TestimonialsMarquee() {
               <ExternalLink className="w-3 h-3 text-charcoal-400" />
             </a>
 
-            {/* Slider arrows */}
-            <div className="flex items-center gap-1.5">
+            {/* Slider Controls with Slide Count Indicator */}
+            <div className="flex items-center gap-2 bg-rose-50/80 px-2.5 py-1.5 rounded-full border border-blush-200/80 shadow-2xs">
               <button
                 onClick={handlePrev}
-                aria-label="Previous Google review"
-                className="w-9 h-9 rounded-full bg-white border border-blush-200 text-charcoal-700 hover:text-blush-600 hover:border-blush-300 hover:bg-blush-50 transition-all shadow-xs flex items-center justify-center cursor-pointer active:scale-95"
+                aria-label="Previous review"
+                className="w-8 h-8 rounded-full bg-white text-charcoal-700 hover:text-blush-600 hover:bg-blush-50 transition-all shadow-xs flex items-center justify-center cursor-pointer active:scale-90 border border-blush-200"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
+
+              <span className="text-[11px] font-mono font-bold text-charcoal-700 px-1.5 select-none">
+                {String(currentIndex + 1).padStart(2, "0")} / {String(maxIndex + 1).padStart(2, "0")}
+              </span>
+
               <button
                 onClick={handleNext}
-                aria-label="Next Google review"
-                className="w-9 h-9 rounded-full bg-blush-500 text-white hover:bg-blush-600 transition-all shadow-xs flex items-center justify-center cursor-pointer active:scale-95"
+                aria-label="Next review"
+                className="w-8 h-8 rounded-full bg-blush-500 text-white hover:bg-blush-600 transition-all shadow-xs flex items-center justify-center cursor-pointer active:scale-90"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -147,7 +214,7 @@ export default function TestimonialsMarquee() {
         </div>
 
         {/* ===================================================================
-            CATEGORY TABS
+            CATEGORY FILTER TABS
             =================================================================== */}
         <div className="flex items-center gap-2 pt-6 pb-6 overflow-x-auto no-scrollbar">
           {CATEGORIES.map((cat) => {
@@ -157,7 +224,7 @@ export default function TestimonialsMarquee() {
                 key={cat.id}
                 onClick={() => {
                   setSelectedCat(cat.id);
-                  setActiveSlide(0);
+                  setCurrentIndex(0);
                 }}
                 className={`px-4 py-1.5 rounded-full text-xs font-medium tracking-wide whitespace-nowrap transition-all cursor-pointer ${
                   isSelected
@@ -172,108 +239,147 @@ export default function TestimonialsMarquee() {
         </div>
 
         {/* ===================================================================
-            AUTHENTIC GOOGLE REVIEWS GRID
+            AUTHENTIC INTERACTIVE REVIEWS CAROUSEL / SLIDER
             =================================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
-          {filteredReviews.map((rev) => {
-            const authorName = rev.author || rev.patientName || "Verified Patient";
-            const avatarInitial = authorName.charAt(0).toUpperCase();
-            const branchName = rev.branch || rev.city || "Delhi Clinic";
-            const replyText = rev.doctorReply || rev.ownerReply?.text || "";
-            const replyAuthor = rev.ownerReply?.author || doctorProfile?.name || "Dr. Megha Aggarwal";
-            const relativeTime = rev.relativeTime || rev.date || "Verified Patient";
-            const isLocalGuide = rev.isLocalGuide !== undefined ? rev.isLocalGuide : Boolean(rev.badge?.includes("Local Guide"));
-            const reviewCount = rev.reviewCount || "Verified Visit";
+        <div
+          className="relative overflow-hidden pt-1 pb-2 select-none"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div
+            className="flex transition-transform duration-500 ease-out will-change-transform"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)`,
+            }}
+          >
+            {filteredReviews.map((rev) => {
+              const authorName = rev.author || rev.patientName || "Verified Patient";
+              const avatarInitial = authorName.charAt(0).toUpperCase();
+              const branchName = rev.branch || rev.city || "Delhi Clinic";
+              const replyText = rev.doctorReply || rev.ownerReply?.text || "";
+              const replyAuthor = rev.ownerReply?.author || doctorProfile?.name || "Dr. Megha Aggarwal";
+              const relativeTime = rev.relativeTime || rev.date || "Verified Patient";
+              const isLocalGuide = rev.isLocalGuide !== undefined ? rev.isLocalGuide : Boolean(rev.badge?.includes("Local Guide"));
+              const reviewCount = rev.reviewCount || "Verified Visit";
 
-            return (
-              <div
-                key={rev.id}
-                className="group p-6 rounded-2xl bg-white border border-blush-200/80 shadow-2xs hover:shadow-md hover:border-blush-300 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Card Header: Author, Avatar, Google Icon, Local Guide */}
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      {/* Google Styled Initial Avatar */}
-                      <div
-                        className={`w-10 h-10 rounded-full ${rev.avatarBg || "bg-[#4285F4]"} text-white font-bold text-sm flex items-center justify-center shadow-2xs shrink-0`}
-                      >
-                        {avatarInitial}
+              return (
+                <div
+                  key={rev.id}
+                  className="px-2.5 sm:px-3 shrink-0 flex"
+                  style={{
+                    width: `${100 / cardsPerView}%`,
+                  }}
+                >
+                  <div className="w-full group p-5 sm:p-6 rounded-2xl bg-white border border-blush-200/90 shadow-2xs hover:shadow-lg hover:border-blush-300 transition-all duration-300 flex flex-col justify-between h-full">
+                    <div>
+                      {/* Card Header: Author, Avatar, Google Icon, Local Guide */}
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          {/* Google Styled Initial Avatar */}
+                          <div
+                            className={`w-10 h-10 rounded-full ${rev.avatarBg || "bg-[#4285F4]"} text-white font-bold text-sm flex items-center justify-center shadow-2xs shrink-0`}
+                          >
+                            {avatarInitial}
+                          </div>
+
+                          <div>
+                            <h3 className="text-xs sm:text-sm font-semibold text-charcoal-900 flex items-center gap-1.5">
+                              {authorName}
+                            </h3>
+                            <p className="text-[11px] text-charcoal-500 font-light flex items-center gap-1">
+                              {isLocalGuide && (
+                                <span className="text-[#EA4335] font-semibold">Local Guide •</span>
+                              )}
+                              <span>{reviewCount}</span>
+                              <span className="text-blush-300">•</span>
+                              <span>{relativeTime}</span>
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Official Google 'G' Mark */}
+                        <div className="p-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-2xs shrink-0 group-hover:scale-110 transition-transform">
+                          <GoogleIcon className="w-4 h-4" />
+                        </div>
                       </div>
 
-                      <div>
-                        <h3 className="text-xs sm:text-sm font-semibold text-charcoal-900 flex items-center gap-1.5">
-                          {authorName}
-                        </h3>
-                        <p className="text-[11px] text-charcoal-500 font-light flex items-center gap-1">
-                          {isLocalGuide && (
-                            <span className="text-[#EA4335] font-semibold">Local Guide •</span>
-                          )}
-                          <span>{reviewCount}</span>
-                          <span className="text-blush-300">•</span>
-                          <span>{relativeTime}</span>
-                        </p>
+                      {/* Rating Stars & Treatment Tag */}
+                      <div className="flex items-center justify-between pt-3 pb-2">
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(rev.rating || 5)].map((_, i) => (
+                            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
+
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-blush-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-blush-200">
+                          {rev.treatment}
+                        </span>
                       </div>
-                    </div>
 
-                    {/* Official Google 'G' Mark */}
-                    <div className="p-1.5 rounded-full bg-slate-50 border border-slate-100 shadow-2xs shrink-0 group-hover:scale-110 transition-transform">
-                      <GoogleIcon className="w-4 h-4" />
-                    </div>
-                  </div>
-
-                  {/* Rating Stars & Treatment Tag */}
-                  <div className="flex items-center justify-between pt-3 pb-2">
-                    <div className="flex items-center gap-0.5">
-                      {[...Array(rev.rating || 5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-blush-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-blush-200">
-                      {rev.treatment}
-                    </span>
-                  </div>
-
-                  {/* Main Review Text */}
-                  <p className="text-xs sm:text-xs text-charcoal-800 leading-relaxed font-light mt-1">
-                    &ldquo;{rev.comment}&rdquo;
-                  </p>
-                </div>
-
-                {/* Card Bottom: Clinic Location Tag & Doctor Response Box */}
-                <div className="pt-3 mt-4 border-t border-blush-100/90 space-y-2.5">
-                  <div className="flex items-center justify-between text-[10.5px] text-charcoal-500">
-                    <span className="font-medium text-charcoal-700">
-                      📍 {branchName}
-                    </span>
-                    <span className="text-emerald-600 font-semibold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                      Verified Visit
-                    </span>
-                  </div>
-
-                  {/* Doctor Response Snippet (Google Business Style) */}
-                  {replyText && (
-                    <div className="bg-blush-50/60 p-2.5 rounded-xl border border-blush-100 text-[10.5px] text-charcoal-700 leading-snug">
-                      <span className="font-semibold text-charcoal-900 block mb-0.5">
-                        Response from {replyAuthor} (Owner):
-                      </span>
-                      <p className="font-light italic text-charcoal-600">
-                        &ldquo;{replyText}&rdquo;
+                      {/* Main Review Text */}
+                      <p className="text-xs text-charcoal-800 leading-relaxed font-light mt-1">
+                        &ldquo;{rev.comment}&rdquo;
                       </p>
                     </div>
-                  )}
+
+                    {/* Card Bottom: Clinic Location Tag & Doctor Response Box */}
+                    <div className="pt-3 mt-4 border-t border-blush-100/90 space-y-2.5">
+                      <div className="flex items-center justify-between text-[10.5px] text-charcoal-500">
+                        <span className="font-medium text-charcoal-700">
+                          📍 {branchName}
+                        </span>
+                        <span className="text-emerald-600 font-semibold flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                          Verified Visit
+                        </span>
+                      </div>
+
+                      {/* Doctor Response Snippet (Google Business Style) */}
+                      {replyText && (
+                        <div className="bg-blush-50/60 p-2.5 rounded-xl border border-blush-100 text-[10.5px] text-charcoal-700 leading-snug">
+                          <span className="font-semibold text-charcoal-900 block mb-0.5">
+                            Response from {replyAuthor} (Owner):
+                          </span>
+                          <p className="font-light italic text-charcoal-600">
+                            &ldquo;{replyText}&rdquo;
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
+
+        {/* ===================================================================
+            PAGINATION BULLET DOTS
+            =================================================================== */}
+        {maxIndex > 0 && (
+          <div className="flex items-center justify-center gap-2 pt-4 pb-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentIndex === idx
+                    ? "w-8 bg-blush-500 shadow-xs"
+                    : "w-2 bg-blush-200 hover:bg-blush-300"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* ===================================================================
             BOTTOM GOOGLE TRUST BAR
             =================================================================== */}
-        <div className="pt-8 sm:pt-10 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FFF8FA] via-white to-[#FFF8FA] border border-blush-200/90 shadow-2xs">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FFF8FA] via-white to-[#FFF8FA] border border-blush-200/90 shadow-2xs">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white border border-blush-200 shadow-2xs flex items-center justify-center shrink-0">
               <GoogleIcon className="w-6 h-6" />
