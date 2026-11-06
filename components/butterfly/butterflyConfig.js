@@ -16,13 +16,13 @@ export const BUTTERFLY_CONFIG = {
       id: "hero-start",
       progress: 0.0,
       frameIndex: 0,
-      x: 75, // % from left
-      y: 28, // % from top
-      scale: 1.0,
+      x: 88, // % from left
+      y: 14, // % from top
+      scale: 0.85,
       rotateX: 0,
       rotateY: 0,
       rotateZ: -5,
-      opacity: 0.95,
+      opacity: 0.9,
       blur: 0,
     },
     {

@@ -89,8 +89,8 @@ export default function AboutUsClient() {
                 <p className="text-[11px] text-charcoal-600 font-medium">Completed Procedures</p>
               </div>
               <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-white border border-blush-200/80 shadow-2xs">
-                <p className="text-lg font-serif font-bold text-blush-600">{siteMeta.doctorsTrainedCount}</p>
-                <p className="text-[11px] text-charcoal-600 font-medium">Doctors Trained</p>
+                <p className="text-lg font-serif font-bold text-blush-600">20,000+</p>
+                <p className="text-[11px] text-charcoal-600 font-medium">Satisfied Patients</p>
               </div>
             </div>
 
@@ -113,7 +113,7 @@ export default function AboutUsClient() {
                 className="px-6 py-3.5 rounded-full bg-white hover:bg-rose-50 text-charcoal-800 text-xs font-semibold tracking-wider uppercase border border-blush-200 shadow-sm transition-all flex items-center gap-2 cursor-pointer"
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                <span>WhatsApp Priority Desk</span>
+                <span>WhatsApp Consult</span>
               </a>
 
               <a
@@ -146,14 +146,14 @@ export default function AboutUsClient() {
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full text-charcoal-900 text-[10.5px] font-bold uppercase tracking-wider border border-blush-200 shadow-sm flex items-center gap-1.5 z-20">
                   <AwardMedalIcon className="w-4 h-4" />
-                  <span>Gold Medalist • MD Dermatology</span>
+                  <span>Founder • Truly Derma</span>
                 </div>
 
                 {/* Floating Bottom Card */}
                 <div className="absolute bottom-3 left-3 right-3 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-blush-200 shadow-xl z-20 space-y-1">
                   <div className="flex items-center justify-between">
                     <p className="text-[10px] font-bold text-blush-600 uppercase tracking-widest">
-                      Founder & Chief Dermatologist
+                      Founder & Aesthetic Director
                     </p>
                     <div className="flex items-center gap-1 text-amber-500 text-xs font-semibold">
                       <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
@@ -214,46 +214,8 @@ export default function AboutUsClient() {
                   "Skincare is not just about the surface; it is about understanding yourself and promoting overall well-being. As your partner, I create a nurturing space where self-love is celebrated. Every treatment at Truly Derma is rooted in medical science, customized to your unique dermal needs, and delivered with genuine care."}&rdquo;
               </p>
               <div className="mt-3 not-italic font-sans text-xs font-bold text-blush-600 flex items-center justify-between">
-                <span>— {doc.name}, MD Dermatology</span>
+                <span>— {doc.name}, Founder</span>
                 <span className="text-charcoal-500 font-normal">Delhi, India</span>
-              </div>
-            </div>
-
-            {/* Credentials & Distinction Badges */}
-            <div className="space-y-3 pt-2">
-              <h3 className="font-serif font-bold text-base text-charcoal-900">
-                Medical Education & Elite Credentials
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="p-4 rounded-2xl bg-[#FFFDFE] border border-blush-100 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-200">
-                    <Award className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-charcoal-900">MBBS — Gold Medalist</p>
-                    <p className="text-[11px] text-charcoal-600 mt-0.5">Top Academic Honors in Medical School</p>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-[#FFFDFE] border border-blush-100 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-rose-50 text-blush-600 flex items-center justify-center shrink-0 border border-blush-200">
-                    <GraduationCap className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-charcoal-900">MD Dermatology</p>
-                    <p className="text-[11px] text-charcoal-600 mt-0.5">Venereology & Leprosy Specialist</p>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-[#FFFDFE] border border-blush-100 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200">
-                    <ShieldCheck className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-charcoal-900">Fellowship in Aesthetic Med</p>
-                    <p className="text-[11px] text-charcoal-600 mt-0.5">FAM Certified Laser & Injectable Master</p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -270,7 +232,7 @@ export default function AboutUsClient() {
             {/* Consultation Action */}
             <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-blush-100">
               <div className="text-xs text-charcoal-600">
-                <span className="font-semibold text-charcoal-900">Available For Consultations:</span> Mon - Sat at Pitampura & Rajouri Garden Suites.
+                <span className="font-semibold text-charcoal-900">Available For Consultations:</span> Mon - Sat at Pitampura & Rajouri Garden Clinics.
               </div>
               <button
                 type="button"
@@ -286,85 +248,7 @@ export default function AboutUsClient() {
       </section>
 
       {/* =====================================================================
-          3. TRULY DERMA AESTHETIC ACADEMY
-          ===================================================================== */}
-      {about.academyOverview && (
-        <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-gradient-to-br from-[#FFF5F7] via-white to-[#FDEEF2] p-8 sm:p-14 rounded-3xl border-2 border-blush-200/90 shadow-md">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-blush-200 text-blush-600 text-xs font-semibold tracking-widest uppercase shadow-2xs">
-                  <GraduationCap className="w-4 h-4 text-blush-500" />
-                  <span>{about.academyOverview.badge || "Clinical Training & Fellowship"}</span>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 leading-tight">
-                  {about.academyOverview.title || "Truly Derma Aesthetic Academy"}
-                </h2>
-
-                <p className="text-sm sm:text-base text-charcoal-700 font-light leading-relaxed">
-                  {about.academyOverview.description ||
-                    "Under Dr. Megha Aggarwal's direct mentorship, our academy has trained over 650 certified medical practitioners across India in advanced dermatological lasers, micro-current electroporation, aesthetic injectables, and evidence-based trichology protocols."}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 pt-2">
-                  {about.academyOverview.stats.map((stat, idx) => (
-                    <div key={idx} className="bg-white p-4 rounded-2xl border border-blush-100 shadow-2xs text-center">
-                      <p className="text-xl sm:text-2xl font-serif font-bold text-blush-600">{stat.value}</p>
-                      <p className="text-[11px] text-charcoal-600 font-medium mt-1 leading-tight">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-2">
-                  <a
-                    href={`https://wa.me/${clinicContact.whatsappNumber}?text=${encodeURIComponent("Hello Truly Derma Academy desk, I would like to inquire about medical aesthetic doctor training fellowships.")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-charcoal-900 hover:bg-charcoal-800 text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-sm"
-                  >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    <span>Inquire About Doctor Fellowship</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Academy Right Box Highlights */}
-              <div className="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border border-blush-200 shadow-sm space-y-4">
-                <h3 className="font-serif font-bold text-lg text-charcoal-900 border-b border-blush-100 pb-3">
-                  Physician Curriculum Highlights
-                </h3>
-
-                <ul className="space-y-3 text-xs sm:text-sm text-charcoal-700">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Hands-on training on <strong>US-FDA Cleared Laser Toning</strong> & Diode Systems</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Proprietary <strong>TD Glowtech 360°</strong> 7-frequency electroporation protocols</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Advanced facial anatomy mapping for Botox, Fillers & Thread Lifts</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>Clinical safety, complication mitigation & emergency management</span>
-                  </li>
-                </ul>
-
-                <div className="pt-2 text-[11px] text-blush-700 font-semibold bg-rose-50/70 p-3 rounded-xl border border-blush-100">
-                  Certified Continuing Medical Education (CME) Standards
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* =====================================================================
-          4. CLINIC SUITES SHOWCASE: PITAMPURA & RAJOURI GARDEN
+          3. CLINIC SUITES SHOWCASE: PITAMPURA & RAJOURI GARDEN
           ===================================================================== */}
       <section className="py-20 bg-white border-t border-blush-200/80 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -374,10 +258,10 @@ export default function AboutUsClient() {
               <span>Two Luxury Clinic Locations in Delhi</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-              Visit Our Private <span className="italic text-blush-600 font-medium">Clinic Suites</span>
+              Visit Our <span className="italic text-blush-600 font-medium">Clinic Locations</span>
             </h2>
             <p className="text-xs sm:text-sm text-charcoal-600 font-light max-w-xl mx-auto">
-              Equipped with sterile procedure theatres, private consultation suites, and dedicated valet parking.
+              Equipped with sterile procedure rooms, comfortable consultation spaces, and dedicated parking.
             </p>
           </div>
 
@@ -465,7 +349,7 @@ export default function AboutUsClient() {
                   className="w-full py-3 rounded-xl bg-blush-600 hover:bg-blush-700 text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer"
                 >
                   <CalendarCheck className="w-3.5 h-3.5" />
-                  <span>Book At This Suite</span>
+                  <span>Book At This Clinic</span>
                 </button>
               </div>
             </div>
@@ -518,7 +402,7 @@ export default function AboutUsClient() {
               className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-xs tracking-wider uppercase border border-white/30 transition-all flex items-center gap-2"
             >
               <WhatsAppIcon className="w-4 h-4" />
-              <span>WhatsApp Concierge</span>
+              <span>WhatsApp Consult</span>
             </a>
           </div>
         </div>

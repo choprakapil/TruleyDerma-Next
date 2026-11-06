@@ -40,28 +40,27 @@ export default function BlogsPage() {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blush-200 text-blush-600 text-xs font-semibold tracking-widest uppercase shadow-sm">
             <SingleBloom className="w-3.5 h-3.5" color="#C98294" />
-            <span>{hub.hero.badge || "The Truly Derma Clinical Journal"}</span>
+            <span>Blogs</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-charcoal-900 tracking-tight leading-[1.2]">
-            Evidence-Based Skin & Hair{" "}
-            <span className="italic text-blush-600 font-medium">Medical Insights</span>
+            Blogs
           </h1>
 
           <p className="text-sm sm:text-base text-charcoal-700/85 font-light leading-relaxed max-w-2xl mx-auto">
             {hub.hero.subtitle ||
-              "Authoritative dermatological advice, clinical breakthrough reviews, and procedural guides authored by Chief Dermatologist Dr. Megha Aggarwal."}
+              "Helpful skin care tips, guides, and advice directly from Dr. Megha Aggarwal."}
           </p>
 
           <div className="flex items-center justify-center gap-4 pt-1 text-xs text-charcoal-600">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>Peer-Reviewed Clinical Data</span>
+              <span>Easy-to-Follow Advice</span>
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              <span>Authored by MD Dermatologists</span>
+              <span>Written by Dr. Megha Aggarwal</span>
             </span>
           </div>
         </div>
@@ -84,7 +83,7 @@ export default function BlogsPage() {
 
                   <div className="absolute top-4 left-4 flex items-center gap-2">
                     <span className="px-3.5 py-1.5 rounded-full bg-blush-600 text-white text-[11px] font-bold tracking-wider uppercase shadow-md">
-                      Featured Clinical Guide
+                      Featured Blog
                     </span>
                     <span className="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-charcoal-900 text-[11px] font-bold tracking-wider uppercase border border-blush-200">
                       {featuredBlog.category}
@@ -126,7 +125,7 @@ export default function BlogsPage() {
                     </div>
                     <div className="text-xs">
                       <p className="font-bold text-charcoal-900">{featuredBlog.author || doctorProfile.name}</p>
-                      <p className="text-[11px] text-blush-600 font-medium">Chief Dermatologist, MD</p>
+                      <p className="text-[11px] text-blush-600 font-medium">Founder, Truly Derma</p>
                     </div>
                   </div>
 
@@ -248,7 +247,7 @@ export default function BlogsPage() {
               className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider border border-white/30 transition-all flex items-center gap-2"
             >
               <WhatsAppIcon className="w-4 h-4" />
-              <span>Ask On WhatsApp</span>
+              <span>WhatsApp Consult</span>
             </a>
           </div>
         </div>

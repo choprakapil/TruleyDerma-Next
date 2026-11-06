@@ -23,21 +23,19 @@ export default function ServicesGallery() {
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
 
   const filters = [
-    { id: "all", label: "All Procedures" },
+    { id: "all", label: "All Treatments" },
     { id: "skin", label: "Skin Treatments" },
     { id: "hair", label: "Hair Treatments" },
-    { id: "laser", label: "Laser Treatments" },
     { id: "fat-loss", label: "Fat Loss" },
-    { id: "semi-permanent", label: "Semi-Permanent" },
+    { id: "laser", label: "Laser Treatments" },
   ];
 
   const filteredTreatments = treatments.filter((t) => {
     if (selectedFilter === "all") return true;
-    if (selectedFilter === "skin") return t.category === "Skin Treatment";
-    if (selectedFilter === "hair") return t.category === "Hair Treatment";
-    if (selectedFilter === "laser") return t.category === "Laser Treatment";
-    if (selectedFilter === "fat-loss") return t.category === "Fat Loss";
-    if (selectedFilter === "semi-permanent") return t.category === "Semi-Permanent Makeup";
+    if (selectedFilter === "skin") return t.category === "Skin" || t.categoryKey === "skin";
+    if (selectedFilter === "hair") return t.category === "Hair" || t.categoryKey === "hair";
+    if (selectedFilter === "laser") return t.category === "Laser Treatment" || t.categoryKey === "laser";
+    if (selectedFilter === "fat-loss") return t.category === "Fat Loss" || t.categoryKey === "fat-loss";
     return true;
   });
 
@@ -147,7 +145,7 @@ export default function ServicesGallery() {
                 We Offer a Variety of Services for Your Needs
               </h2>
               <p className="text-charcoal-700/80 text-xs sm:text-sm mt-1 max-w-xl font-light">
-                Comprehensive solutions for skincare, hair care, LASER treatments, fat loss, and semi-permanent makeup led by Dr. Megha Aggarwal.
+                Comprehensive solutions for skincare, hair care, LASER treatments, and fat loss led by Dr. Megha Aggarwal.
               </p>
             </div>
 

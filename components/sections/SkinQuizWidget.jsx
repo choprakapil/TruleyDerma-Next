@@ -64,8 +64,8 @@ export default function SkinQuizWidget() {
       setIsAnalyzing(true);
       setTimeout(() => {
         setIsAnalyzing(false);
-        const matchedSlug = newAnswers.goal?.slug || "td-glowtech-360";
-        setPrescription(PRESCRIPTIONS[matchedSlug] || PRESCRIPTIONS["td-glowtech-360"]);
+        const matchedSlug = newAnswers.goal?.slug || "hydra-facial";
+        setPrescription(PRESCRIPTIONS[matchedSlug] || PRESCRIPTIONS["hydra-facial"]);
       }, 1500);
     }
   };
@@ -93,13 +93,13 @@ export default function SkinQuizWidget() {
         <Reveal className="text-center space-y-1.5 mb-4 sm:mb-5">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white border border-blush-200 text-blush-600 text-[10px] font-semibold tracking-widest uppercase shadow-2xs">
             <SingleBloom className="w-3 h-3" color="#C98294" />
-            <span>Personalized Skincare Consultation</span>
+            <span>{pagesContent.home.skinQuiz.pill || "Skin Quiz"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-            Discover Your Tailored Clinical Protocol
+            {pagesContent.home.skinQuiz.title || "Find the Right Treatment for You"}
           </h2>
           <p className="text-xs sm:text-sm text-charcoal-700/80 max-w-xl mx-auto font-light leading-snug">
-            Answer 3 quick questions for Dr. Megha Aggarwal’s customized medical recommendation.
+            {pagesContent.home.skinQuiz.subtitle || "Answer 3 quick questions to find the best treatment for your skin or hair."}
           </p>
         </Reveal>
 
@@ -141,10 +141,10 @@ export default function SkinQuizWidget() {
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-lg sm:text-xl font-serif font-normal text-charcoal-900">
-                    Curating Your Prescription...
+                    Finding Your Recommendation...
                   </h3>
                   <p className="text-xs text-charcoal-600 font-light">
-                    Harmonizing skin histology parameters with Dr. Megha's clinical protocols.
+                    Matching your answers with our recommended treatments.
                   </p>
                 </div>
                 <div className="w-36 h-1 bg-blush-100 rounded-full mx-auto overflow-hidden">
@@ -234,7 +234,7 @@ export default function SkinQuizWidget() {
                     className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal-700 hover:text-blush-600 transition-colors cursor-pointer self-start sm:self-auto"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
-                    <span>Retake Consultation</span>
+                    <span>Retake Quiz</span>
                   </button>
                 </div>
 
@@ -242,7 +242,7 @@ export default function SkinQuizWidget() {
                 <div className="space-y-2">
                   <div className="space-y-0.5">
                     <span className="text-[10px] uppercase tracking-widest text-blush-600 font-bold">
-                      Prescribed Clinical Recommendation
+                      Recommended Treatment
                     </span>
                     <h3 className="text-xl sm:text-2xl font-serif font-normal text-charcoal-900">
                       {prescription.name}
@@ -257,7 +257,7 @@ export default function SkinQuizWidget() {
                 {/* Highlights */}
                 <div className="space-y-1.5">
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-charcoal-800">
-                    Protocol Highlights:
+                    Treatment Highlights:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-[11px]">
                     {prescription.keyBenefits.map((benefit, bIdx) => (

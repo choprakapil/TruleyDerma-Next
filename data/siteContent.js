@@ -13,7 +13,7 @@
 // 1. BRAND & SITE METADATA
 // =============================================================================
 export const siteMeta = {
-  name: "Truly Derma Clinic & Academy",
+  name: "Truly Derma Clinic",
   shortName: "Truly Derma",
   tagline: "Specialized Skin, Hair, Laser, and Fat Loss Treatments by Certified Experts",
   taglineAlt: "Transform Your Beauty and Health with Our Expert Treatments",
@@ -25,10 +25,9 @@ export const siteMeta = {
   googleReviewCount: "520+",
   proceduresCount: "20,000+",
   satisfactionRate: "99.4%",
-  doctorsTrainedCount: "650+",
   yearsOfExcellence: "10+",
-  defaultTitle: "Truly Derma Clinic & Academy | Dr. Megha Aggarwal | Aesthetic Dermatology Delhi",
-  defaultDescription: "Leading aesthetic dermatology clinic led by Gold Medalist Dr. Megha Aggarwal in Pitampura & Rajouri Garden, New Delhi. Specialized in TD Glowtech 360°, Hydra Facial MD, Laser Toning, FUE Hair Transplant, PRP, and Fat Loss.",
+  defaultTitle: "Truly Derma Clinic | Dr. Megha Aggarwal | Aesthetic Dermatology Delhi",
+  defaultDescription: "Leading aesthetic skin and hair clinic founded by Dr. Megha Aggarwal in Pitampura & Rajouri Garden, New Delhi. Specialized in TD Glowtech 360°, Hydra Facial MD, Laser Toning, FUE Hair Transplant, PRP, and Fat Loss.",
   keywords: [
     "Truly Derma",
     "Dr Megha Aggarwal",
@@ -42,10 +41,9 @@ export const siteMeta = {
     "Hair Transplant Delhi",
     "Q Switch Laser Toning",
     "Botox Delhi",
-    "Lip Fillers Delhi",
-    "Truly Derma Aesthetic Academy"
+    "Lip Fillers Delhi"
   ],
-  copyright: `© ${new Date().getFullYear()} Truly Derma Clinic & Academy. All Rights Reserved.`
+  copyright: `© ${new Date().getFullYear()} Truly Derma Clinic. All Rights Reserved.`
 };
 
 // =============================================================================
@@ -74,7 +72,7 @@ export const clinicContact = {
       slug: "pitampura",
       city: "Pitampura, Delhi",
       name: "Pitampura Clinic",
-      fullName: "Truly Derma Clinic — Pitampura Suite",
+      fullName: "Truly Derma Clinic — Pitampura",
       address: "1st Floor, Building 46, Harsh Vihar, Above AU Small Finance Bank, Pitampura, New Delhi, PinCode :- 110034",
       shortAddress: "1st Floor, Building 46, Harsh Vihar, Pitampura, New Delhi - 110034",
       landmark: "Above AU Small Finance Bank, Harsh Vihar",
@@ -90,7 +88,7 @@ export const clinicContact = {
       slug: "rajouri-garden",
       city: "Rajouri Garden, Delhi",
       name: "Rajouri Garden Clinic",
-      fullName: "Truly Derma Clinic — Rajouri Garden Suite",
+      fullName: "Truly Derma Clinic — Rajouri Garden",
       address: "J2/16, Basement, Rajouri Garden, New Delhi, PinCode :- 110027",
       shortAddress: "J2/16, Basement, Rajouri Garden, New Delhi - 110027",
       landmark: "Near Main Market / J-Block",
@@ -116,30 +114,29 @@ export const clinicContact = {
 export const doctorProfile = {
   name: "Dr. Megha Aggarwal",
   honorific: "Dr.",
-  role: "Founder, Chief Dermatologist & Aesthetic Director",
-  title: "Chief Dermatologist & Aesthetic Physician",
-  qualifications: "MBBS, MD (Dermatology, Venereology & Leprosy), Fellowship in Aesthetic Medicine (FAM)",
+  role: "Founder, Truly Derma Clinic",
+  title: "Founder, Truly Derma",
+  qualifications: "Founder & Aesthetic Director, Truly Derma Clinic",
   credentials: [
-    "MBBS — Gold Medalist",
-    "MD (Dermatology, Venereology & Leprosy)",
-    "Fellowship in Aesthetic Medicine (FAM)",
-    "Certified by Board of Plastic Surgery Protocols",
-    "Member of IADVL (Indian Association of Dermatologists)"
+    "Founder, Truly Derma Clinic",
+    "10+ Years of Aesthetic Excellence",
+    "Pioneer in Advanced Non-Invasive Aesthetics",
+    "US-FDA Approved Laser & Dermal Protocols"
   ],
   experience: "10+ Years of Clinical Excellence",
   image: "/images/Doctor.png",
-  imageAlt: "Dr. Megha Aggarwal - Chief Dermatologist at Truly Derma Clinic",
+  imageAlt: "Dr. Megha Aggarwal - Founder of Truly Derma Clinic",
   secondaryImage: "/images/dr-megha.jpg",
   stats: [
     { label: "Successful Procedures", value: "20,000+", highlight: true },
     { label: "Patient Satisfaction", value: "99.4%", highlight: true },
     { label: "Years Experience", value: "10+", highlight: false },
-    { label: "Academy Doctors Trained", value: "650+", highlight: false }
+    { label: "Delhi Clinics", value: "2", highlight: false }
   ],
-  philosophy: "At Truly Derma, we understand the importance of glowing skin and healthy hair in boosting confidence. To achieve exceptional results, our expert personnel use modern processes and cutting-edge technologies. We believe everyone should feel their best, so we offer a range of treatments tailored just for you.",
-  bio: "Welcome to Truly Derma, Clinic & Academy, led by the famous Aesthetician Dr. Megha Aggarwal where our primary focus is on providing comprehensive solutions for skincare, hair care, LASER treatments, and fat loss. At Truly Derma, we understand the importance of glowing skin and healthy hair in boosting confidence. To achieve exceptional results, our expert personnel use modern processes and cutting-edge technologies. We believe everyone should feel their best, so we offer a range of treatments just for you.",
-  personalNote: "Welcome to Truly Derma Clinic and Academy, where I, Dr. Megha, am dedicated to transforming your skin and hair with over ten years of experience. Whether you're dealing with pesky breakouts or seeking to renew mature skin, I offer personalized treatments and caring advice to help reveal your natural beauty. Skincare isn't just about the surface; it's about understanding yourself and promoting overall well-being. As your partner, I create a nurturing space where self-love is celebrated. I'm committed to staying updated with the latest advancements in beauty to provide you with the best possible care. If you're ready to start your journey of self-discovery and self-care, let's connect at Truly Derma Clinic and Academy in Delhi. Together, we'll help you to shine from the inside out.",
-  signatureTitle: "Dr. Megha Aggarwal, MD (Dermatology)",
+  philosophy: "We believe in enhancing your natural beauty through safe, personalized care and proven medical technology.",
+  bio: "Welcome to Truly Derma Clinic, founded by Dr. Megha Aggarwal. We provide safe, effective, and personalized solutions for skin, hair, laser, and body contouring.",
+  personalNote: "Welcome to Truly Derma Clinic, where I, Dr. Megha, am dedicated to transforming your skin and hair with over ten years of experience. Whether you're dealing with pesky breakouts or seeking to renew mature skin, I offer personalized treatments and caring advice to help reveal your natural beauty. Skincare isn't just about the surface; it's about understanding yourself and promoting overall well-being. As your partner, I create a nurturing space where self-love is celebrated. I'm committed to staying updated with the latest advancements in beauty to provide you with the best possible care. If you're ready to start your journey of self-discovery and self-care, let's connect at Truly Derma Clinic in Delhi. Together, we'll help you to shine from the inside out.",
+  signatureTitle: "Dr. Megha Aggarwal, Founder",
   availability: [
     { branch: "Pitampura Clinic", days: "Monday, Wednesday, Friday, Saturday", time: "10:30 AM - 7:30 PM" },
     { branch: "Rajouri Garden Clinic", days: "Tuesday, Thursday, Saturday", time: "10:30 AM - 7:30 PM" }
@@ -151,28 +148,37 @@ export const doctorProfile = {
 // =============================================================================
 export const whyChooseUsList = [
   {
-    id: "board-certified",
-    title: "Certified by The Board of Plastic Surgery",
+    id: "non-invasive",
+    pillar: "Non-Invasive",
+    title: "Non-Invasive Aesthetics",
+    subtitle: "Zero Downtime & Gentle Care",
+    description: "State-of-the-art non-surgical procedures and cellular technologies that lift, contour, and renew skin and hair naturally with no pain and zero downtime.",
+    icon: "Sparkles",
+    tag: "Non-Invasive",
+    badge: "100% Non-Surgical",
+    badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200"
+  },
+  {
+    id: "safe",
+    pillar: "100% Safe",
+    title: "100% Safe & Certified Care",
     subtitle: "Hospital-Grade Clinical Protocols",
-    description: "Highest clinical safety, sterilization standards, and certified aesthetic dermatology protocols backed by verified medical boards.",
-    icon: "Award",
-    tag: "Medical Safety"
-  },
-  {
-    id: "ten-years-training",
-    title: "10+ Years of Surgical & Aesthetic Training",
-    subtitle: "Over 20,000 Completed Procedures",
-    description: "Extensive hands-on clinical and surgical expertise across all skin, laser, and hair therapies led personally by Dr. Megha Aggarwal.",
-    icon: "Clock",
-    tag: "Proven Mastery"
-  },
-  {
-    id: "advanced-technology",
-    title: "Experienced in all Plastic Surgery & Clinical Procedures",
-    subtitle: "US-FDA Cleared Instrumentation",
-    description: "State-of-the-art non-invasive technologies including TD Glowtech 360°, US-FDA cleared Q-Switch Nd:YAG Laser, and Cryo-lipolysis.",
+    description: "Rigorous medical sterilization, US-FDA cleared clinical lasers, and strict physician oversight ensuring 100% patient safety and clinical peace of mind.",
     icon: "ShieldCheck",
-    tag: "US-FDA Cleared"
+    tag: "100% Safe",
+    badge: "US-FDA Cleared",
+    badgeColor: "bg-rose-50 text-rose-700 border-rose-200"
+  },
+  {
+    id: "experience",
+    pillar: "Proven Experience of 13 Years",
+    title: "Proven Experience of 13 Years",
+    subtitle: "20,000+ Completed Procedures",
+    description: "Over 13 years of specialized skin, hair, and laser treatments, founded and led personally by Dr. Megha Aggarwal with documented results.",
+    icon: "Award",
+    tag: "13 Years Proven",
+    badge: "20,000+ Procedures",
+    badgeColor: "bg-amber-50 text-amber-700 border-amber-200"
   }
 ];
 
@@ -186,7 +192,7 @@ export const threeStepProcess = [
     subtitle: "Cellular-Level Diagnosis",
     description: "Before any applicator touches your face, multi-spectral polarized light mapping assesses sebum depth, UV photodamage, porphyrins, and baseline epidermal hydration.",
     icon: "Microscope",
-    image: "/images/tech-1.jpg",
+    image: "/images/treatments/hair-transplant.png",
     details: "Identifies hidden dermal pigmentation, lipid barrier integrity, and biological skin age."
   },
   {
@@ -210,58 +216,196 @@ export const threeStepProcess = [
 ];
 
 // =============================================================================
-// 6. VERIFIED BEFORE & AFTER CLINICAL OUTCOMES
+// 6. VERIFIED BEFORE & AFTER CLINICAL OUTCOMES (REAL TRULY DERMA PATIENTS)
 // =============================================================================
 export const beforeAfterCases = [
+  // --- SKIN (3) ---
   {
     id: "case-1",
-    title: "Skin Radiance & Pore Refining",
-    treatment: "Dermapen 4 + Recombinant Growth Factors (4 Sessions)",
-    treatmentSlug: "dermapen-4",
-    before: "/images/before-skin.jpg",
-    after: "/images/after-skin.jpg",
-    concern: "Dull Skin & Enlarged Pores",
-    result: "Refined open pores, smooth glass texture, and restored lipid barrier.",
-    timeframe: "8 Weeks",
-    notes: "Smoothed skin texture, refined open pores, and restored luminous hydration barrier with zero peeling."
+    title: "Full Face Radiance & Pore Refining",
+    treatment: "Hydra Facial MD + Medi Facial",
+    treatmentSlug: "hydra-facial",
+    category: "Skin",
+    before: "/images/patients_slider/patient-skin-glow-rejuvenation-before.jpg",
+    after: "/images/patients_slider/patient-skin-glow-rejuvenation-after.jpg",
+    combined: "/images/patients_privacy/patient-skin-glow-rejuvenation.jpg",
+    concern: "Dull Complexion, Congested Pores & Uneven Tone",
+    result: "Refined open pores, smooth glass glow, and restored lipid hydration barrier.",
+    timeframe: "4 Weeks",
+    sessions: "3 Sessions",
+    badge: "Luminous Glow",
+    notes: "Triple-stage vortex infusion cleared epidermal congestion while infusing low-molecular hyaluronic acid."
   },
+  {
+    id: "case-5",
+    title: "Periorbital Under-Eye Brightening",
+    treatment: "Under-Eye Dark Circle Therapy",
+    treatmentSlug: "under-eye-dark-circle",
+    category: "Skin",
+    before: "/images/patients_slider/patient-dark-circles-male-before.jpg",
+    after: "/images/patients_slider/patient-dark-circles-male-after.jpg",
+    combined: "/images/patients_privacy/patient-dark-circles-male.jpg",
+    concern: "Chronic Under-Eye Dark Shadows & Fatigue",
+    result: "Substantially brightened tear trough shadows and rehydrated delicate periorbital tissue.",
+    timeframe: "4 Weeks",
+    sessions: "3 Sessions",
+    badge: "Brightened Eyes",
+    notes: "Targeted vascular toning and micro-infusions cleared accumulated periorbital pigments."
+  },
+  {
+    id: "case-10",
+    title: "Acne Scar Smoothing & Barrier Repair",
+    treatment: "Medi Facial + Skin Repair Protocol",
+    treatmentSlug: "medi-facial",
+    category: "Skin",
+    before: "/images/patients_slider/patient-acne-scar-smoothing-before.jpg",
+    after: "/images/patients_slider/patient-acne-scar-smoothing-after.jpg",
+    combined: "/images/patients_privacy/patient-acne-scar-smoothing.jpg",
+    concern: "Post-Acne Indentations & Skin Roughness",
+    result: "Smoothed dermal surface, softened acne scars, and calmed underlying inflammation.",
+    timeframe: "6 Weeks",
+    sessions: "3 Sessions",
+    badge: "Smooth Texture",
+    notes: "Enzymatic resurfacing coupled with clinical barrier restoration peptides."
+  },
+
+  // --- HAIR (4) ---
   {
     id: "case-2",
-    title: "Facial Contouring & Jowl Lift",
-    treatment: "TD Glowtech 360° (3 Sessions)",
-    treatmentSlug: "td-glowtech-360",
-    before: "/images/before-contour.jpg",
-    after: "/images/after-contour.jpg",
-    concern: "Mid-Face Laxity & Jowls",
-    result: "Sharpened jawline definition, lifted cheeks, and plump smile lines.",
-    timeframe: "3 Weeks",
-    notes: "Sharpened jawline angle, nasolabial softening, and restored mid-face volume through micro-current toning."
+    title: "Crown Scalp Hair Density Revival",
+    treatment: "Hair Restoration & Growth Factor PRP",
+    treatmentSlug: "hair-rejuvenation",
+    category: "Hair",
+    before: "/images/patients_slider/patient-hair-scalp-1-before.jpg",
+    after: "/images/patients_slider/patient-hair-scalp-1-after.jpg",
+    combined: "/images/patients_privacy/patient-hair-scalp-1.jpg",
+    concern: "Crown Scalp Thinning & Follicular Miniaturization",
+    result: "Significant follicle revival, noticeable decrease in shedding, and increased hair volume.",
+    timeframe: "4 Months",
+    sessions: "4 Sessions",
+    badge: "Follicle Revival",
+    notes: "Autologous concentrated growth factors reactivated miniaturized follicles and stimulated healthy hair cycles."
   },
   {
-    id: "case-3",
-    title: "Melasma & Pigmentation Clearing",
-    treatment: "Q-Switch Laser Toning (4 Sessions)",
-    treatmentSlug: "laser-toning",
-    before: "/images/before-skin.jpg",
-    after: "/images/after-skin.jpg",
-    concern: "Deep Dermal Melasma & Sun Tan",
-    result: "Cleared stubborn melasma patches and revealed balanced radiant complexion.",
-    timeframe: "6 Weeks",
-    notes: "Photoacoustic laser pulses cleared deep melasma without burning, shedding, or post-inflammatory hyperpigmentation."
+    id: "case-6",
+    title: "Permanent Chin Laser Hair Reduction",
+    treatment: "US-FDA Approved 4D Tec Laser",
+    treatmentSlug: "laser-hair-reduction",
+    category: "Hair",
+    before: "/images/patients_slider/patient-chin-laser-reduction-1-before.jpg",
+    after: "/images/patients_slider/patient-chin-laser-reduction-1-after.jpg",
+    combined: "/images/patients_privacy/patient-chin-laser-reduction-1.jpg",
+    concern: "Coarse Unwanted Chin & Submental Hair",
+    result: "Smooth, hair-free skin with virtually zero razor bumps or folliculitis recurrence.",
+    timeframe: "10 Weeks",
+    sessions: "5 Sessions",
+    badge: "Permanent Reduction",
+    notes: "Quad-wavelength laser disabled active follicular roots with sub-zero contact sapphire cooling."
   },
+  {
+    id: "case-8",
+    title: "Vertex Hair Density & Shedding Reduction",
+    treatment: "PRP Hair Rejuvenation Therapy",
+    treatmentSlug: "hair-rejuvenation",
+    category: "Hair",
+    before: "/images/patients_slider/patient-hair-density-male-before.jpg",
+    after: "/images/patients_slider/patient-hair-density-male-after.jpg",
+    combined: "/images/patients_privacy/patient-hair-density-male.jpg",
+    concern: "Progressive Vertex Thinning & Shedding",
+    result: "Halted excessive hair shedding, increased shaft caliber, and filled visible scalp areas.",
+    timeframe: "8 Weeks",
+    sessions: "4 Sessions",
+    badge: "Reduced Shedding",
+    notes: "Plasma growth factor micro-infusions stimulated dormant follicular matrix cells."
+  },
+  {
+    id: "case-11",
+    title: "Midline Female Hair Parting Restoration",
+    treatment: "Hair Detox & PRP Growth Protocol",
+    treatmentSlug: "hair-detox-therapy",
+    category: "Hair",
+    before: "/images/patients_slider/patient-female-hair-parting-before.jpg",
+    after: "/images/patients_slider/patient-female-hair-parting-after.jpg",
+    combined: "/images/patients_privacy/patient-female-hair-parting.jpg",
+    concern: "Widening Midline Parting & Diffuse Thinning",
+    result: "Narrowed parting line, reinforced root anchoring, and restored natural hair density.",
+    timeframe: "8 Weeks",
+    sessions: "8 Weeks",
+    badge: "Density Boost",
+    notes: "Deep follicle detox combined with autologous growth micro-needling."
+  },
+
+  // --- LASER (3) ---
   {
     id: "case-4",
-    title: "Acne Scar Revision & Tissue Smoothing",
-    treatment: "Dermapen 4™ + Active Exosomes (3 Sessions)",
-    treatmentSlug: "dermapen-4",
-    before: "/images/before-contour.jpg",
-    after: "/images/after-contour.jpg",
-    concern: "Pitted Rolling Acne Scars",
-    result: "Deep scar indentation filled in with natural new collagen growth.",
-    timeframe: "10 Weeks",
-    notes: "Filled in pitted acne scars and stimulated natural neo-collagenesis with medical-grade microneedling."
+    title: "Cheek Dermal Melasma Clearance",
+    treatment: "Laser Toning (Q-Switch) Protocol",
+    treatmentSlug: "laser-toning",
+    category: "Laser",
+    before: "/images/patients_slider/patient-melasma-profile-1-before.jpg",
+    after: "/images/patients_slider/patient-melasma-profile-1-after.jpg",
+    combined: "/images/patients_privacy/patient-melasma-profile-1.jpg",
+    concern: "Deep Dermal Melasma & Patchy Discoloration",
+    result: "Shattered deep melanin clusters, visibly cleared melasma patches, and restored uniform tone.",
+    timeframe: "6 Weeks",
+    sessions: "5 Sessions",
+    badge: "Melasma Cleared",
+    notes: "Sub-nanosecond photoacoustic laser pulses shattered stubborn dermal pigment without heating or downtime."
+  },
+  {
+    id: "case-9",
+    title: "Facial Pigmentation & Sun Tan Clearing",
+    treatment: "Laser Toning & Photo Facial",
+    treatmentSlug: "laser-toning",
+    category: "Laser",
+    before: "/images/patients_slider/patient-pigmentation-clearing-before.jpg",
+    after: "/images/patients_slider/patient-pigmentation-clearing-after.jpg",
+    combined: "/images/patients_privacy/patient-pigmentation-clearing.jpg",
+    concern: "Stubborn Sun Tan & Epidermal Dyschromia",
+    result: "Balanced skin tone, cleared sun damage patches, and enhanced dermal clarity.",
+    timeframe: "6 Weeks",
+    sessions: "4 Sessions",
+    badge: "Even Complexion",
+    notes: "Dual-pulsed laser shattered epidermal melanin clumps without peeling or downtime."
+  },
+  {
+    id: "case-14",
+    title: "Deep Dermal Melasma Shattering",
+    treatment: "Laser Toning (Q-Switch) + Carbon Peel",
+    treatmentSlug: "laser-toning",
+    category: "Laser",
+    before: "/images/patients_slider/patient-melasma-profile-2-before.jpg",
+    after: "/images/patients_slider/patient-melasma-profile-2-after.jpg",
+    combined: "/images/patients_privacy/patient-melasma-profile-2.jpg",
+    concern: "Recalcitrant Deep Melasma Patches",
+    result: "Progressive fading of dark dermal patches and restored uniform skin glow.",
+    timeframe: "6 Weeks",
+    sessions: "4 Sessions",
+    badge: "Tone Cleared",
+    notes: "Selective photothermolysis destroys dermal pigment without damaging healthy tissue."
+  },
+
+  // --- FAT LOSS (1) ---
+  {
+    id: "case-3",
+    title: "Non-Surgical Jawline & Fat Contouring",
+    treatment: "Truly Derma Submental Contouring",
+    treatmentSlug: "fat-loss",
+    category: "Fat Loss",
+    before: "/images/patients_slider/patient-jawline-contouring-before.jpg",
+    after: "/images/patients_slider/patient-jawline-contouring-after.jpg",
+    combined: "/images/patients_privacy/patient-jawline-contouring.jpg",
+    concern: "Submental Fullness & Undefined Jawline",
+    result: "Sharply sculpted mandibular line with zero surgical incisions or downtime.",
+    timeframe: "6 Weeks",
+    sessions: "3 Sessions",
+    badge: "Sculpted Jawline",
+    notes: "Non-invasive targeted lipolysis sculpted chin and neck contours with zero recovery downtime."
   }
 ];
+
+// Alias patientGalleryPhotos to beforeAfterCases for full backwards compatibility
+export const patientGalleryPhotos = beforeAfterCases;
 
 // =============================================================================
 // 7. PATIENT TESTIMONIALS & GOOGLE REVIEWS
@@ -276,7 +420,7 @@ export const testimonialsList = [
     treatment: "Personalized Hair Restoration",
     treatmentSlug: "hair-rejuvenation",
     rating: 5,
-    branch: "Pitampura Suite, Delhi",
+    branch: "Pitampura, Delhi",
     city: "Pitampura Clinic",
     relativeTime: "2 weeks ago",
     date: "Verified Patient",
@@ -299,7 +443,7 @@ export const testimonialsList = [
     treatment: "Laser Skin Rejuvenation (Q-Switch)",
     treatmentSlug: "laser-toning",
     rating: 5,
-    branch: "Rajouri Garden Suite, Delhi",
+    branch: "Rajouri Garden, Delhi",
     city: "Rajouri Garden Clinic",
     relativeTime: "1 month ago",
     date: "Verified Patient",
@@ -322,7 +466,7 @@ export const testimonialsList = [
     treatment: "Medi-Facial & Skincare Regimen",
     treatmentSlug: "medi-facial",
     rating: 5,
-    branch: "Pitampura Suite, Delhi",
+    branch: "Pitampura, Delhi",
     city: "Pitampura Clinic",
     relativeTime: "3 weeks ago",
     date: "Verified Patient",
@@ -342,21 +486,21 @@ export const testimonialsList = [
     patientName: "Pooja Sharma",
     category: "skin",
     badge: "Verified Google Review • Local Guide",
-    treatment: "TD Glowtech 360° Facial",
-    treatmentSlug: "td-glowtech-360",
+    treatment: "Party Pop Facial",
+    treatmentSlug: "party-pop-facial",
     rating: 5,
-    branch: "Rajouri Garden Suite, Delhi",
+    branch: "Rajouri Garden, Delhi",
     city: "Rajouri Garden Clinic",
     relativeTime: "1 month ago",
     date: "Verified Patient",
     reviewCount: "63 reviews • Local Guide",
     isLocalGuide: true,
     avatarBg: "bg-[#34A853]",
-    comment: "I had an upcoming family wedding and booked the TD Glowtech 360 session. The immediate lift on my jawline and the intense glow were stunning. No redness at all! Dr. Megha personally examined my skin beforehand and explained every step so gently. Best aesthetic clinic in West Delhi without doubt.",
-    doctorReply: "Thank you Pooja! The TD Glowtech 360° was specially formulated for red carpet radiance and instant contour without any downtime.",
+    comment: "I had an upcoming family wedding and booked the Party Pop Facial at Truly Derma. The immediate hydration and intense glow were stunning. No redness at all! Dr. Megha's team personally examined my skin beforehand and explained every step so gently. Best aesthetic clinic in West Delhi without doubt.",
+    doctorReply: "Thank you Pooja! The Party Pop Facial was specially designed for red carpet radiance and instant glow without any downtime.",
     ownerReply: {
       author: "Dr. Megha Aggarwal",
-      text: "Thank you Pooja! The TD Glowtech 360° was specially formulated for red carpet radiance and instant contour without any downtime."
+      text: "Thank you Pooja! The Party Pop Facial was specially designed for red carpet radiance and instant glow without any downtime."
     }
   },
   {
@@ -368,7 +512,7 @@ export const testimonialsList = [
     treatment: "PRP & GFC Hair Rejuvenation",
     treatmentSlug: "hair-rejuvenation",
     rating: 5,
-    branch: "Pitampura Suite, Delhi",
+    branch: "Pitampura, Delhi",
     city: "Pitampura Clinic",
     relativeTime: "2 months ago",
     date: "Verified Patient",
@@ -391,7 +535,7 @@ export const testimonialsList = [
     treatment: "Medical Hydra Facial MD",
     treatmentSlug: "hydra-facial",
     rating: 5,
-    branch: "Pitampura Suite, Delhi",
+    branch: "Pitampura, Delhi",
     city: "Pitampura Clinic",
     relativeTime: "3 weeks ago",
     date: "Verified Patient",
@@ -414,7 +558,7 @@ export const testimonialsList = [
     treatment: "Painless Laser Hair Reduction",
     treatmentSlug: "laser-hair-reduction",
     rating: 5,
-    branch: "Rajouri Garden Suite, Delhi",
+    branch: "Rajouri Garden, Delhi",
     city: "Rajouri Garden Clinic",
     relativeTime: "1 month ago",
     date: "Verified Patient",
@@ -434,78 +578,140 @@ export const testimonialsList = [
     patientName: "Ritu Chawla",
     category: "skin",
     badge: "Verified Google Review • Local Guide",
-    treatment: "Dermapen 4™ Acne Scar Revision",
-    treatmentSlug: "dermapen-4",
+    treatment: "Under-Eye Dark Circle Therapy",
+    treatmentSlug: "under-eye-dark-circle",
     rating: 5,
-    branch: "Pitampura Suite, Delhi",
+    branch: "Pitampura, Delhi",
     city: "Pitampura Clinic",
     relativeTime: "5 weeks ago",
     date: "Verified Patient",
     reviewCount: "51 reviews • Local Guide",
     isLocalGuide: true,
     avatarBg: "bg-[#D97706]",
-    comment: "I had stubborn acne scars from my college years that makeup could never hide. Three sessions of Dermapen 4 with exosomes at Truly Derma smoothed out the pitted texture dramatically. Dr. Megha gave realistic expectations and delivered beyond them.",
-    doctorReply: "Dear Ritu, watching your skin texture smooth out naturally through collagen induction has been so rewarding for our entire team!",
+    comment: "I had stubborn dark circles and fatigue shadows around my eyes that concealer could never hide. The under-eye dark circle therapy at Truly Derma smoothed out and brightened the skin dramatically. Dr. Megha gave realistic expectations and delivered beyond them.",
+    doctorReply: "Dear Ritu, watching your eye area brighten naturally and seeing your confidence restored has been so rewarding for our entire team!",
     ownerReply: {
       author: "Dr. Megha Aggarwal",
-      text: "Dear Ritu, watching your skin texture smooth out naturally through collagen induction has been so rewarding for our entire team!"
+      text: "Dear Ritu, watching your eye area brighten naturally and seeing your confidence restored has been so rewarding for our entire team!"
     }
   }
 ];
 
 // =============================================================================
-// 8. ALL 18 CLINICAL PROCEDURES DIRECTORY
+// 8. MAIN TREATMENT CATEGORIES (CARDS) & AUTHENTIC PROCEDURES DIRECTORY
 // =============================================================================
-export const allTreatments = [
-  // --- Category A: Skin & Medi-Facials ---
+// Sourced 100% authentically from https://trulyderma.com/
+// 4 Main Categories: Skin (7), Hair (4), Fat Loss (1), Laser Treatment (1)
+// =============================================================================
+export const treatmentCategories = [
   {
-    id: "td-glowtech-360",
-    slug: "td-glowtech-360",
-    name: "TD Glowtech 360°",
-    category: "Skin Treatment",
+    id: "skin",
+    name: "Skin",
+    title: "Skin Treatments",
+    slug: "skin",
+    tagline: "Rejuvenating, glow-enhancing & clinical skin therapies",
+    description: "From Hydra Facials and Medi Facials to Photo Facials and Mesotherapy, experience deep pore cleansing, pigmentation reduction, and natural skin glow.",
+    image: "/images/treatments/hydra-facial.png",
+    bgBanner: "/banners/banner-facial.orig.jpg",
+    badge: "7 Treatments",
+    treatments: [
+      { name: "Mesotherapy", slug: "mesotherapy", tag: "Nutrient Infusion", image: "/images/treatments/mesotherapy.png", description: "Vitamins, amino acids & growth factor micro-infusion for skin renewal & hair loss." },
+      { name: "Hydra Facial", slug: "hydra-facial", tag: "Vortex Hydration", image: "/images/treatments/hydra-facial.png", description: "Vortex exfoliation, gentle extraction & deep hyaluronic serum hydration." },
+      { name: "Medi Facial", slug: "medi-facial", tag: "Doctor Curated", image: "/images/treatments/medi-facial.png", description: "Customized medical-grade facials for acne, pigmentation & luminous glow." },
+      { name: "Party Pop Facial", slug: "party-pop-facial", tag: "Instant Glow", image: "/images/treatments/party-pop-facial.png", description: "Fun, refreshing facial for instant radiance, lip renewal & pre-event glow." },
+      { name: "Photo Facial", slug: "photo-facial", tag: "Light Therapy", image: "/images/treatments/photo-facial.png", description: "Specialized light wavelengths targeting sun damage, age spots & fine lines." },
+      { name: "Laser Toning", slug: "laser-toning", tag: "Q-Switch Laser", image: "/images/treatments/laser-toning.png", description: "Sub-nanosecond photoacoustic laser shattering deep melanin & melasma." },
+      { name: "Under-Eye Dark Circle", slug: "under-eye-dark-circle", tag: "Eye Rejuvenation", image: "/images/treatments/under-eye-dark-circle.png", description: "Vanishing dark circles & eye shadows while restoring brightness and tone." }
+    ]
+  },
+  {
+    id: "hair",
+    name: "Hair",
+    title: "Hair Treatments",
+    slug: "hair",
+    tagline: "Advanced hair regrowth, laser reduction & scalp wellness",
+    description: "Permanent 4D laser hair reduction, PRP hair rejuvenation, FUE hair transplants, and scalp detox therapies tailored to restore hair density.",
+    image: "/images/treatments/laser-hair-reduction.png",
+    bgBanner: "/banners/banner-laser.orig.jpg",
+    badge: "4 Treatments",
+    treatments: [
+      { name: "Laser Hair Reduction", slug: "laser-hair-reduction", tag: "US-FDA Approved", image: "/images/treatments/laser-hair-reduction.png", description: "US-FDA approved 4D Tec LASER with 4 wavelengths for smooth, hair-free skin." },
+      { name: "Hair Rejuvenation", slug: "hair-rejuvenation", tag: "PRP & Follicle Growth", image: "/images/treatments/hair-rejuvenation.png", description: "PRP & growth factors to stimulate hair follicles, control fall & revitalize scalp." },
+      { name: "Hair Transplant", slug: "hair-transplant", tag: "Permanent FUE", image: "/images/treatments/hair-transplant.png", description: "Transformative FUE follicle transplantation for full, permanent hair." },
+      { name: "Hair Detox Therapy", slug: "hair-detox-therapy", tag: "Scalp Purification", image: "/images/treatments/hair-detox-therapy.jpg", description: "Deep scalp cleanse removing toxic buildup & restoring scalp balance." }
+    ]
+  },
+  {
+    id: "fat-loss",
+    name: "Fat Loss",
+    title: "Non-Surgical Fat Loss",
+    slug: "fat-loss",
+    tagline: "Target stubborn fat pockets safely with zero surgery",
+    description: "Safe, non-surgical body contouring treatments designed to help you achieve your desired shape with zero surgery and zero downtime.",
+    image: "/images/treatments/fat-loss.png",
+    bgBanner: "/images/after-contour.jpg",
+    badge: "1 Treatment",
+    treatments: [
+      { name: "Non-Surgical Fat Loss & Contouring", slug: "fat-loss", tag: "Zero Surgery", image: "/images/treatments/fat-loss.png", description: "Safe body contouring targeting stubborn fat deposits with zero downtime." }
+    ]
+  },
+  {
+    id: "laser",
+    name: "Laser Treatment",
+    title: "Laser Treatments",
+    slug: "laser",
+    tagline: "US-FDA cleared Q-Switch laser toning & carbon peel",
+    description: "Advanced photoacoustic Q-Switch Nd:YAG laser toning to shatter deep melanin, remove pigmentation, and refine skin texture with zero downtime.",
+    image: "/images/treatments/laser-toning.png",
+    bgBanner: "/banners/banner-laser.jpg",
+    badge: "1 Treatment",
+    treatments: [
+      { name: "Laser Toning", slug: "laser-toning", tag: "Melasma & Pigment Removal", image: "/images/treatments/laser-toning.png", description: "Q-Switch laser and carbon peel to improve tone, texture, melasma & acne scars." }
+    ]
+  }
+];
+
+export const allTreatments = [
+  // --- Category 1: Skin ---
+  {
+    id: "mesotherapy",
+    slug: "mesotherapy",
+    name: "Mesotherapy",
+    category: "Skin",
     categoryKey: "skin",
-    plainHeadline: "Instant Face Lift & Skin Gym",
-    tagline: "Truly Derma Exclusive in India — Patented Electroporation & 7 Micro-Current Frequencies",
-    badge: "Exclusive In India",
-    description: "TD Glowtech 360° uses a patented electroporation method with seven scientifically proven micro-current frequencies. This non-invasive skin gym offers customized treatments that lift, tone, and contour the skin with no downtime. It’s a painless, relaxing experience that delivers instant, long-lasting results.",
-    heroImage: "/banners/banner-facial.orig.jpg",
-    sessionDuration: "60 - 75 Mins",
-    downtime: "No downtime (Walkout Glow)",
-    suitableFor: "Skin Laxity, Sagging Contours, Dull Skin, Facial Tone & Muscle Sculpting",
+    plainHeadline: "Nutrient Injection for Hair Loss & Skin Rejuvenation",
+    tagline: "Nutrient Injection into Mesoderm for Hair Loss & Skin Rejuvenation",
+    badge: "Cellular Nutrition",
+    description: "In today’s fast-paced world, hair thinning and baldness are becoming increasingly common due to stress and lifestyle factors. Mesotherapy emerges as a popular solution, offering a fruitful treatment for hair loss, alopecia, and male-pattern baldness caused by hormonal imbalances. Unlike topical treatments like Minoxidil, our mesotherapy treatment yields superior results. This painless procedure involves injecting a specialised solution into the scalp’s mesoderm layer, including vitamins, amino acids, and growth factors. It can also be performed on various parts of the body, including the face, neck, and hands to improve skin texture, tone, and overall appearance.",
+    heroImage: "/images/treatments/mesotherapy.png",
+    sessionDuration: "30 - 60 Mins",
+    downtime: "None",
+    suitableFor: "Hair Thinning, Alopecia, Male-Pattern Baldness, Facial Skin Texture, Dull Tone",
     highlights: [
-      "Exclusive proprietary treatment in India only at Truly Derma",
-      "Patented 7-microcurrent resonance frequencies",
-      "Cellular electroporation drives nutrients 400% deeper",
-      "Instant face lift and jawline contouring with zero downtime"
+      "Painless micro-injection into the targeted mesoderm layer",
+      "Formulated with vitamins, amino acids, and vital growth factors",
+      "Yields superior results compared to standard topical treatments",
+      "Versatile therapy for scalp, face, neck, and hands"
     ],
     procedureSteps: [
-      { step: 1, title: "Skin Diagnosis & Cleansing", description: "Comprehensive analysis of skin condition and preparation." },
-      { step: 2, title: "7-Frequency Micro-Currents", description: "Targeted bio-frequencies stimulate facial muscles and lift contours." },
-      { step: 3, title: "Patented Electroporation Infusion", description: "Pulsed micro-current channels drive active revitalizing nutrients deep into dermis." },
-      { step: 4, title: "Cryo-Shield Finish", description: "Seals in hydration and firms the skin with zero recovery time." }
+      { step: 1, title: "Target Area Mapping", description: "Physician maps the treatment zone on scalp or face." },
+      { step: 2, title: "Mesoderm Delivery", description: "Painless delivery of specialized vitamin, amino acid, and peptide cocktail." },
+      { step: 3, title: "Scalp / Skin Calming", description: "Soothing application to enhance absorption and patient comfort." }
     ],
-    preCareTips: [
-      "Avoid harsh chemical peels or exfoliants 48 hours prior",
-      "Stay hydrated before your session",
-      "Inform the doctor if you have pacemakers or metal implants"
-    ],
-    postCareTips: [
-      "Apply broad-spectrum mineral SPF 50+ daily",
-      "You can apply makeup immediately if desired",
-      "Maintain hydration with peptide-based moisturizers"
-    ]
+    preCareTips: ["Cleanse hair or skin on morning of treatment"],
+    postCareTips: ["Avoid washing hair or face for 6 hours post treatment"]
   },
   {
     id: "hydra-facial",
     slug: "hydra-facial",
-    name: "Medical Hydra Facial MD",
-    category: "Skin Treatment",
+    name: "Hydra Facial",
+    category: "Skin",
     categoryKey: "skin",
     plainHeadline: "Deep Pore Cleanse & Glass Skin Glow",
     tagline: "Exfoliation, Extraction, and Hydration Using Specialized Vortex Technology",
     badge: "Most Popular",
     description: "Our Hydrafacial combines exfoliation, extraction, and hydration using specialized vortex technology. It removes dead skin cells, clears pores, and extracts impurities, revealing a smoother complexion. Plus, it infuses nourishing serums for intense hydration, improving skin tone, reducing fine lines, and giving you a youthful glow. It is a popular non-invasive treatment that helps to refresh the skin. You can see a noticeable improvement in your skin, texture, and tone immediately after the treatment.",
-    heroImage: "/images/tech-3.jpg",
+    heroImage: "/images/treatments/hydra-facial.png",
     sessionDuration: "45 Mins",
     downtime: "No downtime",
     suitableFor: "Dead Skin Cells, Clogged Pores, Impurities, Fine Lines, Dehydration, Dull Tone",
@@ -521,19 +727,19 @@ export const allTreatments = [
       { step: 3, title: "Fuse & Protect", description: "Saturates the skin’s surface with antioxidants and peptides to maximize your glow." }
     ],
     preCareTips: ["Discontinue topical retinoids 48 hours before treatment"],
-    postCareTips: ["Avoid washing face with hot water for 6 hours", "Wear sunscreen"]
+    postCareTips: ["Avoid washing face with hot water for 6 hours", "Wear sunscreen daily"]
   },
   {
     id: "medi-facial",
     slug: "medi-facial",
-    name: "Prescription Medi-Facial",
-    category: "Skin Treatment",
+    name: "Medi Facial",
+    category: "Skin",
     categoryKey: "skin",
     plainHeadline: "Customized Doctor Facial for Acne & Glow",
     tagline: "Customized Medical-Grade Facials Tailored for Specific Skin Conditions",
     badge: "Doctor Formulated",
     description: "At our clinic, we offer customized medi facials to refresh your skin. We use medical-grade ingredients to address particular conditions such as acne, hyperpigmentation, and ageing, leaving you with a luminous complexion. Results can be long-lasting, especially with a consistent skincare routine and periodic maintenance facials.",
-    heroImage: "/banners/banner-glow.jpg",
+    heroImage: "/images/treatments/medi-facial.png",
     sessionDuration: "50 Mins",
     downtime: "No downtime",
     suitableFor: "Active Acne, Hyperpigmentation, Ageing Skin, Dullness, Environmental Pollution",
@@ -552,44 +758,16 @@ export const allTreatments = [
     postCareTips: ["Avoid swimming or heavy sauna for 24 hours"]
   },
   {
-    id: "mesotherapy",
-    slug: "mesotherapy",
-    name: "Mesotherapy Rejuvenation",
-    category: "Skin Treatment",
-    categoryKey: "skin",
-    plainHeadline: "Direct Vitamin & Moisture Infusion",
-    tagline: "Nutrient Injection into Mesoderm for Hair Loss & Skin Rejuvenation",
-    badge: "Cellular Nutrition",
-    description: "In today’s fast-paced world, hair thinning and baldness are becoming increasingly common due to stress and lifestyle factors. Mesotherapy emerges as a popular solution, offering a fruitful treatment for hair loss, alopecia, and male-pattern baldness caused by hormonal imbalances. Unlike topical treatments like Minoxidil, our mesotherapy treatment yields superior results. This painless procedure involves injecting a specialised solution into the scalp’s mesoderm layer, including vitamins, amino acids, and growth factors. It can also be performed on various parts of the body, including the face, neck, and hands to improve skin texture, tone, and overall appearance.",
-    heroImage: "/images/tech-2.jpg",
-    sessionDuration: "30 - 60 Mins",
-    downtime: "None",
-    suitableFor: "Hair Thinning, Alopecia, Male-Pattern Baldness, Facial Skin Texture, Dull Tone",
-    highlights: [
-      "Painless micro-injection into the targeted mesoderm layer",
-      "Formulated with vitamins, amino acids, and vital growth factors",
-      "Yields superior results compared to standard topical treatments",
-      "Versatile therapy for scalp, face, neck, and hands"
-    ],
-    procedureSteps: [
-      { step: 1, title: "Target Area Mapping", description: "Physician maps the treatment zone on scalp or face." },
-      { step: 2, title: "Mesoderm Injection", description: "Painless delivery of specialized vitamin, amino acid, and peptide cocktail." },
-      { step: 3, title: "Scalp / Skin Calming", description: "Soothing application to enhance absorption and patient comfort." }
-    ],
-    preCareTips: ["Cleanse hair or skin on morning of treatment"],
-    postCareTips: ["Avoid washing hair/face for 6 hours"]
-  },
-  {
     id: "party-pop-facial",
     slug: "party-pop-facial",
     name: "Party Pop Facial",
-    category: "Skin Treatment",
+    category: "Skin",
     categoryKey: "skin",
-    plainHeadline: "Red Carpet Instant Radiance",
+    plainHeadline: "Red Carpet Instant Radiant Glow",
     tagline: "Fun and Refreshing Facial Treatment Designed for an Instant Radiant Glow",
     badge: "Instant Glow",
     description: "It is a fun and refreshing facial treatment. Designed to leave you with a radiant glow, it is perfect for any occasion. Details may vary depending on the person and individual outcomes needed, but the focus is on skin cleansing analysis, exfoliation, resurfacing, hydration, brightening, radiance boost, lip treatment, massage, and relaxation, with some final touches and additional enhancement, depending on personal goals.",
-    heroImage: "/banners/banner-facial.orig.jpg",
+    heroImage: "/images/treatments/party-pop-facial.png",
     sessionDuration: "45 Mins",
     downtime: "No downtime",
     suitableFor: "Pre-Event Radiance, Parties, Weddings, Dull Complexion, Dry Lips",
@@ -610,14 +788,14 @@ export const allTreatments = [
   {
     id: "photo-facial",
     slug: "photo-facial",
-    name: "Photo Facial (IPL Light Therapy)",
-    category: "Skin Treatment",
+    name: "Photo Facial",
+    category: "Skin",
     categoryKey: "skin",
-    plainHeadline: "Light Therapy Skin Brightening",
+    plainHeadline: "Targeting Sun Damage, Age Spots & Redness",
     tagline: "Targeting Sun Damage, Age Spots, Redness & Fine Lines with Specialized Light",
     badge: "Clinical Phototherapy",
     description: "Our Photofacial treatment is designed to target and diminish the signs of sun damage, age spots, redness, and fine lines. Using specialized light wavelengths, we precisely penetrate the skin’s surface, stimulating collagen production and promoting cellular renewal. It requires little to no recovery time. You can resume normal activities immediately after the treatment. When done correctly, minimal risks are involved.",
-    heroImage: "/images/tech-1.jpg",
+    heroImage: "/images/treatments/photo-facial.png",
     sessionDuration: "35 Mins",
     downtime: "Little to no recovery time",
     suitableFor: "Sun Damage, Age Spots, Facial Redness, Fine Lines, Dull Skin",
@@ -638,14 +816,14 @@ export const allTreatments = [
   {
     id: "laser-toning",
     slug: "laser-toning",
-    name: "Laser Toning (Q-Switch Nd:YAG Laser)",
+    name: "Laser Toning",
     category: "Laser Treatment",
     categoryKey: "laser",
     plainHeadline: "Pigmentation, Melasma & Sun Tan Removal",
     tagline: "Advanced Q-Switch LASER & Carbon Peel for Sunspots, Melasma & Acne Scars",
     badge: "Clinical Gold Standard",
     description: "In LASER toning, we employ advanced techniques like Q-Switch LASER and Carbon Peel to improve your skin’s tone and texture by targeting issues like sunspots, freckles, melasma, and acne scars. It is a non-invasive cosmetic procedure. The heat that is generated by the LASER helps with collagen production and breaks down pigment particles. It needs little to no recovery time, and it is effective in reducing acne, blemishes, and other types of scarring. Very short pulses of high energy are delivered to the skin, absorbed by pigments in the skin, breaking them down into smaller particles and gradually removing them. You can see a noticeable improvement in pigmentation and skin texture only after a few sessions.",
-    heroImage: "/banners/banner-laser.orig.jpg",
+    heroImage: "/images/treatments/laser-toning.png",
     sessionDuration: "40 Mins",
     downtime: "Little to no recovery time (Zero peeling)",
     suitableFor: "Sunspots, Freckles, Melasma, Acne Scars, Blemishes, Uneven Pigmentation",
@@ -666,14 +844,14 @@ export const allTreatments = [
   {
     id: "under-eye-dark-circle",
     slug: "under-eye-dark-circle",
-    name: "Under-Eye Dark Circle Therapy",
-    category: "Skin Treatment",
+    name: "Under-Eye Dark Circle",
+    category: "Skin",
     categoryKey: "skin",
-    plainHeadline: "Under-Eye Dark Circles & Bags Relief",
+    plainHeadline: "Vanishing Under-Eye Dark Circles & Brightness Restoration",
     tagline: "Vanishing Under-Eye Dark Circles & Restoring Brightness to the Eye Area",
     badge: "Clinic Speciality",
-    description: "Vanishing under-eye dark circles is one of our specialities. Using advanced treatments and techniques, we address the root causes of dark circles to restore brightness to your under-eye area. Under the eye dark circles or shadows, while typically not a sign of a serious medical condition, can affect one’s appearance and self-confidence. Dark circles can have various causes, including genetics, ageing, fatigue, allergies, etc. Treatment options range from topical creams and cosmetic procedures to lifestyle modifications aimed at reducing pigment and improving skin texture. At Truly Derma, Clinic & Academy, we prioritize patient safety, comfort, and satisfaction.",
-    heroImage: "/images/gorgeous-visage.jpg",
+    description: "Vanishing under-eye dark circles is one of our specialities. Using advanced treatments and techniques, we address the root causes of dark circles to restore brightness to your under-eye area. Under the eye dark circles or shadows, while typically not a sign of a serious medical condition, can affect one’s appearance and self-confidence. Dark circles can have various causes, including genetics, ageing, fatigue, allergies, etc. Treatment options range from topical creams and cosmetic procedures to lifestyle modifications aimed at reducing pigment and improving skin texture. At Truly Derma Clinic, we prioritize patient safety, comfort, and satisfaction.",
+    heroImage: "/images/treatments/under-eye-dark-circle.png",
     sessionDuration: "35 Mins",
     downtime: "Zero downtime",
     suitableFor: "Under-Eye Dark Circles, Shadows, Fatigue Eyes, Pigment Accumulation, Fine Wrinkles",
@@ -691,47 +869,19 @@ export const allTreatments = [
     preCareTips: ["Arrive with clean, makeup-free eye area"],
     postCareTips: ["Keep periorbital skin well moisturized"]
   },
-  {
-    id: "dermapen-4",
-    slug: "dermapen-4",
-    name: "Dermapen 4™ Microneedling",
-    category: "Skin Treatment",
-    categoryKey: "skin",
-    plainHeadline: "Acne Scar Smoothing & Pore Tightening",
-    tagline: "Virtually Painless Microneedling with Patented Hylafuse Complex Formula",
-    badge: "Advanced Microneedling",
-    description: "Dermapen 4 offers a virtually painless microneedling experience, gliding smoothly over the skin and making treatments comfortable even without anesthetics. By creating microchannels in the skin, it stimulates collagen production to address concerns like fine lines, acne scars, and uneven texture. The patented Hylafuse Complex formula enhances the delivery of topical nutrients, carrying up to 80% more into the skin for optimal results. This microneedling treatment effectively reduces age and sunspots, lines and wrinkles, as well as thinning and sagging skin. Additionally, Dermapen 4 is highly effective for reducing unwanted pigmentation and stretch marks by reaching depths of up to 3 mm.",
-    heroImage: "/images/hero-skin.jpg",
-    sessionDuration: "50 Mins",
-    downtime: "Mild transient redness (12 - 24 hours)",
-    suitableFor: "Pitted Acne Scars, Enlarged Pores, Uneven Texture, Age & Sunspots, Stretch Marks",
-    highlights: [
-      "Virtually painless microneedling gliding smoothly over the skin",
-      "Patented Hylafuse Complex carries up to 80% more nutrients into skin",
-      "Stimulates natural neo-collagenesis to flatten and plump pitted scars",
-      "Safe and effective for pigmentation, wrinkles, and stretch marks up to 3mm"
-    ],
-    procedureSteps: [
-      { step: 1, title: "Skin Cleansing & Preparation", description: "Preparation with gentle antiseptic solution." },
-      { step: 2, title: "Smooth Gliding Microneedling", description: "Dermapen 4 creates precise microchannels while infusing Hylafuse Complex." },
-      { step: 3, title: "Cooling & Barrier Repair", description: "Calming mask applied to accelerate recovery and lock in moisture." }
-    ],
-    preCareTips: ["Stop topical actives (retinoids, AHA/BHA) 3 days before"],
-    postCareTips: ["Avoid touching face for 4 hours; apply prescribed barrier balm"]
-  },
 
-  // --- Category B: Laser & Hair Care ---
+  // --- Category 2: Hair ---
   {
     id: "laser-hair-reduction",
     slug: "laser-hair-reduction",
-    name: "Triple-Wavelength Laser Hair Reduction",
-    category: "Hair Treatment",
+    name: "Laser Hair Reduction",
+    category: "Hair",
     categoryKey: "hair",
     plainHeadline: "Painless Laser Hair Reduction",
     tagline: "US-FDA Approved 4D Tec LASER with 4 Wavelengths for Smooth, Hair-Free Skin",
     badge: "US-FDA Approved",
     description: "Looking for smooth, hair-free skin? Our US-FDA approved 4D Tec LASER with 4 wavelengths ensures lasting results for all skin types. Our skilled professionals curate treatments for your specific needs, whether your face, underarms, legs, or bikini line. This method targets dark-coarse hair while leaving the skin undamaged, and in comparison to other hair removal methods, it is less painful. Using precise LASER energy, we disable hair follicles, offering a quick, painless procedure with no downtime.",
-    heroImage: "/banners/banner-laser.orig.jpg",
+    heroImage: "/images/treatments/laser-hair-reduction.png",
     sessionDuration: "30 - 60 Mins",
     downtime: "No downtime",
     suitableFor: "Unwanted Hair on Face, Underarms, Arms, Legs, Bikini Line, Back, Full Body",
@@ -752,19 +902,19 @@ export const allTreatments = [
   {
     id: "hair-rejuvenation",
     slug: "hair-rejuvenation",
-    name: "Hair Rejuvenation Therapy (PRP & Growth Factors)",
-    category: "Hair Treatment",
+    name: "Hair Rejuvenation",
+    category: "Hair",
     categoryKey: "hair",
-    plainHeadline: "Hair Fall Control & Natural Regrowth",
+    plainHeadline: "Hair Fall Control & Scalp Revitalization",
     tagline: "Stimulating Hair Follicles, Growth & Scalp Revitalization with PRP Therapy",
     badge: "Follicle Revival",
     description: "At our clinic, we offer hair rejuvenation treatments to help you achieve luscious, healthy locks. Using advanced techniques and specialized products, our hair rejuvenation treatment stimulates hair follicles, promotes hair growth, and revitalizes your scalp. Whether you’re dealing with hair loss or simply want to enhance the health and vitality of your hair, our customized treatments can help you achieve the beautiful hair you’ve always wanted. Losing 10-100 strands of hair daily is normal, but if you’re noticing excessive shedding, it’s advisable to consult for PRP treatment for hair loss. At our clinic, we draw your blood, process it, and inject it into the scalp to stimulate hair growth. This treatment is beneficial for individuals going through thinning or sparse hair and is suitable for both men and women.",
-    heroImage: "/images/particle-lady.jpg",
+    heroImage: "/images/treatments/hair-rejuvenation.png",
     sessionDuration: "60 Mins",
     downtime: "No downtime",
     suitableFor: "Excessive Hair Shedding, Thinning Hair, Sparse Patches, Dull Scalp Vitality",
     highlights: [
-      "PRP and GFC growth factor concentrate therapies for hair loss",
+      "PRP and growth factor concentrate therapies for hair loss",
       "Draws, concentrates, and injects autologous biostimulatory factors into scalp",
       "Beneficial for thinning crown or widening parting in both men and women",
       "Customized treatment plans with microscopic dermoscopy progress monitoring"
@@ -780,14 +930,14 @@ export const allTreatments = [
   {
     id: "hair-transplant",
     slug: "hair-transplant",
-    name: "FUE Natural Hair Transplant",
-    category: "Hair Treatment",
+    name: "Hair Transplant",
+    category: "Hair",
     categoryKey: "hair",
-    plainHeadline: "Natural Lifetime Hair Transplant",
+    plainHeadline: "Natural Lifetime Hair Restoration",
     tagline: "Transformative Advanced Follicular Transplantation for Full, Lush, Permanent Hair",
     badge: "Permanent Results",
     description: "We offer a transformative solution for those seeking to restore fullness and confidence to their hair! Our skilled aestheticians specialize in this advanced procedure, transplanting healthy hair follicles to areas of thinning or balding. Whether you’re dealing with male pattern baldness, thinning hair, or receding hairlines, our hair transplantation treatment can help you achieve the full, lush hair you desire. Typically, the back or sides of the scalp go to the balding or thinner areas. Transplanted hair growth typically begins within a few weeks after the surgery, and over several months, the transplanted hair grows thicker, fuller, and more permanent. Patients can achieve natural-looking results that last for years to come.",
-    heroImage: "/images/radiant-woman.png",
+    heroImage: "/images/treatments/hair-transplant.png",
     sessionDuration: "4 - 6 Hours (Day Procedure)",
     downtime: "2 - 3 Days Rest",
     suitableFor: "Male Pattern Baldness, Receding Hairlines, Crown Balding, Thinning Scalp",
@@ -808,14 +958,14 @@ export const allTreatments = [
   {
     id: "hair-detox-therapy",
     slug: "hair-detox-therapy",
-    name: "Hair Detox & Scalp Therapy",
-    category: "Hair Treatment",
+    name: "Hair Detox Therapy",
+    category: "Hair",
     categoryKey: "hair",
     plainHeadline: "Scalp Deep Cleanse & Dandruff Defense",
     tagline: "Deeply Cleansing & Fortifying Hair and Scalp, Removing Buildup & Impurities",
     badge: "Scalp Purification",
     description: "Hair detox therapy treatment is designed to deeply cleanse and fortify your hair and scalp, removing impurities and buildup to reveal healthy locks. Whether you’re dealing with product buildup or environmental pollutants, or just want to give your hair a reset, our hair detox therapy is the perfect solution. The combination of deep cleansing shampoo, stimulating massages, nourishing conditions, and hair detox therapy can help restore balance and vitality to your scalp and hair.",
-    heroImage: "/banners/banner-glow.jpg",
+    heroImage: "/images/treatments/hair-detox-therapy.jpg",
     sessionDuration: "45 Mins",
     downtime: "No downtime",
     suitableFor: "Product Buildup, Environmental Pollutants, Itchy Scalp, Dandruff, Oily Roots",
@@ -834,18 +984,18 @@ export const allTreatments = [
     postCareTips: ["Maintain clean scalp with gentle sulfate-free shampoo"]
   },
 
-  // --- Category C: Body Contouring & Aesthetics ---
+  // --- Category 3: Fat Loss ---
   {
     id: "fat-loss",
     slug: "fat-loss",
     name: "Non-Surgical Fat Loss & Contouring",
     category: "Fat Loss",
-    categoryKey: "body",
+    categoryKey: "fat-loss",
     plainHeadline: "Non-Surgical Fat Loss & Body Contouring",
     tagline: "Result-Oriented Treatments Targeting Stubborn Fat Deposits & Sculpting Physique",
     badge: "Physique Contouring",
-    description: "Looking to shed those stubborn fat pockets and get closer to your dream body? Well, you’re in luck! Here at our clinic, we’ve got some result-oriented fat loss treatments that can help you do just that. We offer services designed to target stubborn fat deposits and contour your physique. At Truly Derma, we understand the importance of glowing skin and healthy hair in boosting confidence, and we believe everyone should feel their best, so we offer a range of fat loss treatments just for you.",
-    heroImage: "/images/after-contour.jpg",
+    description: "Looking to reduce stubborn fat pockets and contour your body? We offer safe, non-surgical body sculpting and contouring treatments designed to help you achieve your desired shape with zero surgery and zero downtime.",
+    heroImage: "/images/treatments/fat-loss.png",
     sessionDuration: "50 - 60 Mins",
     downtime: "No downtime",
     suitableFor: "Stubborn Fat Pockets, Tummy Pouch, Love Handles, Thighs, Upper Arms, Double Chin",
@@ -862,120 +1012,6 @@ export const allTreatments = [
     ],
     preCareTips: ["Drink 1-2 liters of water before the session"],
     postCareTips: ["Increase daily water intake to help lymphatic clearance"]
-  },
-  {
-    id: "semi-permanent",
-    slug: "semi-permanent",
-    name: "Semi-Permanent Makeup (BB Glow & Microblading)",
-    category: "Semi-Permanent Makeup",
-    categoryKey: "cosmetic",
-    plainHeadline: "Microblading Eyebrows & BB Glow",
-    tagline: "BB Glow Korean Beauty Treatment, Eyebrow Microblading & Micro-Pigmentation",
-    badge: "Korean Beauty Glow",
-    description: "We offer a wide range of treatments to ensure that you don’t miss out on a party or function. Who isn’t a fan of Korean Beauty? Get it with our BB Glow treatment! This procedure helps you get that coveted “no-makeup” look using a micro-needling process. It is a semi-permanent make-up treatment that aims to improve skin tone, texture, and overall appearance. It involves the application of a specialized BB cream formulation containing skin-enhancing ingredients via microneedling or micro-pigmentation techniques. Immediate improvement in skin tone, texture, and radiance is seen following the treatment.",
-    heroImage: "/images/gorgeous-visage.jpg",
-    sessionDuration: "60 - 90 Mins",
-    downtime: "No downtime (3-5 days mild healing for brows)",
-    suitableFor: "Dull Complexion, Sparse Eyebrows, Pale Lips, Desired 'No-Makeup' Look, Parties & Weddings",
-    highlights: [
-      "Coveted Korean Beauty 'glass skin no-makeup' look with BB Glow",
-      "Specialized organic pigments with skin-enhancing peptides",
-      "Precision feather-stroke microblading for natural eyebrows",
-      "Immediate visible improvement in skin tone, texture, and radiance"
-    ],
-    procedureSteps: [
-      { step: 1, title: "Shade & Symmetry Analysis", description: "Selecting the matching BB formulation and mapping natural eyebrow lines." },
-      { step: 2, title: "Micro-Pigmentation Delivery", description: "Gentle delivery of organic medical pigment for seamless coverage." },
-      { step: 3, title: "Radiance Seal Mask", description: "Soothing mask locking in porcelain radiance and instant glow." }
-    ],
-    preCareTips: ["Avoid alcohol and blood thinners 24 hours prior"],
-    postCareTips: ["Keep area dry for 24 hours; apply healing balm"]
-  },
-
-  // --- Category D: Cosmetic Solutions ---
-  {
-    id: "botox",
-    slug: "botox",
-    name: "Advanced Botox Treatment",
-    category: "Cosmetic Solutions",
-    categoryKey: "cosmetic",
-    plainHeadline: "Wrinkle Smoothing & Natural Expression",
-    tagline: "Reduce Fine Lines, Crows Feet & Forehead Wrinkles for a Refreshed Natural Look",
-    badge: "Doctor Performed",
-    description: "Reduce the appearance of fine lines and achieve a naturally refreshed look with expert Botox treatment performed exclusively by Dr. Megha Aggarwal. Targets crow's feet, forehead furrows, and frown lines while preserving your natural emotional expressions without freezing.",
-    heroImage: "/banners/d-3.jpg",
-    sessionDuration: "20 - 30 Mins",
-    downtime: "Zero downtime",
-    suitableFor: "Forehead Lines, Frown Lines (11s), Crow's Feet, Bunny Lines, Jawline Slimming (Masseter)",
-    highlights: [
-      "Administered exclusively by certified MD Dermatologist Dr. Megha Aggarwal",
-      "US-FDA approved genuine botulinum toxin formulations",
-      "Preserves natural facial dynamics — never looks stiff or frozen",
-      "Results emerge in 3-5 days and last 4-6 months"
-    ],
-    procedureSteps: [
-      { step: 1, title: "Facial Dynamic Mapping", description: "Doctor evaluates dynamic expression lines in motion." },
-      { step: 2, title: "Micro-Precision Injections", description: "Ultra-fine insulin needles target precise muscle coordinates." },
-      { step: 3, title: "Post-Injection Calming", description: "Cooling compress applied with immediate return to work." }
-    ],
-    preCareTips: ["Avoid blood thinners, green tea, and alcohol 48 hours before"],
-    postCareTips: ["Stay upright for 4 hours; do not rub or massage injection sites"]
-  },
-  {
-    id: "lip-filler",
-    slug: "lip-filler",
-    name: "Lip Augmentation & Dermal Fillers",
-    category: "Cosmetic Solutions",
-    categoryKey: "cosmetic",
-    plainHeadline: "Plump, Hydrated & Defined Natural Lips",
-    tagline: "Enhance Lip Volume, Shape & Facial Symmetry with US-FDA Hyaluronic Acid Fillers",
-    badge: "Natural Definition",
-    description: "Enhance lip volume, define your cupid’s bow, and achieve a beautifully balanced, natural-looking smile. Using premium cross-linked hyaluronic acid gels, Dr. Megha sculpts subtle hydration and proportion tailored to your facial anatomy.",
-    heroImage: "/banners/d-2.jpg",
-    sessionDuration: "30 - 45 Mins",
-    downtime: "1 - 2 Days mild swelling",
-    suitableFor: "Thin Lips, Asymmetry, Volume Loss, Smoker Lines, Hydration Deficit",
-    highlights: [
-      "Premium US-FDA approved cross-linked Hyaluronic Acid gels",
-      "Doctor-curated Russian lip or natural French hydration techniques",
-      "Reversible and biocompatible for maximum patient peace of mind",
-      "Results visible immediately, lasting 9 to 12 months"
-    ],
-    procedureSteps: [
-      { step: 1, title: "Anatomy & Volume Assessment", description: "Mapping lip proportions against golden ratio facial aesthetics." },
-      { step: 2, title: "Topical Anesthetic Numbing", description: "Medical-grade numbing cream ensures virtually painless experience." },
-      { step: 3, title: "Micro-Cannula Sculpting", description: "Smooth micro-droplet placement for symmetrical, pillowy definition." }
-    ],
-    preCareTips: ["Avoid aspirin, ibuprofen, and fish oil 5 days prior"],
-    postCareTips: ["Avoid touching lips and hot drinks for 24 hours"]
-  },
-  {
-    id: "hair-patch",
-    slug: "hair-patch",
-    name: "Natural Hair Patch System",
-    category: "Hair Treatment",
-    categoryKey: "hair",
-    plainHeadline: "Instant Hair Density & Undetectable Hairline",
-    tagline: "Natural-Looking Hair Transformation with Breathable, Customized Hair Systems",
-    badge: "Instant Transformation",
-    description: "Get an instant, natural-looking hair transformation with a comfortable, customized hair patch designed to complement your personal look. Made with 100% natural human hair on breathable lace or ultra-thin skin base, allowing swimming, showering, and active sports.",
-    heroImage: "/banners/d-1.jpg",
-    sessionDuration: "60 - 90 Mins",
-    downtime: "Zero downtime",
-    suitableFor: "Advanced Stage Baldness, Alopecia Totalis, Thinning Crown, Non-Surgical Candidates",
-    highlights: [
-      "100% natural virgin human hair customized to your hair texture and color",
-      "Ultra-thin breathable Swiss lace or micro-skin base",
-      "Completely undetectable hairline even in bright outdoor lighting",
-      "Allows normal showering, shampooing, swimming, and gym workouts"
-    ],
-    procedureSteps: [
-      { step: 1, title: "Scalp Measurement & Contour Matching", description: "Custom measurement of balding area and hair color analysis." },
-      { step: 2, title: "Base Preparation & Breathable Bonding", description: "Application with dermatologically tested skin-safe adhesive tape or glue." },
-      { step: 3, title: "Styling & Blend Cut", description: "Professional salon styling blending patch seamlessly with natural hair." }
-    ],
-    preCareTips: ["Arrive with clean scalp free of oils"],
-    postCareTips: ["Schedule maintenance re-servicing every 3-4 weeks"]
   }
 ];
 
@@ -991,8 +1027,8 @@ export const allBlogs = [
     date: "November 13, 2023",
     readTime: "5 min read",
     author: "Dr. Megha Aggarwal",
-    authorTitle: "Chief Dermatologist & Aesthetician",
-    image: "/images/tech-1.jpg",
+    authorTitle: "Founder, Truly Derma",
+    image: "/images/treatments/hair-transplant.png",
     excerpt: "Hair loss is a common concern affecting men and women across various ages. Explore the key differences between nonsurgical hair restoration and hair transplants to determine the best clinical approach for your needs.",
     content: [
       {
@@ -1050,36 +1086,36 @@ export const allBlogs = [
     ]
   },
   {
-    id: "td-glowtech-360-guide",
-    slug: "td-glowtech-360-why-doctors-choose-non-invasive-electroporation",
-    title: "TD Glowtech 360°: Why India's Leading Doctors Choose Non-Invasive Electroporation Over Traditional Facials",
+    id: "hydra-facial-vs-regular-facial-guide",
+    slug: "hydra-facial-vs-regular-facial-benefits",
+    title: "Hydra Facial vs. Regular Facial: Why Medical Vortex Exfoliation Gives Lasting Glow",
     category: "Skin Rejuvenation",
     date: "December 4, 2023",
-    readTime: "6 min read",
+    readTime: "5 min read",
     author: "Dr. Megha Aggarwal",
-    authorTitle: "Chief Dermatologist & Aesthetician",
-    image: "/banners/banner-facial.orig.jpg",
-    excerpt: "Discover how the patented TD Glowtech 360° system harnesses 7 microcurrent frequencies and electroporation to lift, contour, and deeply infuse active serums without thermal injury or downtime.",
+    authorTitle: "Founder, Truly Derma",
+    image: "/images/treatments/hydra-facial.png",
+    excerpt: "Discover why medical vortex hydro-exfoliation and antioxidant infusion in Hydra Facial outperforms regular salon facials for deep pore cleansing, hydration, and long-lasting glass skin.",
     content: [
       {
         type: "paragraph",
-        text: "Traditional salon facials often provide only fleeting, superficial hydration. TD Glowtech 360°, exclusive to Truly Derma in India, represents a revolutionary paradigm shift in aesthetic dermatology by combining physiological muscle toning with cellular electroporation."
+        text: "Traditional salon facials often provide only fleeting, superficial hydration. A medical Hydra Facial at Truly Derma represents a revolutionary clinical standard by combining painless vortex extraction with intense serum hydration."
       },
       {
         type: "heading",
-        text: "The Science of 7-Frequency Resonance"
+        text: "The Power of 3-Step Vortex Technology"
       },
       {
         type: "paragraph",
-        text: "Each muscle group and dermal layer responds to distinct bio-electrical frequencies. TD Glowtech 360° cycles through seven scientifically proven resonance channels that gently exercise facial muscles, retrain tissue tone, and tighten lax jawlines."
+        text: "Using specialized spiral tips and vacuum suction, the Hydra Facial system gently dislodges sebum, dead skin cells, and blackheads without manual squeezing or painful redness."
       },
       {
         type: "heading",
-        text: "Electroporation: 400% Deeper Peptide Absorption"
+        text: "Deep Hyaluronic & Antioxidant Infusion"
       },
       {
         type: "paragraph",
-        text: "Electroporation temporarily reorganizes cell membrane lipids, creating micro-pores that allow large hyaluronic acid and active peptide molecules to enter cells directly rather than sitting atop the skin. Once sealed with cryotherapy, the walkout glow is immediate, luminous, and long-lasting."
+        text: "Simultaneously, active nourishing serums containing hyaluronic acid and peptides saturate the epidermal layers. The result is an instant glass-skin radiance, improved elasticity, and zero recovery downtime."
       }
     ]
   },
@@ -1091,8 +1127,8 @@ export const allBlogs = [
     date: "January 18, 2024",
     readTime: "7 min read",
     author: "Dr. Megha Aggarwal",
-    authorTitle: "Chief Dermatologist & Aesthetician",
-    image: "/banners/banner-laser.orig.jpg",
+    authorTitle: "Founder, Truly Derma",
+    image: "/images/treatments/laser-toning.png",
     excerpt: "Stubborn dark patches on Indian skin require careful clinical handling. Learn why aggressive peels can worsen melasma and why low-fluence Q-Switch laser toning combined with barrier repair is the gold standard.",
     content: [
       {
@@ -1128,7 +1164,7 @@ export const allFaqs = [
     questions: [
       {
         q: "Who conducts the consultations and procedures at Truly Derma?",
-        a: "All medical consultations and advanced clinical procedures are personally conducted or directly supervised by Dr. Megha Aggarwal (MBBS, MD Dermatology, Gold Medalist). Our clinical staff consists solely of certified nurses and trained aestheticians."
+        a: "All consultations and clinical procedures are supervised directly by Dr. Megha Aggarwal, Founder of Truly Derma. Our clinical staff consists solely of certified nurses and trained aestheticians."
       },
       {
         q: "Where are Truly Derma clinics located in New Delhi?",
@@ -1141,19 +1177,19 @@ export const allFaqs = [
     ]
   },
   {
-    category: "Skin & Medi-Facials",
+    category: "Skin Treatments",
     questions: [
       {
-        q: "What makes TD Glowtech 360° different from a regular salon facial?",
-        a: "TD Glowtech 360° is a medical-grade, non-invasive skin gym utilizing 7 micro-current bio-frequencies and patented electroporation. Unlike surface salon creams, it penetrates active peptides 400% deeper and tones underlying facial muscles for an instant, lifted jawline with zero recovery time."
-      },
-      {
-        q: "Is there any downtime or peeling after Medical Hydra Facial MD?",
+        q: "Is there any downtime or peeling after a Hydra Facial?",
         a: "None whatsoever. You walk out immediately with glowing, deeply cleansed, hydrated skin. You can return to work, social events, or even apply makeup right after your session."
       },
       {
-        q: "How many sessions are typically required for acne scar reduction?",
-        a: "For pitted acne scars (boxcar or rolling scars), we generally recommend 3 to 5 sessions of Dermapen 4™ microneedling spaced 4 weeks apart. Noticeable smoothing occurs within 6 to 8 weeks as natural collagen remodels."
+        q: "What conditions do Prescription Medi-Facials treat?",
+        a: "Our medi-facials use medical-grade active formulations tailored to address active acne, sun damage, pigmentation, and premature ageing, leaving you with a luminous, calm complexion."
+      },
+      {
+        q: "How does Under-Eye Dark Circle therapy work?",
+        a: "Vanishing under-eye dark circles is one of Truly Derma's clinical specialities. We address the root causes including fatigue, genetics, and vascular pooling with gentle clinical active formulations that disperse dark pigment safely."
       }
     ]
   },
@@ -1162,15 +1198,15 @@ export const allFaqs = [
     questions: [
       {
         q: "Is Laser Hair Reduction truly permanent and safe for Indian skin tones?",
-        a: "Yes. Our US-FDA approved 4D Tec laser operates across synchronized 755nm, 810nm, and 1064nm wavelengths with a -4°C contact sapphire tip. It safely targets deep hair follicles while protecting the melanin in Indian skin from burns or discoloration."
+        a: "Yes. Our US-FDA approved 4D Tec laser operates across synchronized wavelengths with a sub-zero contact cooling sapphire tip. It safely disables hair follicles while protecting Indian skin tones from burns or discoloration."
       },
       {
-        q: "How soon can I see results from PRP or GFC Hair Rejuvenation?",
-        a: "Excessive hair shedding typically decreases within 2 to 3 weeks after the first session. Visible new baby hair regrowth and shaft thickening become apparent after 2 to 3 sessions scheduled monthly."
+        q: "How soon can I see results from PRP Hair Rejuvenation?",
+        a: "Excessive hair shedding typically decreases within 2 to 3 weeks after the first session. Visible new hair growth and follicle thickening become apparent after 2 to 3 sessions scheduled monthly."
       },
       {
         q: "Is Hair Transplant surgery painful?",
-        a: "No. The procedure is performed under local anesthesia, so you will feel no pain during follicle extraction or implantation. Most patients watch TV, listen to music, or relax comfortably throughout the day session."
+        a: "No. The procedure is performed under local anesthesia, so you will feel no pain during follicle extraction or implantation. Most patients relax comfortably throughout the day session."
       }
     ]
   }
@@ -1189,44 +1225,45 @@ export const siteNavigation = {
       isDropdown: true,
       categories: [
         {
-          title: "Skin Treatments",
+          title: "Skin",
           href: "/treatments?category=skin",
           items: [
-            { name: "TD Glowtech 360°", slug: "td-glowtech-360", tag: "Exclusive in India" },
-            { name: "Medical Hydra Facial", slug: "hydra-facial", tag: "Most Popular" },
-            { name: "Prescription Medi-Facial", slug: "medi-facial", tag: "Doctor Curated" },
-            { name: "Laser Toning (Q-Switch)", slug: "laser-toning", tag: "Pigmentation" },
-            { name: "Dermapen 4™ Microneedling", slug: "dermapen-4", tag: "Acne Scars" },
-            { name: "Under-Eye Dark Circle", slug: "under-eye-dark-circle", tag: "Eye Care" },
-            { name: "Party Pop Facial", slug: "party-pop-facial", tag: "Instant Radiance" },
-            { name: "Photo Facial IPL", slug: "photo-facial", tag: "Sun Damage" },
-            { name: "Mesotherapy", slug: "mesotherapy", tag: "Vitamin Infusion" }
+            { name: "Mesotherapy", slug: "mesotherapy", tag: "Nutrient Infusion" },
+            { name: "Hydra Facial", slug: "hydra-facial", tag: "Vortex Hydration" },
+            { name: "Medi Facial", slug: "medi-facial", tag: "Doctor Curated" },
+            { name: "Party Pop Facial", slug: "party-pop-facial", tag: "Instant Glow" },
+            { name: "Photo Facial", slug: "photo-facial", tag: "Light Therapy" },
+            { name: "Laser Toning", slug: "laser-toning", tag: "Q-Switch Laser" },
+            { name: "Under-Eye Dark Circle", slug: "under-eye-dark-circle", tag: "Eye Rejuvenation" }
           ]
         },
         {
-          title: "Hair Care & Restoration",
+          title: "Hair",
           href: "/treatments?category=hair",
           items: [
-            { name: "Triple-Wavelength Laser Hair Reduction", slug: "laser-hair-reduction", tag: "Painless" },
-            { name: "PRP & GFC Hair Rejuvenation", slug: "hair-rejuvenation", tag: "Anti-Hair Fall" },
-            { name: "FUE Natural Hair Transplant", slug: "hair-transplant", tag: "Permanent" },
-            { name: "Hair Detox & Scalp Therapy", slug: "hair-detox-therapy", tag: "Dandruff Relief" },
-            { name: "Natural Hair Patch System", slug: "hair-patch", tag: "Instant Density" }
+            { name: "Laser Hair Reduction", slug: "laser-hair-reduction", tag: "US-FDA Approved" },
+            { name: "Hair Rejuvenation", slug: "hair-rejuvenation", tag: "PRP & Follicle Growth" },
+            { name: "Hair Transplant", slug: "hair-transplant", tag: "Permanent FUE" },
+            { name: "Hair Detox Therapy", slug: "hair-detox-therapy", tag: "Scalp Purification" }
           ]
         },
         {
-          title: "Body & Cosmetic",
-          href: "/treatments?category=cosmetic",
+          title: "Fat Loss",
+          href: "/treatments/fat-loss",
           items: [
-            { name: "Non-Surgical Fat Loss & Contouring", slug: "fat-loss", tag: "Body Sculpting" },
-            { name: "Semi-Permanent Makeup (BB Glow)", slug: "semi-permanent", tag: "Korean Beauty" },
-            { name: "Advanced Botox Treatment", slug: "botox", tag: "Wrinkle Relaxing" },
-            { name: "Lip Fillers & Augmentation", slug: "lip-filler", tag: "Natural Volume" }
+            { name: "Non-Surgical Fat Loss & Contouring", slug: "fat-loss", tag: "Zero Surgery" }
+          ]
+        },
+        {
+          title: "Laser Treatment",
+          href: "/treatments/laser-toning",
+          items: [
+            { name: "Laser Toning", slug: "laser-toning", tag: "Melasma & Pigment Removal" }
           ]
         }
       ]
     },
-    { label: "Journal", href: "/blogs" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "/contact" }
   ],
   footerLinks: {
@@ -1234,14 +1271,15 @@ export const siteNavigation = {
       { name: "Home", href: "/" },
       { name: "About Us", href: "/about-us" },
       { name: "Treatments", href: "/treatments" },
-      { name: "Journal", href: "/blogs" },
-      { name: "Contact & Suites", href: "/contact" }
+      { name: "Blogs", href: "/blogs" },
+      { name: "Contact Us", href: "/contact" }
     ],
     treatments: [
-      { name: "TD Glowtech 360°", href: "/treatments/td-glowtech-360" },
-      { name: "Medical Hydra Facial", href: "/treatments/hydra-facial" },
+      { name: "Hydra Facial", href: "/treatments/hydra-facial" },
       { name: "Laser Hair Reduction", href: "/treatments/laser-hair-reduction" },
-      { name: "Q-Switch Laser Toning", href: "/treatments/laser-toning" }
+      { name: "Hair Rejuvenation", href: "/treatments/hair-rejuvenation" },
+      { name: "Laser Toning", href: "/treatments/laser-toning" },
+      { name: "Non-Surgical Fat Loss", href: "/treatments/fat-loss" }
     ],
     legal: [
       { name: "Privacy Policy", href: "/privacy-policy" },
@@ -1259,10 +1297,10 @@ export const pagesContent = {
   // ---------------------------------------------------------------------------
   home: {
     hero: {
-      badge: "TRULY DERMA CLINIC & ACADEMY",
+      badge: "TRULY DERMA CLINIC",
       pill: "Aesthetic Dermatology & Trichology",
       mainTitle: "Specialized Skin, Hair, Laser & Fat Loss by Certified Experts",
-      subtitle: "Transform your beauty and health with evidence-based treatments and US-FDA cleared technologies, led by Gold Medalist Dr. Megha Aggarwal in New Delhi.",
+      subtitle: "Transform your beauty and health with evidence-based treatments and US-FDA cleared technologies, founded by Dr. Megha Aggarwal in New Delhi.",
       ctaPrimary: "Book Consultation",
       ctaSecondary: "Explore Treatments",
       phoneDirect: "+91 75910 55566",
@@ -1270,44 +1308,62 @@ export const pagesContent = {
       slides: [
         {
           index: 0,
-          image: "/banners/d-3.jpg",
-          badge: "TRULY DERMA CLINIC & ACADEMY",
-          title: "Reveal Your Best Look with Advanced Botox",
-          subtitle: "Reduce the appearance of fine lines and achieve a naturally refreshed look with expert Botox treatment.",
-          ctaText: "BOOK APPOINTMENT",
-          treatmentSlug: "botox",
+          image: "/banners/banner-real-facial.webp",
+          objectPosition: "center 30%",
+          badge: "TRULY DERMA CLINIC",
+          title: "Deep Cleansing & Glass Skin with Hydra Facial",
+          subtitle: "Gentle exfoliation, painless vortex extraction, and nourishing hyaluronic hydration for an instant radiant glow.",
+          ctaText: "EXPLORE HYDRA FACIAL",
+          treatmentSlug: "hydra-facial",
           trustBadges: [
-            { label: "10+ Yrs Expertise", icon: "Award" },
-            { label: "20,000+ Procedures", icon: "Users" },
-            { label: "US-FDA Approved Tech", icon: "ShieldCheck" }
+            { label: "13 Yrs Experience", icon: "Award" },
+            { label: "100% Safe", icon: "ShieldCheck" },
+            { label: "Zero Downtime", icon: "Sparkles" }
           ]
         },
         {
           index: 1,
-          image: "/banners/d-2.jpg",
-          badge: "EXCLUSIVE IN INDIA",
-          title: "Enhance Your Lips, Elevate Your Confidence",
-          subtitle: "Enhance lip volume, define your shape, and achieve a beautifully balanced, natural-looking smile.",
-          ctaText: "EXPLORE TD GLOWTECH",
-          treatmentSlug: "lip-filler",
+          image: "/banners/banner-real-laser.webp",
+          objectPosition: "right center",
+          badge: "US-FDA APPROVED 4D TEC LASER",
+          title: "Smooth, Hair-Free Skin with Laser Hair Reduction",
+          subtitle: "Triple-wavelength laser energy with sub-zero contact cooling for a painless, lasting hair reduction experience.",
+          ctaText: "EXPLORE LASER REDUCTION",
+          treatmentSlug: "laser-hair-reduction",
           trustBadges: [
-            { label: "7 Micro-Currents", icon: "Sparkles" },
-            { label: "Cellular Electroporation", icon: "ShieldCheck" },
-            { label: "Zero Downtime", icon: "Award" }
+            { label: "Non-Invasive", icon: "Sparkles" },
+            { label: "US-FDA Approved", icon: "ShieldCheck" },
+            { label: "Painless Cooling", icon: "Award" }
           ]
         },
         {
           index: 2,
-          image: "/banners/d-1.jpg",
-          badge: "ADVANCED HAIR CARE CLINIC",
-          title: "Regain Your Look with a Natural-Looking Hair Patch",
-          subtitle: "Get a natural-looking hair transformation with a comfortable, customized hair patch designed to complement your look.",
-          ctaText: "SCHEDULE HAIR VISIT",
-          treatmentSlug: "hair-patch",
+          image: "/banners/banner-real-hair.jpg",
+          objectPosition: "center 40%",
+          badge: "HAIR REGROWTH & SCALP CLINIC",
+          title: "Restore Density & Growth with Hair Rejuvenation",
+          subtitle: "Customized PRP & growth factor therapy to stimulate hair follicles, control hair fall, and revitalize your scalp.",
+          ctaText: "EXPLORE HAIR THERAPY",
+          treatmentSlug: "hair-rejuvenation",
           trustBadges: [
-            { label: "Q-Switch Nd:YAG", icon: "Award" },
-            { label: "Vortex-Fusion Hydra", icon: "Heart" },
-            { label: "Pore Tightening", icon: "ShieldCheck" }
+            { label: "Proven Experience", icon: "Award" },
+            { label: "Natural Regrowth", icon: "Heart" },
+            { label: "Safe & Certified", icon: "ShieldCheck" }
+          ]
+        },
+        {
+          index: 3,
+          image: "/banners/banner-real-laser-therapy.jpg",
+          objectPosition: "center center",
+          badge: "US-FDA APPROVED Q-SWITCH LASER",
+          title: "Clear, Pigment-Free Skin with Laser Toning",
+          subtitle: "Advanced photo-acoustic laser energy targeting deep pigmentation, sun spots, and uneven tone with zero downtime.",
+          ctaText: "EXPLORE LASER TONING",
+          treatmentSlug: "laser-toning",
+          trustBadges: [
+            { label: "100% Non-Invasive", icon: "Sparkles" },
+            { label: "Zero Downtime", icon: "ShieldCheck" },
+            { label: "13 Yrs Expertise", icon: "Award" }
           ]
         }
       ],
@@ -1318,95 +1374,101 @@ export const pagesContent = {
           namePlaceholder: "Your Full Name",
           phonePlaceholder: "Phone / WhatsApp Number",
           serviceLabel: "Select Clinical Concern",
-          branchLabel: "Select Preferred Clinic Suite",
+          branchLabel: "Select Clinic Location",
           submitButton: "Request Priority Callback"
         },
         successMessage: "Thank you! Our clinic desk will connect with you immediately."
       }
     },
     brandPhilosophy: {
-      pill: "The Truly Derma Philosophy",
-      headlineQuote: "“At Truly Derma, we understand the importance of glowing skin and healthy hair in boosting confidence. To achieve exceptional results, our expert personnel use modern processes and cutting-edge technologies tailored just for you.”",
+      pill: "Our Approach",
+      title: "How We Care For You",
+      subtitle: "Personalized treatments designed to give you natural, glowing skin with safe, proven technology.",
       authorName: "Dr. Megha Aggarwal",
-      authorTitle: "MD (Dermatology, Venereology & Leprosy), Gold Medalist",
+      authorTitle: "Founder, Truly Derma Clinic",
       pillars: [
         {
           num: "01",
-          category: "DIAGNOSTICS",
-          title: "Microscopic Tissue Analysis",
-          description: "Every clinical consultation commences with multi-spectral polarized dermoscopy, mapping cellular histology, lipid barrier integrity, and melanin depth before any treatment.",
-          tag: "Polarized Dermoscopy"
+          category: "CONSULTATION",
+          title: "Personalized Skin Analysis",
+          description: "Every consultation begins with a detailed skin and hair analysis to understand your unique needs and create a personalized plan.",
+          tag: "Doctor Consultation"
         },
         {
           num: "02",
           category: "TECHNOLOGY",
-          title: "Bio-Calibrated Energy",
-          description: "From authentic TD Glowtech 360° microcurrent resonance to US-FDA cleared Q-Switch Nd:YAG lasers, all instrumentation is calibrated to protect natural facial volume.",
-          tag: "US-FDA Cleared"
+          title: "US-FDA Approved Technology",
+          description: "We use only proven, safe, and certified medical equipment to ensure the highest safety and natural results.",
+          tag: "100% Safe"
         },
         {
           num: "03",
           category: "EXPERIENCE",
-          title: "Zero-Downtime Luxury",
-          description: "Experience boutique calm paired with clinical potency. Walk out with visible cellular luminosity and zero peeling, allowing an effortless return to your life.",
-          tag: "Immediate Radiance"
+          title: "Comfortable & Zero Downtime",
+          description: "Gentle, non-invasive treatments that let you return to your daily routine right away with visible, glowing skin.",
+          tag: "Instant Glow"
         }
       ]
     },
     whyChooseUs: {
-      pill: "Why We Are Distinct",
-      title: "Why Choose Truly Derma",
-      subtitle: "Leading dermatology and aesthetic clinic combining medical safety, certified physician oversight, and gentle personalized care.",
+      pill: "Our Promise",
+      title: "Why Choose Us",
+      subtitle: "Experience trusted skin and hair care with non-invasive treatments, 100% safety, and over 13 years of proven experience.",
+      highlights: [
+        { label: "Non-Invasive", desc: "Zero downtime & painless care" },
+        { label: "100% Safe", desc: "US-FDA approved protocols" },
+        { label: "Proven Experience of 13 Years", desc: "Led by Dr. Megha Aggarwal" }
+      ],
       items: whyChooseUsList
     },
     pinnedShowcase: {
-      pill: "Clinical Directory",
-      title: "Specialized Procedures",
-      subtitle: "Explore our comprehensive range of skin, hair, laser, and body contouring treatments performed with certified medical expertise.",
+      pill: "Explore Services",
+      title: "Our Treatments",
+      subtitle: "Explore our popular skin, hair, and laser treatments designed to give you natural, glowing results.",
       filterTabs: [
-        { id: "all", label: "All Procedures" },
-        { id: "skin", label: "Skin & Medi-Facials" },
-        { id: "hair", label: "Hair & Trichology" },
-        { id: "laser", label: "Laser & Body" }
+        { id: "all", label: "All Treatments" },
+        { id: "skin", label: "Skin & Facials" },
+        { id: "hair", label: "Hair Treatments" },
+        { id: "laser", label: "Laser Treatments" }
       ]
     },
     technologyShowcase: {
-      pill: "Scientific Innovation",
-      title: "Our 3-Step Cellular Transformation",
-      subtitle: "Evidence-based clinical protocols that protect your skin barrier while maximizing regenerative cellular activity.",
+      pill: "How It Works",
+      title: "Our 3-Step Treatment Process",
+      subtitle: "Simple, doctor-guided steps designed to give you healthy skin and lasting results.",
       steps: threeStepProcess
     },
     beforeAfter: {
-      pill: "Documented Clinical Outcomes",
-      title: "Real Patients, Proven Results",
-      subtitle: "Drag the slider to examine verified clinical transformations achieved with our customized dermatological regimens.",
+      pill: "Before & After",
+      title: "Real Patient Results",
+      subtitle: "Drag the slider to see before and after photos of our treatments.",
       cases: beforeAfterCases
     },
     doctorBio: {
-      pill: "Physician Leadership",
-      title: "Meet Our Chief Dermatologist",
+      pill: "About Our Doctor",
+      title: "Meet Dr. Megha Aggarwal",
       doctor: doctorProfile
     },
     skinQuiz: {
-      pill: "Interactive Skin Assessment",
-      title: "Discover Your Tailored Treatment Protocol",
-      subtitle: "Answer three quick clinical questions to receive an evidence-based recommendation personalized to your skin and hair aspirations.",
-      step1Title: "What is your primary skin or hair aspiration?",
+      pill: "Skin Quiz",
+      title: "Find the Right Treatment for You",
+      subtitle: "Answer 3 quick questions to find the best treatment for your skin or hair.",
+      step1Title: "What is your main skin or hair concern?",
       step2Title: "What is your recovery preference?",
       step3Title: "How would you describe your skin sensitivity?",
       questions: [
         {
           id: "goal",
           step: 1,
-          title: "What is your primary skin or hair aspiration?",
+          title: "What is your main skin or hair concern?",
           subtitle: "Select the primary condition you wish to address with Dr. Megha.",
           options: [
-            { id: "glow", label: "Dullness & Instant Party Radiance", description: "Looking for glass-skin hydration, cellular plumpness, and zero peeling.", slug: "td-glowtech-360" },
-            { id: "pores", label: "Enlarged Pores & Congestion", description: "Deep sebum plugs, uneven texture, and blackheads requiring vacuum hydro-peeling.", slug: "hydra-facial" },
-            { id: "pigmentation", label: "Melasma, Dark Spots & Sun Damage", description: "Targeting deeper dermal pigmentation with photoacoustic laser accuracy.", slug: "laser-toning" },
-            { id: "scars", label: "Acne Scars & Texture Remodeling", description: "Rolling or boxcar scars requiring automated collagen induction.", slug: "dermapen-4" },
-            { id: "laxity", label: "Facial Firmness & Jowl Sculpting", description: "Loosened contours and nasolabial folds seeking non-invasive microcurrent lift.", slug: "td-glowtech-360" },
-            { id: "hair", label: "Hair Thinning & Excessive Shedding", description: "Revitalizing hair follicle caliber with recombinant growth factors.", slug: "hair-rejuvenation" }
+            { id: "glow", label: "Dullness & Instant Party Radiance", description: "Looking for instant hydration, red-carpet glow, and zero peeling.", slug: "party-pop-facial" },
+            { id: "pores", label: "Enlarged Pores & Deep Congestion", description: "Deep sebum plugs and blackheads requiring vortex hydro-peeling.", slug: "hydra-facial" },
+            { id: "pigmentation", label: "Melasma, Dark Spots & Sun Tan", description: "Targeting deeper dermal pigmentation with Q-Switch laser accuracy.", slug: "laser-toning" },
+            { id: "acne", label: "Active Acne & Blemishes", description: "Medical-grade active formulations tailored to clear acne and restore calm.", slug: "medi-facial" },
+            { id: "darkcircles", label: "Under-Eye Dark Circles & Fatigue", description: "Dispelling periorbital dark shadows and restoring eye brightness.", slug: "under-eye-dark-circle" },
+            { id: "hair", label: "Hair Thinning & Excessive Shedding", description: "Revitalizing hair follicle caliber with PRP and growth factors.", slug: "hair-rejuvenation" }
           ]
         },
         {
@@ -1433,40 +1495,40 @@ export const pagesContent = {
         }
       ],
       prescriptions: {
-        "td-glowtech-360": {
-          name: "TD Glowtech 360° Protocol",
-          slug: "td-glowtech-360",
-          badge: "Exclusive In India",
-          category: "Bio-Resonance & Electroporation",
+        "party-pop-facial": {
+          name: "Party Pop Facial",
+          slug: "party-pop-facial",
+          badge: "Instant Glow",
+          category: "Instant Radiance & Event Care",
           downtime: "Zero Downtime",
-          sessions: "1 - 3 Sessions Recommended",
-          summary: "Based on your profile, Dr. Megha recommends our proprietary TD Glowtech 360°. Its 7 micro-current resonance frequencies tone facial SMAS muscles while electroporation drives concentrated botanical peptides deep into the dermis for an instant sculpted, luminous glow.",
+          sessions: "1 Session Before Events",
+          summary: "Based on your profile, Dr. Megha recommends our Party Pop Facial. A refreshing, fun treatment featuring skin cleansing, gentle exfoliation, intense hydration, lip treatment, and relaxation massage for an immediate radiant glow.",
           keyBenefits: [
-            "Immediate facial contouring with sharpened jawline definition",
-            "Cellular ATP recharge without heat, needles, or peeling",
-            "Perfect pre-event skin gym with long-lasting hydration lock"
+            "Immediate red-carpet radiance and fresh glow",
+            "Deep hydration infusion with gentle lip care",
+            "Zero downtime — wear makeup immediately"
           ]
         },
         "hydra-facial": {
-          name: "Medical HydraFacial MD Vortex Care",
+          name: "Hydra Facial",
           slug: "hydra-facial",
-          badge: "Doctor-Supervised",
+          badge: "Most Popular",
           category: "Vortex Hydro-Exfoliation",
           downtime: "Zero Downtime",
           sessions: "Monthly Maintenance",
-          summary: "Your objective calls for gentle pore vacuuming and lipid replenishment. Our medical-grade HydraFacial employs specialized vortex technology to extract impurities painlessly while quenching thirsty epidermal layers with medical antioxidants and hyaluronic acid.",
+          summary: "Your objective calls for gentle pore vacuuming and lipid replenishment. Our Hydra Facial employs specialized vortex technology to extract impurities painlessly while quenching epidermal layers with nourishing serums and antioxidants.",
           keyBenefits: [
             "Painless vortex extraction of blackheads & debris",
             "Zero redness, instant glass-skin luminosity",
-            "Immediate pore refining and rebalanced sebum production"
+            "Immediate pore refining and rebalanced skin hydration"
           ]
         },
         "laser-toning": {
-          name: "Q-Switch Nd:YAG Laser Toning",
+          name: "Laser Toning (Q-Switch Nd:YAG)",
           slug: "laser-toning",
-          badge: "US-FDA Cleared",
+          badge: "US-FDA Approved",
           category: "Photoacoustic Pigment Fragmentation",
-          downtime: "Zero Downtime (No Crusting)",
+          downtime: "Zero Downtime",
           sessions: "4 - 6 Sessions Recommended",
           summary: "Targeted sub-nanosecond photoacoustic energy safely shatters localized melanin clusters and stubborn melasma patches without burning surface tissue. Paired with Hollywood carbon peeling for supreme dermal clarity.",
           keyBenefits: [
@@ -1475,30 +1537,44 @@ export const pagesContent = {
             "Tightens dilated pores and refines skin texture"
           ]
         },
-        "dermapen-4": {
-          name: "Dermapen 4™ Collagen Remodeling + Exosomes",
-          slug: "dermapen-4",
-          badge: "Gold Standard Microneedling",
-          category: "Percutaneous Collagen Induction",
-          downtime: "12 - 24 Hours Mild Pinkness",
-          sessions: "3 - 5 Sessions Recommended",
-          summary: "For deeper structural scars and textural unevenness, the world-leading Dermapen 4 generates 1,920 micro-channels per second. We infuse recombinant growth factors to trigger genuine neo-collagenesis and scar level elevation.",
+        "medi-facial": {
+          name: "Prescription Medi-Facial",
+          slug: "medi-facial",
+          badge: "Doctor Curated",
+          category: "Medical-Grade Facial",
+          downtime: "Zero Downtime",
+          sessions: "3 - 4 Sessions Recommended",
+          summary: "Formulated specifically for acne-prone, pigmented, or ageing skin, our Medi-Facial uses pharmaceutical-grade active ingredients to calm inflammation, clear blemishes, and restore a luminous complexion.",
           keyBenefits: [
-            "Proven reduction in acne scarring and pitted rolling scars",
-            "Triggers long-term natural Type-I collagen synthesis",
-            "Smooths rough, scarred texture into refined firmness"
+            "Customized after thorough skin assessment",
+            "Pharmaceutical-grade active ingredients",
+            "Calms active acne and smooths texture"
+          ]
+        },
+        "under-eye-dark-circle": {
+          name: "Under-Eye Dark Circle Therapy",
+          slug: "under-eye-dark-circle",
+          badge: "Clinic Speciality",
+          category: "Periorbital Rejuvenation",
+          downtime: "Zero Downtime",
+          sessions: "3 - 5 Sessions Recommended",
+          summary: "Vanishing under-eye dark circles is one of Truly Derma's clinical specialities. We target pigment pooling and fatigue shadows to restore natural brightness and firmness around the delicate eye area.",
+          keyBenefits: [
+            "Targets root causes: fatigue, vascular pooling & pigment",
+            "Safe clinical active formulations for delicate periorbital skin",
+            "Visible brightness and reduced puffiness"
           ]
         },
         "hair-rejuvenation": {
-          name: "Autologous GFC Trichology Protocol",
+          name: "Hair Rejuvenation Therapy (PRP)",
           slug: "hair-rejuvenation",
-          badge: "Physician-Performed",
-          category: "Growth Factor Concentrate (GFC)",
+          badge: "Follicle Revival",
+          category: "PRP & Growth Factor Therapy",
           downtime: "Zero Downtime",
           sessions: "3 - 4 Sessions Spaced 1 Month Apart",
-          summary: "Dr. Megha's specialized trichology protocol utilizes high-potency recombinant and autologous growth factor concentrates directly micro-infused at the hair follicle bulb, arresting shedding and reactivating dormant root papillae.",
+          summary: "Dr. Megha's specialized trichology protocol utilizes autologous platelet-rich plasma and concentrated growth factors micro-infused at the scalp to arrest excessive shedding and revitalize dormant hair follicles.",
           keyBenefits: [
-            "Arrests sudden telogen effluvium and hormonal shedding",
+            "Controls excessive hair fall and shedding",
             "Thickens hair follicle shaft caliber and density",
             "100% natural autologous factors with zero synthetic risk"
           ]
@@ -1506,7 +1582,7 @@ export const pagesContent = {
       }
     },
     testimonials: {
-      pill: "Patient Trust & Reviews",
+      pill: "Patient Reviews",
       title: "Loved by Over 20,000 Happy Patients",
       subtitle: "Verified Google reviews from patients who experienced transformative skin, hair, and aesthetic renewal at our Delhi clinics.",
       aggregateRating: "4.9 / 5.0",
@@ -1514,18 +1590,18 @@ export const pagesContent = {
       reviews: testimonialsList
     },
     blogSection: {
-      pill: "Clinical Insights",
-      title: "Latest From Our Dermatologists",
-      subtitle: "Read medical advice, self-care guides, and procedure breakthroughs authored by Dr. Megha Aggarwal.",
-      readMoreText: "Read Complete Guide →"
+      pill: "Expert Advice",
+      title: "Blogs",
+      subtitle: "Read our blogs on skin care, hair restoration, and clinical treatments from Dr. Megha Aggarwal.",
+      readMoreText: "View All Blogs →"
     },
     ctaBanner: {
-      pill: "Begin Your Skincare Journey",
-      title: "Experience World-Class Dermatology in Delhi",
-      subtitle: "Schedule a comprehensive digital or in-clinic consultation with Dr. Megha Aggarwal at our Pitampura or Rajouri Garden suites.",
+      pill: "Book Consultation",
+      title: "Visit Truly Derma in Delhi",
+      subtitle: "Schedule a consultation with Dr. Megha Aggarwal at our Pitampura or Rajouri Garden clinics.",
       phoneCTA: "Call +91 75910 55566",
-      whatsappCTA: "WhatsApp Priority Desk",
-      bookingCTA: "Book In-Clinic Appointment"
+      whatsappCTA: "WhatsApp Consult",
+      bookingCTA: "Book Appointment"
     }
   },
 
@@ -1534,25 +1610,25 @@ export const pagesContent = {
   // ---------------------------------------------------------------------------
   about: {
     meta: {
-      title: "About Truly Derma Clinic & Academy | Led by Dr. Megha Aggarwal",
-      description: "Learn about Truly Derma Clinic & Academy, founded by Gold Medalist Dr. Megha Aggarwal with 10+ years of aesthetic and clinical dermatology excellence in Delhi."
+      title: "About Truly Derma Clinic | Founded by Dr. Megha Aggarwal",
+      description: "Learn about Truly Derma Clinic, founded by Dr. Megha Aggarwal with 10+ years of aesthetic excellence in Delhi."
     },
     hero: {
       badge: "ABOUT TRULY DERMA",
-      title: "Welcome to Truly Derma Clinic & Academy",
-      subtitle: "Where medical science meets bespoke aesthetics, led by Gold Medalist Dr. Megha Aggarwal.",
+      title: "Welcome to Truly Derma Clinic",
+      subtitle: "Where science meets bespoke aesthetics, founded by Dr. Megha Aggarwal.",
       introParagraphs: [
-        "Welcome to Truly Derma, Clinic & Academy, led by the famous Aesthetician Dr. Megha Aggarwal where our primary focus is on providing comprehensive solutions for skincare, hair care, LASER treatments, and fat loss.",
-        "At Truly Derma, we understand the importance of glowing skin and healthy hair in boosting confidence. To achieve exceptional results, our expert personnel use modern processes and cutting-edge technologies. We believe everyone should feel their best, so we offer a range of treatments tailored just for you."
+        "Welcome to Truly Derma Clinic, led by the famous Aesthetician Dr. Megha Aggarwal where our primary focus is on providing comprehensive solutions for skincare, hair care, LASER treatments, and fat loss.",
+        "We believe everyone deserves to feel confident in their skin. Every treatment at Truly Derma is personalized to your individual needs using US-FDA approved technologies and gentle, non-invasive methods."
       ]
     },
     missionVision: {
       missionTitle: "Our Clinical Mission",
       missionText: "To provide safe, ethical, and evidence-based aesthetic and dermatological treatments that celebrate each patient's individuality, delivering noticeable natural results without invasive downtime or compromised safety.",
-      visionTitle: "Our Academy Vision",
-      visionText: "To mentor the next generation of aesthetic physicians through the Truly Derma Aesthetic Academy, raising the gold standard of clinical ethics and technical mastery across India.",
+      visionTitle: "Our Vision",
+      visionText: "To set the highest standard of compassionate, doctor-led clinical aesthetics across India, combining US-FDA approved technologies with genuine care and natural results.",
       coreValues: [
-        { title: "Physician-Led Safety", description: "Every protocol is supervised by an MD Dermatologist adhering to board-certified standards." },
+        { title: "Patient Safety First", description: "Every protocol is supervised by certified doctors and experts adhering to board-certified standards." },
         { title: "Honest Diagnostics", description: "No unnecessary treatments. We recommend only what your skin cellularly requires." },
         { title: "Modern Technologies", description: "Continuous investment in US-FDA cleared machinery and patented European systems." },
         { title: "Patient Dignity", description: "Warm, empathetic care celebrating self-love and empowering personal confidence." }
@@ -1564,16 +1640,6 @@ export const pagesContent = {
       subtitle: "10+ Years Experience • 20,000+ Completed Procedures",
       letter: doctorProfile.personalNote,
       credentials: doctorProfile.credentials
-    },
-    academyOverview: {
-      badge: "TRULY DERMA AESTHETIC ACADEMY",
-      title: "Training India's Future Aesthetic Physicians",
-      description: "Founded by Dr. Megha Aggarwal, the Truly Derma Aesthetic Academy has trained over 650+ doctors, dermatologists, and surgeons in advanced injectables, clinical lasers, and trichology.",
-      stats: [
-        { label: "Doctors Trained", value: "650+" },
-        { label: "Hands-On Clinical Hours", value: "500+" },
-        { label: "Masterclass Modules", value: "15+" }
-      ]
     }
   },
 
@@ -1582,13 +1648,13 @@ export const pagesContent = {
   // ---------------------------------------------------------------------------
   contact: {
     meta: {
-      title: "Contact Truly Derma Clinic | Pitampura & Rajouri Garden Suites",
-      description: "Get in touch with Truly Derma Clinic & Academy. Book appointments or visit our state-of-the-art clinic suites in Pitampura and Rajouri Garden, New Delhi."
+      title: "Contact Truly Derma Clinic | Pitampura & Rajouri Garden, Delhi",
+      description: "Get in touch with Truly Derma Clinic. Book appointments or visit our clinics in Pitampura and Rajouri Garden, New Delhi."
     },
     hero: {
-      badge: "CONNECT WITH TRULY DERMA",
-      title: "Contact Our Clinic Suites",
-      subtitle: "Visit our state-of-the-art clinics in Pitampura or Rajouri Garden, or schedule an initial digital skin & hair assessment."
+      badge: "CONTACT TRULY DERMA",
+      title: "Contact Our Clinics",
+      subtitle: "Visit our clinics in Pitampura or Rajouri Garden, or contact us to book your consultation."
     },
     branches: clinicContact.branches,
     phoneLines: clinicContact.phoneNumbers,
@@ -1598,12 +1664,12 @@ export const pagesContent = {
     hours: clinicContact.hours,
     bookingForm: {
       title: "Schedule Your Consultation",
-      subtitle: "Our patient coordinator will contact you to confirm your preferred suite and timing.",
+      subtitle: "Our team will contact you shortly to confirm your clinic location and timing.",
       fields: {
         name: "Full Name",
         phone: "Mobile / WhatsApp Number",
         email: "Email Address (Optional)",
-        branch: "Select Clinic Suite",
+        branch: "Select Clinic Location",
         service: "Select Treatment / Concern",
         preferredDate: "Preferred Date",
         message: "Any specific concern or question for Dr. Megha",
@@ -1631,18 +1697,18 @@ export const pagesContent = {
   // ---------------------------------------------------------------------------
   treatmentsHub: {
     meta: {
-      title: "All Treatments & Procedures | Truly Derma Clinic Delhi",
-      description: "Explore 18 authentic skin, hair, laser, and fat loss treatments offered by Dr. Megha Aggarwal at Truly Derma Clinic & Academy in New Delhi."
+      title: "All Treatments | Truly Derma Clinic Delhi",
+      description: "Explore 18 authentic skin, hair, laser, and fat loss treatments offered by Dr. Megha Aggarwal at Truly Derma Clinic in New Delhi."
     },
     hero: {
-      badge: "CLINICAL SERVICES DIRECTORY",
-      title: "World-Class Dermatological & Aesthetic Treatments",
-      subtitle: "From India-exclusive TD Glowtech 360° to US-FDA cleared Laser Hair Reduction and FUE Hair Transplants, explore our complete procedure catalogue."
+      badge: "EXPLORE ALL SERVICES",
+      title: "Skin, Hair, Laser & Fat Loss Treatments",
+      subtitle: "Explore our range of treatments tailored to give you healthy, glowing skin and confident hair, led by Dr. Megha Aggarwal in New Delhi."
     },
     guarantee: {
-      badge: "THE TRULY DERMA STANDARD",
-      title: "Zero Fluff, 100% Medical Efficacy",
-      text: "Every procedure is performed using genuine medical-grade consumables, strict hospital sterilization standards, and doctor-calibrated energies tailored to your skin."
+      badge: "OUR PROMISE",
+      title: "100% Safe, Proven Medical Results",
+      text: "Every treatment uses certified equipment, strict safety standards, and expert doctor care tailored to your skin."
     }
   },
 
@@ -1651,13 +1717,13 @@ export const pagesContent = {
   // ---------------------------------------------------------------------------
   blogsHub: {
     meta: {
-      title: "Clinical Blogs & Dermatology Insights | Truly Derma Journal",
-      description: "Read evidence-based skincare advice, hair restoration breakthroughs, and cosmetic dermatology guides written by Dr. Megha Aggarwal."
+      title: "Blogs | Truly Derma Clinic",
+      description: "Read our blogs on skin care, hair restoration, and clinical treatments from Dr. Megha Aggarwal."
     },
     hero: {
-      badge: "THE TRULY DERMA JOURNAL",
-      title: "News & Clinical Insights From Our Doctors",
-      subtitle: "Evidence-based aesthetic medicine, trichology insights, and seasonal dermatological advice from Chief Dermatologist Dr. Megha Aggarwal."
+      badge: "BLOGS",
+      title: "Blogs",
+      subtitle: "Helpful skin care tips, guides, and advice directly from Dr. Megha Aggarwal."
     }
   },
 
@@ -1666,7 +1732,7 @@ export const pagesContent = {
   // ---------------------------------------------------------------------------
   privacyPolicy: {
     meta: {
-      title: "Privacy Policy | Truly Derma Clinic & Academy",
+      title: "Privacy Policy | Truly Derma Clinic",
       description: "Our commitment to patient confidentiality, medical data protection, and clinical privacy."
     },
     title: "Privacy Policy",
@@ -1674,7 +1740,7 @@ export const pagesContent = {
     sections: [
       {
         heading: "1. Patient Medical Confidentiality",
-        text: "Truly Derma Clinic & Academy adheres strictly to medical privacy guidelines and HIPAA/Indian Medical Council confidentiality standards. Any medical history, diagnostic skin scans, or treatment notes shared with our physicians are protected under doctor-patient privilege."
+        text: "Truly Derma Clinic adheres strictly to medical privacy guidelines and HIPAA/Indian Medical Council confidentiality standards. Any medical history, diagnostic skin scans, or treatment notes shared with our physicians are protected under doctor-patient privilege."
       },
       {
         heading: "2. Information We Collect",
@@ -1692,7 +1758,7 @@ export const pagesContent = {
   },
   termsOfService: {
     meta: {
-      title: "Terms of Service | Truly Derma Clinic & Academy",
+      title: "Terms of Service | Truly Derma Clinic",
       description: "Terms and conditions governing clinical consultations and website usage."
     },
     title: "Terms of Service",
@@ -1799,20 +1865,20 @@ export const clinicInfo = {
   contact: clinicContact,
   testimonials: testimonialsList,
   exclusiveTreatment: {
-    title: "Truly Derma Exclusive in India TD Glowtech 360°",
-    description: "TD Glowtech 360° uses a patented electroporation method with seven scientifically proven micro-current frequencies. This non-invasive skin gym offers customized treatments that lift, tone, and contour the skin with no downtime. It's a painless, relaxing experience that delivers instant, long-lasting results.",
+    title: "US-FDA Approved 4D Tec Laser Hair Reduction",
+    description: "Our US-FDA approved 4D Tec LASER with 4 synchronized wavelengths ensures lasting, painless results for all skin types, featuring sub-zero contact sapphire cooling.",
     features: [
       "Non-invasive",
-      "Innovative",
-      "High-tech",
-      "Electroporation",
-      "Natural",
-      "No downtime",
-      "Safe"
+      "US-FDA Approved",
+      "Painless Contact Cooling",
+      "4 Synchronized Wavelengths",
+      "Zero Downtime",
+      "100% Safe"
     ]
   },
   techSteps: threeStepProcess,
-  beforeAfter: beforeAfterCases
+  beforeAfter: beforeAfterCases,
+  patientGallery: patientGalleryPhotos
 };
 
 export const quizQuestions = pagesContent.home.skinQuiz.questions;
@@ -1826,6 +1892,7 @@ export default {
   whyChooseUsList,
   threeStepProcess,
   beforeAfterCases,
+  patientGalleryPhotos,
   testimonialsList,
   allTreatments,
   allBlogs,

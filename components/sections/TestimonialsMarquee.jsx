@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Star, ExternalLink, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Star, ExternalLink, ChevronLeft, ChevronRight, CheckCircle2, X } from "lucide-react";
 import { SingleBloom } from "../ui/BotanicalMotifs";
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from "../ui/LuxuryIcons";
 import {
   testimonialsList,
   pagesContent,
@@ -36,9 +37,9 @@ function GoogleIcon({ className = "w-5 h-5" }) {
 }
 
 const CATEGORIES = [
-  { id: "all", label: "All Google Reviews" },
-  { id: "skin", label: "Skin & Medi-Facials" },
-  { id: "hair", label: "Hair Restoration" },
+  { id: "all", label: "All Reviews" },
+  { id: "skin", label: "Skin & Facials" },
+  { id: "hair", label: "Hair Care" },
   { id: "laser", label: "Laser Treatments" },
 ];
 
@@ -47,6 +48,7 @@ export default function TestimonialsMarquee() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
+  const [selectedReview, setSelectedReview] = useState(null);
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -130,7 +132,7 @@ export default function TestimonialsMarquee() {
 
   return (
     <section
-      id="testimonials"
+      id="patient-reviews"
       className="py-16 sm:py-24 bg-white text-charcoal-900 border-b border-blush-200/70 overflow-hidden relative"
     >
       {/* Soft Ambient Glows */}
@@ -144,15 +146,15 @@ export default function TestimonialsMarquee() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* ===================================================================
-            GOOGLE REVIEWS HEADER WITH SLIDER ARROWS & COUNTER
+            GOOGLE & SOCIAL REVIEWS HEADER WITH SLIDER ARROWS & COUNTER
             =================================================================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 sm:pb-8 border-b border-blush-200/60">
           <div>
-            {/* Google Reviews Trust Pill */}
+            {/* Reviews Trust Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200 shadow-2xs mb-3">
               <GoogleIcon className="w-4 h-4" />
               <span className="text-xs font-bold text-charcoal-900 tracking-wide">
-                {tContent.pill || "Patient Trust & Reviews"}
+                Verified Feedback
               </span>
               <span className="text-blush-300">•</span>
               <div className="flex items-center gap-0.5 text-amber-500">
@@ -165,18 +167,57 @@ export default function TestimonialsMarquee() {
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-              {tContent.title || "Loved by Over 20,000 Happy Patients"}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal-900 tracking-tight">
+              Patient Reviews
             </h2>
 
-            <p className="text-charcoal-700/85 text-xs sm:text-sm mt-1 max-w-xl font-light leading-relaxed">
-              {tContent.subtitle ||
-                "Verified Google reviews from patients who experienced transformative skin, hair, and aesthetic renewal at our Delhi clinics."}
+            <p className="text-charcoal-700/85 text-sm sm:text-base mt-2 max-w-xl font-light leading-relaxed">
+              Verified reviews from real patients on Google &amp; Facebook. Follow our profiles for patient stories, tips, and updates.
             </p>
           </div>
 
-          {/* Right Action: Write a Google Review & Slider Navigation Controls */}
+          {/* Right Action: Social Media Profiles, Write a Google Review & Slider Navigation Controls */}
           <div className="flex flex-wrap items-center gap-3 self-start md:self-end">
+            {/* Social Media Profiles */}
+            <div className="flex items-center gap-1.5 p-1 bg-white rounded-full border border-blush-200 shadow-2xs">
+              {clinicContact.socials.instagram && (
+                <a
+                  href={clinicContact.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Truly Derma Instagram"
+                  className="w-8 h-8 rounded-full hover:bg-rose-50 flex items-center justify-center transition-all hover:scale-110 cursor-pointer text-charcoal-700"
+                  title="Follow on Instagram"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                </a>
+              )}
+              {clinicContact.socials.facebook && (
+                <a
+                  href={clinicContact.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Truly Derma Facebook"
+                  className="w-8 h-8 rounded-full hover:bg-rose-50 flex items-center justify-center transition-all hover:scale-110 cursor-pointer text-charcoal-700"
+                  title="Follow on Facebook"
+                >
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
+              )}
+              {clinicContact.whatsappUrl && (
+                <a
+                  href={clinicContact.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp Consult"
+                  className="w-8 h-8 rounded-full hover:bg-rose-50 flex items-center justify-center transition-all hover:scale-110 cursor-pointer text-charcoal-700"
+                  title="WhatsApp Consult"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                </a>
+              )}
+            </div>
+
             <a
               href={googleReviewLink}
               target="_blank"
@@ -319,14 +360,26 @@ export default function TestimonialsMarquee() {
                         </span>
                       </div>
 
-                      {/* Main Review Text */}
-                      <p className="text-xs text-charcoal-800 leading-relaxed font-light mt-1">
-                        &ldquo;{rev.comment}&rdquo;
-                      </p>
+                      {/* Main Review Text: Equal height with Read More button */}
+                      <div className="mt-1 flex flex-col justify-between">
+                        <p className="text-xs text-charcoal-800 leading-relaxed font-light line-clamp-3 min-h-[3.8rem]">
+                          &ldquo;{rev.comment}&rdquo;
+                        </p>
+                        {rev.comment && rev.comment.length > 120 && (
+                          <button
+                            type="button"
+                            onClick={() => setSelectedReview(rev)}
+                            className="text-[11px] font-semibold text-blush-600 hover:text-blush-700 mt-1.5 cursor-pointer inline-flex items-center gap-1 self-start underline decoration-blush-300 hover:decoration-blush-600 transition-colors"
+                          >
+                            <span>Read more</span>
+                            <span className="text-xs">→</span>
+                          </button>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Card Bottom: Clinic Location Tag & Doctor Response Box */}
-                    <div className="pt-3 mt-4 border-t border-blush-100/90 space-y-2.5">
+                    {/* Card Bottom: Clinic Location Tag */}
+                    <div className="pt-3 mt-4 border-t border-blush-100/90">
                       <div className="flex items-center justify-between text-[10.5px] text-charcoal-500">
                         <span className="font-medium text-charcoal-700">
                           📍 {branchName}
@@ -336,18 +389,6 @@ export default function TestimonialsMarquee() {
                           Verified Visit
                         </span>
                       </div>
-
-                      {/* Doctor Response Snippet (Google Business Style) */}
-                      {replyText && (
-                        <div className="bg-blush-50/60 p-2.5 rounded-xl border border-blush-100 text-[10.5px] text-charcoal-700 leading-snug">
-                          <span className="font-semibold text-charcoal-900 block mb-0.5">
-                            Response from {replyAuthor} (Owner):
-                          </span>
-                          <p className="font-light italic text-charcoal-600">
-                            &ldquo;{replyText}&rdquo;
-                          </p>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -375,36 +416,92 @@ export default function TestimonialsMarquee() {
             ))}
           </div>
         )}
+      </div>
 
-        {/* ===================================================================
-            BOTTOM GOOGLE TRUST BAR
-            =================================================================== */}
-        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FFF8FA] via-white to-[#FFF8FA] border border-blush-200/90 shadow-2xs">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-white border border-blush-200 shadow-2xs flex items-center justify-center shrink-0">
-              <GoogleIcon className="w-6 h-6" />
+      {/* ===================================================================
+          COMPLETE REVIEW LIGHTBOX MODAL
+          =================================================================== */}
+      {selectedReview && (
+        <div
+          className="fixed inset-0 z-50 bg-charcoal-950/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setSelectedReview(null)}
+        >
+          <div
+            className="bg-white rounded-3xl overflow-hidden max-w-lg w-full border border-blush-200 shadow-2xl relative p-6 sm:p-7 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setSelectedReview(null)}
+              className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-rose-50 hover:bg-rose-100 text-charcoal-800 flex items-center justify-center shadow-xs transition-colors cursor-pointer"
+              aria-label="Close review details"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            {/* Author Header */}
+            <div className="flex items-start gap-3.5 pr-8">
+              <div
+                className={`w-11 h-11 rounded-full ${selectedReview.avatarBg || "bg-[#4285F4]"} text-white font-bold text-base flex items-center justify-center shadow-2xs shrink-0`}
+              >
+                {(selectedReview.author || selectedReview.patientName || "V").charAt(0).toUpperCase()}
+              </div>
+
+              <div>
+                <h3 className="font-serif text-base sm:text-lg font-bold text-charcoal-900 leading-tight">
+                  {selectedReview.author || selectedReview.patientName}
+                </h3>
+                <p className="text-xs text-charcoal-500 font-light mt-0.5 flex items-center gap-1.5 flex-wrap">
+                  {selectedReview.isLocalGuide && (
+                    <span className="text-[#EA4335] font-semibold">Local Guide •</span>
+                  )}
+                  <span>{selectedReview.reviewCount || "Verified Visit"}</span>
+                  <span className="text-blush-300">•</span>
+                  <span>{selectedReview.relativeTime || selectedReview.date || "Verified Patient"}</span>
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs sm:text-sm font-serif font-bold text-charcoal-900">
-                {siteMeta?.googleRating || "4.9"}-Star Patient Rating on Google Maps
+
+            {/* Rating Stars & Treatment Badge */}
+            <div className="flex items-center justify-between pt-4 pb-3 border-b border-blush-100">
+              <div className="flex items-center gap-1">
+                {[...Array(selectedReview.rating || 5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+
+              <span className="text-[10.5px] font-bold uppercase tracking-wider text-blush-700 bg-rose-50 px-3 py-1 rounded-full border border-blush-200">
+                {selectedReview.treatment}
+              </span>
+            </div>
+
+            {/* Complete Review Text */}
+            <div className="py-4">
+              <p className="text-xs sm:text-sm text-charcoal-800 leading-relaxed font-light">
+                &ldquo;{selectedReview.comment}&rdquo;
               </p>
-              <p className="text-[10.5px] text-charcoal-600 font-light">
-                Over {siteMeta?.reviewsCount || "1,500+"} verified patient reviews across our {clinicContact?.branches?.map(b => b.city).filter((v, i, a) => a.indexOf(v) === i).join(" & ") || "Delhi"} clinics.
-              </p>
+            </div>
+
+            {/* Modal Bottom Strip */}
+            <div className="pt-4 mt-2 border-t border-blush-100 flex items-center justify-between text-xs text-charcoal-600">
+              <span className="font-medium text-charcoal-700">
+                📍 {selectedReview.branch || selectedReview.city || "Delhi Clinic"}
+              </span>
+
+              <a
+                href={googleReviewLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blush-600 hover:text-blush-700 font-semibold flex items-center gap-1 cursor-pointer"
+              >
+                <span>View on Google</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
-
-          <a
-            href={googleReviewLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-charcoal-900 hover:bg-charcoal-800 text-white text-xs font-semibold tracking-wider transition-all shadow-xs flex items-center gap-2 cursor-pointer shrink-0"
-          >
-            <span>Read All Google Reviews</span>
-            <ExternalLink className="w-3.5 h-3.5 text-slate-300" />
-          </a>
         </div>
-      </div>
+      )}
     </section>
   );
 }

@@ -58,32 +58,15 @@ export default function BrandPhilosophy() {
           </div>
         </Reveal>
 
-        {/* Line-by-Line Editorial Serif Headline with Text Parallax */}
-        <motion.div style={{ y: textY }} className="relative pt-2 max-w-4xl mx-auto">
-          <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-normal text-charcoal-900 leading-[1.3] tracking-tight">
-            {philosophyData.headlineQuote}
-          </blockquote>
-        </motion.div>
-
-        {/* Doctor Signature Credit */}
-        <Reveal delay={0.15}>
-          <div className="flex items-center justify-center gap-3.5 pt-2">
-            <div className="w-11 h-11 rounded-full bg-amber-50 flex items-center justify-center shadow-sm border border-amber-200/60">
-              <AwardMedalIcon className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <div className="flex items-center gap-2">
-                <p className="text-base font-serif font-semibold text-charcoal-900 tracking-wide">
-                  {doctorProfile.name}
-                </p>
-                <span className="px-2 py-0.5 rounded-full bg-blush-100 text-blush-600 text-[10px] font-bold uppercase tracking-wider">
-                  MD Dermatology
-                </span>
-              </div>
-              <p className="text-xs text-charcoal-700/80 font-normal">
-                {doctorProfile.role} • Pitampura & Rajouri Garden, Delhi
-              </p>
-            </div>
+        {/* Section Heading & Subtitle */}
+        <Reveal delay={0.05}>
+          <div className="space-y-2.5 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal-900 tracking-tight">
+              {philosophyData.title}
+            </h2>
+            <p className="text-sm sm:text-base text-charcoal-700/85 font-light leading-relaxed max-w-2xl mx-auto">
+              {philosophyData.subtitle}
+            </p>
           </div>
         </Reveal>
 

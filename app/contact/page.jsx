@@ -39,7 +39,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     phone: "",
-    branch: branches[0]?.name || "Pitampura Suite",
+    branch: branches[0]?.name || "Pitampura Clinic",
     service: allTreatments[0]?.name || "TD Glowtech 360°",
     preferredDate: "",
     message: "",
@@ -55,7 +55,7 @@ export default function ContactPage() {
         `👤 *Name:* ${formData.name}\n` +
         `📞 *Phone:* ${formData.phone}\n` +
         `📧 *Email:* ${formData.email}\n` +
-        `🏥 *Preferred Suite:* ${formData.branch}\n` +
+        `🏥 *Preferred Clinic:* ${formData.branch}\n` +
         `✨ *Treatment:* ${formData.service}\n` +
         `📅 *Preferred Date:* ${formData.preferredDate || "Earliest Available"}\n` +
         `📝 *Notes:* ${formData.message || "General Dermatological Consultation"}\n\n` +
@@ -85,7 +85,7 @@ export default function ContactPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-charcoal-900 tracking-tight leading-[1.2]">
-            Visit Our Private <span className="italic text-blush-600 font-medium">Clinic Suites</span>
+            Visit Our <span className="italic text-blush-600 font-medium">Clinic Locations</span>
           </h1>
 
           <p className="text-sm sm:text-base text-charcoal-700/85 font-light leading-relaxed max-w-2xl mx-auto">
@@ -143,7 +143,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-rose-50 text-blush-700 border border-blush-200">
-                    Suite {selectedBranch + 1}
+                    Clinic {selectedBranch + 1}
                   </span>
                 </div>
 
@@ -181,7 +181,7 @@ export default function ContactPage() {
                     className="flex-1 py-3 rounded-full bg-rose-50 hover:bg-blush-100 text-blush-800 text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-blush-200"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Call Suite</span>
+                    <span>Call Clinic</span>
                   </a>
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function ContactPage() {
                       <WhatsAppIcon className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold leading-tight">WhatsApp Priority Desk</p>
+                      <p className="text-xs font-bold leading-tight">WhatsApp Consult</p>
                       <p className="text-[11px] text-emerald-700">{clinicContact.whatsappDisplay}</p>
                     </div>
                   </div>

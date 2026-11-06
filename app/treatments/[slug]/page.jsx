@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${treatment.name} in Delhi | Truly Derma Clinic & Academy`,
+    title: `${treatment.name} in Delhi | Truly Derma Clinic`,
     description: `${treatment.name}: ${treatment.tagline}. Performed by Dr. Megha Aggarwal at Truly Derma (Pitampura & Rajouri Garden, New Delhi).`,
     openGraph: {
       title: `${treatment.name} | Truly Derma Clinic`,

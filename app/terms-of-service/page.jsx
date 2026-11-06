@@ -52,7 +52,7 @@ export default function TermsOfServicePage() {
             <div className="space-y-1 text-xs text-charcoal-700">
               <p className="font-bold text-charcoal-900 text-sm">Medical Consultation & Treatment Agreement</p>
               <p className="leading-relaxed font-light">
-                Truly Derma Clinic & Academy operates under medical board governance in New Delhi, India. All procedural treatments are performed following a comprehensive, personalized dermal assessment by Dr. Megha Aggarwal or our licensed aesthetic staff.
+                Truly Derma Clinic operates under medical board governance in New Delhi, India. All procedural treatments are performed following a comprehensive, personalized dermal assessment by Dr. Megha Aggarwal or our licensed aesthetic staff.
               </p>
             </div>
           </div>

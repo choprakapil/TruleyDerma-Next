@@ -81,14 +81,14 @@ export default function StickyCTA() {
           target="_blank"
           rel="noopener noreferrer"
           className="w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-transform cursor-pointer flex items-center justify-center"
-          aria-label="WhatsApp Clinic"
+          aria-label="WhatsApp Consult"
         >
           <WhatsAppIcon className="w-10 h-10 sm:w-12 sm:h-12" />
         </a>
 
         {/* Left Tooltip */}
         <span className="hidden md:block absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl bg-charcoal-950/95 backdrop-blur-md text-white text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-xl border border-white/15">
-          WhatsApp Clinic
+          WhatsApp Consult
         </span>
       </div>
     </div>

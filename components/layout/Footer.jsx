@@ -35,8 +35,8 @@ export default function Footer() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
     { name: "Treatments", href: "/treatments" },
-    { name: "Journal", href: "/blogs" },
-    { name: "Contact & Suites", href: "/contact" }
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact Us", href: "/contact" }
   ];
   const signatureTreatments = footerLinks.treatments || [];
   const legalLinks = footerLinks.legal || [];
@@ -92,12 +92,12 @@ export default function Footer() {
             <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blush-50 border border-blush-200 text-blush-600 text-xs font-semibold tracking-widest uppercase shadow-2xs">
                 <Sparkles className="w-3.5 h-3.5 text-blush-500" />
-                <span>Boutique Aesthetic Suites</span>
+                <span>Our Clinic Locations</span>
               </div>
 
               <div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-normal text-charcoal-900 tracking-tight leading-tight">
-                  Visit {doctorProfile?.name || "Dr. Megha’s"} <span className="italic text-blush-600 font-medium">Delhi Suites</span>
+                  Visit {doctorProfile?.name || "Dr. Megha’s"} <span className="italic text-blush-600 font-medium">Delhi Clinics</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-charcoal-700/85 mt-1 font-light leading-relaxed max-w-xl">
                   Select your preferred clinic branch below for direct directions, desk calling, and live availability.
@@ -181,7 +181,7 @@ export default function Footer() {
                         className="flex-1 py-2 rounded-xl bg-white hover:bg-blush-50 text-charcoal-800 text-xs font-semibold tracking-wider uppercase border border-blush-200 flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
                         <PhoneIcon className="w-4 h-4 shrink-0" />
-                        <span>Call Suite</span>
+                        <span>Call Clinic</span>
                       </a>
                     </div>
                   </motion.div>
@@ -200,14 +200,14 @@ export default function Footer() {
               <div className="bg-white p-2.5 rounded-2xl shadow-2xs border border-blush-200 group hover:border-blush-400 transition-all">
                 <img
                   src="/logo.png"
-                  alt="Truly Derma Clinic & Academy"
+                  alt="Truly Derma Clinic"
                   className="h-10 w-auto object-contain group-hover:scale-103 transition-transform"
                 />
               </div>
             </Link>
 
             <p className="text-xs text-charcoal-700 leading-relaxed font-light">
-              Directed by Gold Medalist Dermatologist <strong>{doctorProfile?.name}</strong>. Certified medical aesthetic dermatology, advanced US-FDA lasers, and trichology suites in Pitampura &amp; Rajouri Garden, Delhi.
+              Founded and led by <strong>{doctorProfile?.name}</strong>. Specialized skin, hair, laser, and body contouring clinics in Pitampura &amp; Rajouri Garden, Delhi.
             </p>
 
             {/* Official Social Badges */}
@@ -332,7 +332,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-1 text-[11px] text-charcoal-600 leading-snug border-t border-blush-100">
-                <span className="font-medium text-charcoal-800">Clinic Suites:</span> Pitampura &amp; Rajouri Garden, Delhi
+                <span className="font-medium text-charcoal-800">Clinic Locations:</span> Pitampura &amp; Rajouri Garden, Delhi
               </li>
             </ul>
           </div>
@@ -359,7 +359,7 @@ export default function Footer() {
         {/* Dedicated Bottom Bar: Copyright, Legal Policies (Separated & Clear), Back to Top */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-600 !mt-2.5 sm:!mt-3 pt-3.5 border-t border-blush-200/60">
           <p className="text-[11px] sm:text-xs">
-            © {new Date().getFullYear()} Truly Derma Clinic &amp; Academy. All Rights Reserved.
+            © {new Date().getFullYear()} Truly Derma Clinic. All Rights Reserved.
           </p>
 
           {/* Legal Policies - Explicitly Placed Here Out of Main Navigation */}

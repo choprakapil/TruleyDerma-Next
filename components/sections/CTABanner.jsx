@@ -20,7 +20,7 @@ export default function CTABanner() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-blush-200/80 text-charcoal-900 flex flex-col justify-center items-center relative overflow-hidden">
+    <section id="book-consultation" className="py-16 sm:py-20 bg-white border-b border-blush-200/80 text-charcoal-900 flex flex-col justify-center items-center relative overflow-hidden">
       {/* Bespoke Opulent Sunburst Moire Silk & Radiant Starlight Sparkles Background */}
       <CTABannerLuxuryBg />
 
@@ -59,7 +59,7 @@ export default function CTABanner() {
           {/* Section Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF6F8] border border-rose-200 text-charcoal-900 text-[11px] font-semibold tracking-widest uppercase shadow-xs">
             <SparklesIcon className="w-4 h-4" />
-            <span>{cta.pill || "Begin Your Skincare Journey"}</span>
+            <span>{cta.pill || "Book Consultation"}</span>
           </div>
 
           <div className="space-y-2.5">
@@ -74,7 +74,7 @@ export default function CTABanner() {
             </h2>
             <p className="text-charcoal-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-sans font-light">
               {cta.subtitle ||
-                `Experience the harmony of medical-grade dermatology and serene skincare luxury. Visit ${doctorProfile?.name || "Dr. Megha Aggarwal"} at our ${clinicContact?.branches?.map((b) => b.name).join(" or ") || "Delhi suites"}, or reserve priority scheduling below.`}
+                `Experience trusted skincare and treatments. Visit ${doctorProfile?.name || "Dr. Megha Aggarwal"} at our ${clinicContact?.branches?.map((b) => b.name).join(" or ") || "Delhi clinics"}, or book your appointment below.`}
             </p>
           </div>
 
@@ -96,21 +96,21 @@ export default function CTABanner() {
                 className="w-full sm:w-auto px-7 py-3 rounded-full bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white text-xs sm:text-sm font-semibold tracking-wider uppercase hover:opacity-95 active:scale-95 transition-all shadow-[0_6px_20px_rgb(201,130,148,0.35)] flex items-center justify-center gap-2 border border-white/40 cursor-pointer"
               >
                 <CalendarIcon className="w-4 h-4" />
-                <span>{cta.primaryCtaText || "Reserve Consultation"}</span>
+                <span>{cta.primaryCtaText || "Book Appointment"}</span>
               </button>
             </MagneticButton>
 
             <MagneticButton strength={0.2}>
               <a
                 href={`https://wa.me/${clinicContact.whatsappNumber}?text=${encodeURIComponent(
-                  `Hello Truly Derma desk, I would like to schedule a private consultation with ${doctorProfile?.name || "Dr. Megha Aggarwal"}.`
+                  `Hello Truly Derma desk, I would like to book a consultation with ${doctorProfile?.name || "Dr. Megha Aggarwal"}.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-rose-50/70 text-charcoal-800 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 border border-rose-200 shadow-xs"
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                <span>{cta.whatsappCtaText || "Chat via WhatsApp"}</span>
+                <span>WhatsApp Consult</span>
               </a>
             </MagneticButton>
 

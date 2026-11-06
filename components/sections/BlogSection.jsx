@@ -24,15 +24,15 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <SlideUp yOffset={15} className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-blush-200 text-blush-600 text-xs font-semibold tracking-widest uppercase shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200 text-blush-600 text-xs font-semibold tracking-widest uppercase shadow-2xs">
             <BookOpen className="w-3.5 h-3.5 text-blush-500" />
-            <span>{bContent.pill || "Latest Blogs"}</span>
+            <span>Expert Advice</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 mt-2 tracking-tight">
-            {bContent.title || "News From the Blog"}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal-900 mt-3 tracking-tight">
+            Blogs
           </h2>
-          <p className="text-xs sm:text-sm text-charcoal-700/85 mt-2 font-light leading-relaxed">
-            {bContent.subtitle || "Clinical insights, dermatological self-care protocols, and expert guidance directly from Dr. Megha Aggarwal."}
+          <p className="text-sm sm:text-base text-charcoal-700/85 mt-2 font-light leading-relaxed">
+            Read our blogs on skin care, hair restoration, and clinical treatments from Dr. Megha Aggarwal.
           </p>
         </SlideUp>
 
@@ -107,7 +107,7 @@ export default function BlogSection() {
             href="/blogs"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white hover:bg-blush-50 text-charcoal-800 text-xs font-semibold tracking-wider uppercase border border-blush-300 shadow-sm transition-all hover:scale-102"
           >
-            <span>Explore All Journal Articles</span>
+            <span>View All Blogs</span>
             <ArrowRight className="w-3.5 h-3.5 text-blush-500" />
           </Link>
         </div>

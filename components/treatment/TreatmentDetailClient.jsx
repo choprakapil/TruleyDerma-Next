@@ -29,7 +29,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
           className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-700 hover:text-brand-rose transition-colors uppercase tracking-wider"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to All Protocols</span>
+          <span>Back to All Treatments</span>
         </Link>
       </div>
 
@@ -103,7 +103,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
                 className="px-7 py-4 rounded-full bg-white hover:bg-rose-50 text-charcoal-900 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-colors flex items-center gap-2 border border-rose-200 shadow-sm"
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                <span>WhatsApp Clinical Desk</span>
+                <span>WhatsApp Consult</span>
               </a>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
               className="px-6 py-3 rounded-full bg-white hover:bg-rose-50 text-charcoal-800 text-xs font-semibold uppercase tracking-wider transition-colors border border-blush-200 shadow-2xs flex items-center justify-center gap-2"
             >
               <WhatsAppIcon className="w-4 h-4" />
-              <span>Ask A Question</span>
+              <span>WhatsApp Consult</span>
             </a>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
             href="/treatments"
             className="text-xs font-semibold text-blush-600 hover:text-blush-700 flex items-center gap-1 uppercase tracking-wider"
           >
-            <span>All Protocols</span>
+            <span>All Treatments</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -292,7 +292,7 @@ export default function TreatmentDetailClient({ treatment, relatedTreatments }) 
               </div>
 
               <div className="p-5 pt-0 flex items-center justify-between text-xs text-blush-600 font-semibold border-t border-rose-50/80 mt-2">
-                <span>View Protocol Details</span>
+                <span>View Treatment Details</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>

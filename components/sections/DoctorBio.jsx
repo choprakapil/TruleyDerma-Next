@@ -35,8 +35,8 @@ export default function DoctorBio() {
   return (
     <section
       ref={sectionRef}
-      id="doctor"
-      className="py-16 sm:py-24 bg-white border-b border-blush-200/70 relative overflow-hidden text-charcoal-900"
+      id="about-us"
+      className="py-16 sm:py-24 bg-[#FDEBF0] border-b border-blush-200/70 relative overflow-hidden text-charcoal-900"
     >
       {/* Parallax Botanical Background Element */}
       <motion.div
@@ -65,7 +65,7 @@ export default function DoctorBio() {
               <div className="relative rounded-[28px] overflow-hidden shadow-[0_20px_50px_-10px_rgba(122,70,85,0.2)] bg-gradient-to-b from-[#FFF5F7] to-white h-[420px] sm:h-[480px] lg:h-[530px] border-2 border-blush-200/90 z-10 group">
                 <img
                   src="/images/Doctor.png"
-                  alt="Dr. Megha Aggarwal - Chief Dermatologist & Aesthetic Director"
+                  alt="Dr. Megha Aggarwal - Founder of Truly Derma"
                   className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-charcoal-950/15 to-transparent pointer-events-none" />
@@ -78,14 +78,14 @@ export default function DoctorBio() {
                 {/* Top Badge on Photo */}
                 <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-charcoal-900 text-[10px] font-bold uppercase tracking-wider border border-blush-200 shadow-sm flex items-center gap-1.5 z-20">
                   <AwardMedalIcon className="w-4 h-4" />
-                  <span>Chief Dermatologist & Founder</span>
+                  <span>Founder of Truly Derma</span>
                 </div>
 
                 {/* Bottom Overlay Card on Photo */}
                 <div className="absolute bottom-3 left-3 right-3 p-3.5 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-blush-200 text-charcoal-900 space-y-1 shadow-lg z-20">
                   <div className="flex items-center justify-between">
                     <p className="text-[10px] font-bold uppercase tracking-widest text-blush-600">
-                      Truly Derma Clinic & Academy
+                      Truly Derma Clinic
                     </p>
                     <span className="flex items-center gap-0.5 text-amber-500 text-xs">
                       {[...Array(5)].map((_, i) => (
@@ -112,7 +112,7 @@ export default function DoctorBio() {
                     {doc.experience}
                   </p>
                   <p className="text-[9px] text-charcoal-600 font-medium mt-0.5">
-                    MD Dermatology • Gold Medalist
+                    Founder • Truly Derma Clinic
                   </p>
                 </div>
               </div>
@@ -124,19 +124,19 @@ export default function DoctorBio() {
               ================================================================= */}
           <div className="lg:col-span-7 space-y-5">
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 border border-blush-200 text-blush-700 text-[10.5px] font-semibold tracking-widest uppercase shadow-2xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200 text-blush-700 text-xs font-semibold tracking-widest uppercase shadow-2xs">
                 <SingleBloom className="w-3.5 h-3.5" color="#C98294" />
-                <span>Meet Your Physician</span>
+                <span>Our Founder &amp; Clinic</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.05}>
               <div className="space-y-1">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-charcoal-900 tracking-tight">
-                  {doc.name}
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal text-charcoal-900 tracking-tight">
+                  About Us
                 </h2>
                 <p className="text-blush-600 text-xs sm:text-sm font-semibold tracking-wide">
-                  {doc.role || doc.title} • {clinicInfo.name}
+                  Founded by {doc.name} • {doc.role || doc.title}
                 </p>
               </div>
             </Reveal>
@@ -174,19 +174,19 @@ export default function DoctorBio() {
               ))}
             </StaggerReveal>
 
-            {/* Academy Leadership & Dual Clinic Locations */}
+            {/* Dual Clinic Locations in Delhi */}
             <Reveal delay={0.15}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-3.5 rounded-2xl bg-white border border-blush-200 shadow-2xs flex items-start gap-3">
                   <div className="w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 border border-blush-100">
-                    <GraduationCapIcon className="w-5 h-5 text-blush-600" />
+                    <MapPin className="w-5 h-5 text-blush-600" />
                   </div>
                   <div>
                     <h4 className="text-xs font-serif font-bold text-charcoal-900">
-                      Truly Derma Aesthetic Academy
+                      Pitampura Clinic
                     </h4>
                     <p className="text-[10.5px] text-charcoal-600 font-light leading-snug mt-0.5">
-                      Training 650+ certified doctors in modern lasers, skin injectables & microcurrent aesthetics.
+                      1st Floor, Building 46, Harsh Vihar, Pitampura, New Delhi.
                     </p>
                   </div>
                 </div>
@@ -197,15 +197,10 @@ export default function DoctorBio() {
                   </div>
                   <div>
                     <h4 className="text-xs font-serif font-bold text-charcoal-900">
-                      Delhi Clinic Suites
+                      Rajouri Garden Clinic
                     </h4>
                     <p className="text-[10.5px] text-charcoal-600 font-light leading-snug mt-0.5">
-                      Private luxury clinics at {clinicInfo.contact.branches.map((b, i) => (
-                        <span key={b.city}>
-                          {i > 0 && " & "}
-                          <strong>{b.name}</strong>
-                        </span>
-                      ))}.
+                      J2/16, Basement, Rajouri Garden, New Delhi.
                     </p>
                   </div>
                 </div>
@@ -235,7 +230,7 @@ export default function DoctorBio() {
                   className="w-full sm:w-auto px-6 py-3 rounded-full bg-white hover:bg-blush-50 text-charcoal-800 text-xs font-semibold tracking-wider uppercase transition-colors flex items-center justify-center gap-2 border border-blush-200 shadow-2xs cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
-                  <span>WhatsApp Priority Desk</span>
+                  <span>WhatsApp Consult</span>
                 </a>
               </MagneticButton>
 

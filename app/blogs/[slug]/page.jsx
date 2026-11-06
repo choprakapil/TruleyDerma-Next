@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
   const blog = blogs.find((b) => b.slug === slug);
   if (!blog) return { title: "Article Not Found | Truly Derma Clinic" };
   return {
-    title: `${blog.title} | Truly Derma Clinical Journal`,
+    title: `${blog.title} | Truly Derma Blogs`,
     description: blog.excerpt,
   };
 }
@@ -63,7 +63,7 @@ export default async function BlogDetailPage({ params }) {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200 text-xs font-semibold text-charcoal-700 hover:text-blush-600 transition-colors shadow-2xs"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to Clinical Journal</span>
+            <span>Back to All Blogs</span>
           </Link>
         </div>
 
@@ -171,13 +171,13 @@ export default async function BlogDetailPage({ params }) {
           <div className="space-y-1.5 text-center sm:text-left flex-1">
             <div className="inline-flex items-center gap-1.5 text-[10.5px] font-bold tracking-widest uppercase text-blush-600">
               <Award className="w-3.5 h-3.5" />
-              <span>Gold Medalist • MD Dermatology</span>
+              <span>Founder • Truly Derma</span>
             </div>
             <h3 className="font-serif text-xl font-bold text-charcoal-900">
               Authored & Reviewed by {doctorProfile.name}
             </h3>
             <p className="text-xs sm:text-sm text-charcoal-600 font-light leading-relaxed">
-              Dr. Megha is the Chief Aesthetician and Founder of Truly Derma Clinic & Academy. With 10+ years of practice, she specializes in advanced lasers, injectables, and evidence-based trichology in Pitampura & Rajouri Garden, Delhi.
+              Dr. Megha is the Founder of Truly Derma Clinic. With 10+ years of experience, she specializes in advanced skin, hair, laser, and body contouring care in Pitampura & Rajouri Garden, Delhi.
             </p>
             <div className="pt-2 flex flex-wrap gap-3 justify-center sm:justify-start">
               <a
@@ -187,7 +187,7 @@ export default async function BlogDetailPage({ params }) {
                 className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition-all flex items-center gap-2"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5" />
-                <span>Inquire on WhatsApp</span>
+                <span>WhatsApp Consult</span>
               </a>
               <Link
                 href="/contact"

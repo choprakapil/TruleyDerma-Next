@@ -16,14 +16,14 @@ import { allTreatments, clinicContact, doctorProfile, clinicInfo } from "../../d
 
 export default function BookingModal({ isOpen, onClose, initialTreatment = "" }) {
   const branches = clinicContact.branches || [];
-  const defaultBranchName = branches[0]?.name || "Pitampura Suite";
+  const defaultBranchName = branches[0]?.name || "Pitampura Clinic";
 
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     branch: defaultBranchName,
-    treatment: initialTreatment || allTreatments[0]?.slug || "td-glowtech-360",
+    treatment: initialTreatment || allTreatments[0]?.slug || "hydra-facial",
     date: "",
     timeSlot: "Morning (10:30 AM - 1:00 PM)",
     concerns: "",
@@ -124,10 +124,10 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                 <span>Dr. Megha Aggarwal's Clinic</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-serif font-normal text-white">
-                Reserve Your Clinical Visit
+                Book Your Appointment
               </h3>
               <p className="text-rose-50 text-sm mt-1 max-w-lg font-sans font-light">
-                Experience personalized dermatology, advanced laser toning, and proprietary vortex therapies in our serene suites.
+                Experience personalized care and proven treatments at our comfortable Delhi clinics.
               </p>
             </div>
 
@@ -139,17 +139,17 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                     <AnimatedCheckmark size={72} color="#C98294" />
                   </div>
                   <h4 className="text-2xl font-serif font-normal text-charcoal-900 pt-2">
-                    Consultation Request Initiated
+                    Appointment Request Received
                   </h4>
                   <p className="text-sm max-w-md mx-auto text-charcoal-600 font-sans font-light">
-                    Thank you, <span className="font-semibold text-charcoal-900">{formData.name || "Patient"}</span>. Our clinical desk is reviewing your request and will confirm your appointment via WhatsApp / phone shortly.
+                    Thank you, <span className="font-semibold text-charcoal-900">{formData.name || "Patient"}</span>. Our team will contact you shortly to confirm your appointment.
                   </p>
                   <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                       onClick={resetAndClose}
                       className="px-7 py-3.5 rounded-full bg-brand-rose text-white text-xs font-semibold uppercase tracking-wider hover:opacity-95 transition-colors shadow-md cursor-pointer"
                     >
-                      Return to Experience
+                      Close
                     </button>
                     <a
                       href={`https://wa.me/${clinicInfo.contact.whatsapp}`}
@@ -158,7 +158,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                       className="px-7 py-3.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold uppercase tracking-wider hover:bg-emerald-100 transition-colors flex items-center justify-center gap-2 border border-emerald-200"
                     >
                       <WhatsAppIcon className="w-4 h-4" />
-                      Chat with Desk on WhatsApp
+                      WhatsApp Consult
                     </a>
                   </div>
                 </div>
@@ -306,7 +306,7 @@ export default function BookingModal({ isOpen, onClose, initialTreatment = "" })
                       className="flex-1 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-rose via-[#DFA6B4] to-brand-rose text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2.5 hover:opacity-95 active:scale-[0.99] transition-all shadow-md shadow-brand-rose/25 cursor-pointer"
                     >
                       <WhatsAppIcon className="w-4 h-4" />
-                      <span>Instant WhatsApp Reservation</span>
+                      <span>WhatsApp Consult</span>
                     </button>
 
                     <button
